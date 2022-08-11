@@ -104,7 +104,7 @@ yn
 
 <>
  <HeaderLogin />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure ' style={{marginTop:50,width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure ' style={{marginTop:20,width:750}} >
 
 
     <Row className='justify-content-center mb-5 pt-3' >

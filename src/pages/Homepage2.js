@@ -125,7 +125,7 @@ function Homepage2(props)
             </Col>
 
             <Col md={4} className="my-auto text-center">
-            <Link to="/production_domestique_secteur_info_execution" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Calcule de la production domestique par secteur</b></i>
         </Button>

@@ -61,13 +61,13 @@ function PopulationTotalProvinceInfo(props)
    
           const total_general_split_urbain = total_taille_population_final.reduce((total,value)=>
           {
-            total = Number(total) + Number(value.total_split_urbain).toFixed(4)
+            total = total + Number(value.total_split_urbain)
             return total
           },0)
 
           const total_general_split_rural = total_taille_population_final.reduce((total,value)=>
           {
-            total = Number(total) + Number(value.total_split_rural).toFixed(4)
+            total = total + Number(value.total_split_rural)
             return total
           },0)
           
@@ -76,7 +76,7 @@ function PopulationTotalProvinceInfo(props)
 
           const total_taux_migration = props.tauxMigrationInfo.reduce((total,value)=>
           {
-            total = Number(total) + Number(value.taux_migration).toFixed(4)
+            total = total + Number(value.taux_migration).toFixed(4)
             return total
           },0)
 

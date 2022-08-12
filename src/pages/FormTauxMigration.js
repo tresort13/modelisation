@@ -42,7 +42,7 @@ const submitManifest = (e)=>
    const uploadData = new FormData();
   uploadData.append('fichier', fichier);
     
-    fetch('https://modelisationfiscaleapi/api/tauxMigrationProvince/', {
+    fetch('https://modelisationfiscaleapi.herokuapp.com/api/tauxMigrationProvince/', {
             method:'POST',
             body: uploadData
           })

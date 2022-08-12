@@ -41,7 +41,7 @@ const submitManifest = (e)=>
    const uploadData = new FormData();
   uploadData.append('fichier', fichier);
     
-    fetch('https://modelisationfiscaleapi/api/tauxNataliteMortalite/', {
+    fetch('https://modelisationfiscaleapi.herokuapp.com/api/tauxNataliteMortalite/', {
             method:'POST',
             body: uploadData
           })

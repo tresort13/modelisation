@@ -42,7 +42,7 @@ const submitManifest = (e)=>
    const uploadData = new FormData();
   uploadData.append('manifest', manifest);
     
-    fetch('https://modelisationfiscaleapi/api/manifestUpload/', {
+    fetch('https://modelisationfiscaleapi.herokuapp.com/api/manifestUpload/', {
             method:'POST',
             body: uploadData
           })

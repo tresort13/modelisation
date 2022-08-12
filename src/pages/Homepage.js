@@ -56,7 +56,7 @@ function Homepage(props)
         <Row className="text-center justify-content-center mt-4">
             <Col md={4} className="my-auto text-center">
             <Link to="/taille_reelle_population_execution" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+            <Button variant="warning" style={{width:350,height:80}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Taille réelle de la population par province/milieu</b></i>
         </Button>
         </Link>    

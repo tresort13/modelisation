@@ -42,7 +42,7 @@ const resetFileInput = () => {
      const uploadData = new FormData();
     uploadData.append('fichier', fichier);
       
-      fetch('https://modelisationfiscaleapi/api/populationActiveOffre/', {
+      fetch('https://modelisationfiscaleapi.herokuapp.com/api/populationActiveOffre/', {
               method:'POST',
               body: uploadData
             })

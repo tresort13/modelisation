@@ -42,7 +42,7 @@ const submitManifest = (e)=>
     const uploadData = new FormData();
   uploadData.append('fichier', fichier);
     
-    fetch('https://modelisationfiscaleapi/api/donneeDepenseCapital/', {
+    fetch('https://modelisationfiscaleapi.herokuapp.com/api/donneeDepenseCapital/', {
             method:'POST',
             body: uploadData
           })

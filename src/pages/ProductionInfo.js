@@ -168,6 +168,7 @@ function ProductionInfo(props)
           <td></td>
           <td></td>
           <td></td>
+          <td></td>
           <td><b className='text-primary'>Primaire</b></td>
           <td><b className='text-primary'>Secondaire</b></td>
           <td><b className='text-primary'>Tertiare</b></td>

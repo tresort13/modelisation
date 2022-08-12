@@ -94,12 +94,13 @@ function Header(props)
         <Nav.Link href="/form_donnee_importations"><p className=' zoom text-warning'>2.7 données des importations</p></Nav.Link>
         <Nav.Link href="/donnee_exportations_nettes_info_execution"><p className=' zoom text-warning'>2.8 données des exportations nettes du pays</p></Nav.Link>
         <Nav.Link href="/donnee_demande_interieure_info_execution"><p className=' zoom text-warning'>2.9 Calcul de la Démande intérieure</p></Nav.Link>
-        <Nav.Link href="/production_domestique_info_execution"><p className=' zoom text-warning'>2.10 Calcul de la production domestique</p></Nav.Link>
-        <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>2.11 Calcul de la production domestique par secteur</p></Nav.Link>     
+
         </Nav>
         </Col>
 
         <Col>
+        <Nav.Link href="/production_domestique_info_execution"><p className=' zoom text-warning'>2.10 Calcul de la production domestique</p></Nav.Link>
+        <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>2.11 Calcul de la production domestique par secteur</p></Nav.Link>     
         <Nav.Link href="/donnee_demande_interieure_info_execution"><p className=' zoom text-warning'>2.12 Calcul de la Démande intérieure</p></Nav.Link>
         <Nav.Link href="/production_domestique_info_execution"><p className=' zoom text-warning'>2.13 Calcul de la production domestique</p></Nav.Link>
         <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>2.14Calcul de la production domestique par secteur</p></Nav.Link>     

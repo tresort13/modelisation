@@ -91,7 +91,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/donnees_production_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/donnee_production_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={e=>submitManifest(e)}>
         chargement fichier
         </Button>

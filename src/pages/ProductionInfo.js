@@ -118,7 +118,7 @@ function ProductionInfo(props)
         <>
             <Header username={props.username}/>
             <div>
-{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20,width:2000}} >
+{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20,width:2500}} >
 
 
     

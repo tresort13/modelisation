@@ -58,6 +58,7 @@ import Homepage2 from "./pages/Homepage2";
 import MenuDeterminationPIB from "./pages/MenuDeterminationPIB";
 import MenuCalculs from "./pages/MenuCalculs";
 import FormProduction from "./pages/FormProduction";
+import ProductionInfo from "./pages/ProductionInfo";
 
 
 const useState = React.useState
@@ -408,6 +409,9 @@ const dataDonneeProduction = (data)=>
 
 
     <Route path="/demande_interieure_urbaine" element={<DemandeInterieureUrbaineInfo username = {username} />} >
+    </Route>
+
+    <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo}/>} >
     </Route>
 
     

@@ -63,7 +63,7 @@ function Header(props)
         </Col>
     </Row>
    
-    <Offcanvas  show={show} onHide={handleClose} className="bordure bg-dark" style={{height:650,width:1200}}>
+    <Offcanvas  show={show} onHide={handleClose} className="bordure bg-dark" style={{height:1000,width:1300}}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-end mx-auto"><i className="display-6 text-secondary text-end"><b>Menu Navigation</b></i> </Offcanvas.Title>
         </Offcanvas.Header>

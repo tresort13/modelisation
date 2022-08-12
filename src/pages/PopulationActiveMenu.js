@@ -48,7 +48,7 @@ function PopulationActiveMenu(props)
         <Col xs = {"auto"}>
         <Link to="/form_population_active_milieu_urbain_rural" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <i>Population Active Milieu Urbain/Rural</i>
+        <i>Pourcentage Population Active Milieu Urbain/Rural</i>
         </Button>
         </Link>
         </Col>
@@ -60,7 +60,7 @@ function PopulationActiveMenu(props)
         <Col xs ={"auto"}>
         <Link to="/form_population_active_secteur" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <i>Population Active Par Secteur d'Activité</i>
+        <i>Pourcentage Population Active Par Secteur d'Activité</i>
         </Button>
         </Link>
         </Col>

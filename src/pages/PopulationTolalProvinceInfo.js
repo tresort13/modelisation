@@ -59,9 +59,33 @@ function PopulationTotalProvinceInfo(props)
 
         
    
-console.log(total_taille_population_final)
+          const total_general_split_urbain = total_taille_population_final.reduce((total,value)=>
+          {
+            total = total + Number(value.total_split_urbain)
+            return total
+          },0)
+
+          const total_general_split_rural = total_taille_population_final.reduce((total,value)=>
+          {
+            total = total + Number(value.total_split_rural)
+            return total
+          },0)
+          
   
-  
+          const total_taux_migration = tauxMigrationInfo.reduce((total,value)=>
+          {
+            total = total + Number(value.taux_migration).toFixed(4)
+            return total
+          },0)
+
+       
+
+          const total_final_split_urbain = Number(total_general_split_urbain) + (Number(total_general_split_rural) * Number(total_taux_migration).toFixed(4))
+
+          const total_final_split_rural = Number(total_general_split_rural) - (Number(total_general_split_rural) * Number(total_taux_migration).toFixed(4))
+
+          const total_province = total_final_split_urbain + total_final_split_rural
+
     return (
         <>
             <Header />
@@ -101,7 +125,15 @@ console.log(total_taille_population_final)
           })
         }) 
         }
-        
+
+
+<tr style={{border:"2px solid white"}}>
+          <td><b>Total</b></td>
+          <td><b></b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_final_split_urbain).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_final_split_rural).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_province).toFixed())}</b></td>
+   </tr>
       </tbody>
     </Table>
         </div>

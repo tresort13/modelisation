@@ -35,7 +35,7 @@ function MenuCalculs(props)
             <Col mdmd={6} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Calcul des recettes publique</b></i>
+            <i className="text-secondary"><b>Calcul des recettes publiques</b></i>
            </Button>
             </Link>            
             </Col>

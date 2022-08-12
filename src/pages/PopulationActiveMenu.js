@@ -40,12 +40,12 @@ function PopulationActiveMenu(props)
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
             <Link to="">
-            <Image src={require('./est_back.jpeg')}  className='rounded-pill ' style={{width:300}}></Image>
+            <Image src={require('./est_back.jpeg')}  className='rounded-pill ' style={{width:150}}></Image>
             </Link>
         </Col>
     </Row>
     <Row className='justify-content-center pb-3'>
-        <Col xs = {6}>
+        <Col xs = {"auto"}>
         <Link to="/form_population_active_milieu_urbain_rural" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <i>Population Active Milieu Urbain/Rural</i>
@@ -57,7 +57,7 @@ function PopulationActiveMenu(props)
 
 
     <Row className='justify-content-center pb-3 '>
-        <Col xs ={6}>
+        <Col xs ={"auto"}>
         <Link to="/form_population_active_secteur" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <i>Population Active Par Secteur d'Activité</i>

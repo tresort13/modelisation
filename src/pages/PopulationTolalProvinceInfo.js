@@ -129,7 +129,6 @@ function PopulationTotalProvinceInfo(props)
 
 <tr style={{border:"2px solid white"}}>
           <td><b>Total</b></td>
-          <td><b></b></td>
           <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_final_split_urbain).toFixed())}</b></td>
           <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_final_split_rural).toFixed())}</b></td>
           <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_province).toFixed())}</b></td>

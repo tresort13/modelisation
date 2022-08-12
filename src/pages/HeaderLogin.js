@@ -41,7 +41,7 @@ function HeaderLogin(props)
         </Col>
         <Col xs={6} className="my-auto text-end">
         <Link to="/home" style={{textDecoration:"none"}}>
-          <p className="display-6 text-secondary">MODELISATION MACRO FISCAL</p>
+          <p className="display-6 text-secondary">MODELISATION MACRO FISCALE</p>
           </Link>
         </Col>
         <Col xs={4} className="my-auto mx-auto text-end ">

@@ -82,9 +82,9 @@ function PopulationTotalProvinceInfo(props)
 
        
 
-          const total_final_split_urbain = Number((total_general_split_urbain) + ((total_general_split_urbain * parseInt(total_taux_migration)))).toFixed()
+          const total_final_split_urbain = Number((total_general_split_urbain) + ((total_general_split_urbain * Number(total_taux_migration)))).toFixed()
 
-          const total_final_split_rural =Number((total_general_split_rural) + ((total_general_split_rural * parseInt(total_taux_migration)))).toFixed()
+          const total_final_split_rural =Number((total_general_split_rural) + ((total_general_split_rural * Number(total_taux_migration)))).toFixed()
 
           const total_final_province = Number(total_final_split_urbain + total_final_split_rural).toFixed()
 
@@ -99,7 +99,6 @@ function PopulationTotalProvinceInfo(props)
 {isDesktop && <Container className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20}} >
 
 
-    
 <div>
 <Row className='justify-content-center '>
         <Col xs = {"auto"} className='text-center borders pt-2'>

@@ -57,6 +57,7 @@ import MenuPrincipal from "./pages/MenuPrincipal";
 import Homepage2 from "./pages/Homepage2";
 import MenuDeterminationPIB from "./pages/MenuDeterminationPIB";
 import MenuCalculs from "./pages/MenuCalculs";
+import FormProduction from "./pages/FormProduction";
 
 
 const useState = React.useState
@@ -189,6 +190,17 @@ useEffect(() => {
   window.localStorage.setItem("populationActiveSecteurInfo", JSON.stringify(populationActiveSecteurInfo))
 }, [populationActiveSecteurInfo])
 
+const [productionInfo,setProductionInfo] = useState(()=>
+{
+  const localData = localStorage.getItem('productionInfo');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("productionInfo", JSON.stringify(productionInfo))
+}, [productionInfo])
+
+
 const dataPopulation = (data)=>
 {
   setPopulationInfo(data)
@@ -242,6 +254,11 @@ const dataDonneeExportations = (data)=>
 const dataDonneeImportations = (data)=>
 {
   setDonneeImportationsInfo(data)
+}
+
+const dataDonneeProduction = (data)=>
+{
+  setProductionInfo(data)
 }
 
   return (
@@ -318,6 +335,9 @@ const dataDonneeImportations = (data)=>
     </Route>
 
     <Route path="/form_population_active_secteur" element={<FormPopulationActiveSecteur username = {username} dataPopulationActiveSecteur={dataPopulationActiveSecteur}/>} >
+    </Route>
+
+    <Route path="/form_production" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >

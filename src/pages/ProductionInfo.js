@@ -16,7 +16,7 @@ import Table from 'react-bootstrap/Table';
 
 
 
-function DonneeImportationsInfo(props)
+function ProductionInfo(props)
 {
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -30,56 +30,56 @@ function DonneeImportationsInfo(props)
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
 
-        const total_milieu_urbain_agriculture = props.donneeImportationsInfo.reduce((total,value)=>
+        const total_milieu_urbain_agriculture = props.productionInfo.reduce((total,value)=>
         {
 
           total = total + Number(value.milieu_urbaine_agriculture)
           return total
         },0)
         
-        const total_milieu_urbain_mines = props.donneeImportationsInfo.reduce((total,value)=>
+        const total_milieu_urbain_mines = props.productionInfo.reduce((total,value)=>
         {
 
           total = total + Number(value.milieu_urbaine_mines)
           return total
         },0)
         
-        const total_milieu_urbain_industrie = props.donneeImportationsInfo.reduce((total,value)=>
+        const total_milieu_urbain_industrie = props.productionInfo.reduce((total,value)=>
         {
 
           total = total + Number(value.milieu_urbaine_industrie)
           return total
         },0)
 
-        const total_milieu_urbain_service = props.donneeImportationsInfo.reduce((total,value)=>
+        const total_milieu_urbain_service = props.productionInfo.reduce((total,value)=>
         {
 
           total = total + Number(value.milieu_urbaine_service)
           return total
         },0)
 
-        const total_milieu_rurale_agriculture = props.donneeImportationsInfo.reduce((total,value)=>
+        const total_milieu_rurale_agriculture = props.productionInfo.reduce((total,value)=>
         {
 
           total = total + Number(value.milieu_rurale_agriculture)
           return total
         },0)
 
-        const total_milieu_rurale_mines = props.donneeImportationsInfo.reduce((total,value)=>
+        const total_milieu_rurale_mines = props.productionInfo.reduce((total,value)=>
         {
 
           total = total + Number(value.milieu_rurale_mines)
           return total
         },0)
 
-        const total_milieu_rurale_industrie = props.donneeImportationsInfo.reduce((total,value)=>
+        const total_milieu_rurale_industrie = props.productionInfo.reduce((total,value)=>
         {
 
           total = total + Number(value.milieu_rurale_industrie)
           return total
         },0)
   
-        const total_milieu_rurale_service = props.donneeImportationsInfo.reduce((total,value)=>
+        const total_milieu_rurale_service = props.productionInfo.reduce((total,value)=>
         {
 
           total = total + Number(value.milieu_rurale_service)
@@ -126,20 +126,25 @@ function DonneeImportationsInfo(props)
 <Row className='justify-content-center '>
         <Col xs = {"auto"} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Table de données des importations</i></b></u></h6>
+        <h6 ><u><b><i className='text-primary'>Table de données Production valeur ajoutée</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">
       <thead>
       <tr className='text-primary' style={{border:"2px solid white"}}>
            <th>Province</th>
-          <th>Nature : Importations</th>
-          <th colSpan={4}>Données Importations Milieu Urbain</th>
-          <th>Total Importations Milieu Urban</th>
-          <th colSpan={4}>Données Importations Milieu Rural</th>
-          <th>Total Données Importations Milieu Rural</th>
-          <th colSpan={4}>Données Importations/secteur</th>
-          <th>Total Importations/Province</th>
+          <th>Nature : Production</th>
+          <th colSpan={4}>Données Production Milieu Urbain</th>
+          <th>Total Production Milieu Urban</th>
+          <th colSpan={4}>Données Production Milieu Rural</th>
+          <th>Total Données Production Milieu Rural</th>
+          <th colSpan={4}>Données Production/secteur</th>
+          <th>Total Production/Province</th>
+          <th></th>
+          <th>Province</th>
+          <th>Nature : Production</th>
+          <th colSpan={3}>Données Production/secteur(3)</th>
+          <th>Total Production: valeur Ajoutée/Province </th>
         </tr>
       </thead>
       <tbody>
@@ -161,13 +166,19 @@ function DonneeImportationsInfo(props)
           <td><b className='text-primary'>industrie</b></td>
           <td><b className='text-primary'>Service</b></td>
           <td></td>
+          <td></td>
+          <td></td>
+          <td><b className='text-primary'>Primaire</b></td>
+          <td><b className='text-primary'>Secondaire</b></td>
+          <td><b className='text-primary'>Tertiare</b></td>
+          <td></td>
 
         </tr>
-        {props.donneeImportationsInfo.map((value)=>
+        {props.productionInfo.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}}>
              <td><b>{value.nom_province}</b></td>
-             <td><b>Importations</b></td>
+             <td><b>Production</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.milieu_urbaine_agriculture).toFixed())}</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.milieu_urbaine_mines).toFixed())}</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.milieu_urbaine_industrie).toFixed())}</b></td>
@@ -185,7 +196,13 @@ function DonneeImportationsInfo(props)
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_service)+ Number(value.milieu_rurale_service) ).toFixed())}</b></td>
 
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_agriculture) + Number(value.milieu_rurale_agriculture) + Number(value.milieu_urbaine_mines)+ Number(value.milieu_rurale_mines) + Number(value.milieu_urbaine_industrie)+ Number(value.milieu_rurale_industrie) + Number(value.milieu_urbaine_service)+ Number(value.milieu_rurale_service)).toFixed())}</b></td>
-
+             <td></td>
+             <td><b>{value.nom_province}</b></td>
+             <td><b>Production</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_agriculture)+ Number(value.milieu_rurale_agriculture) + Number(value.milieu_urbaine_mines)+ Number(value.milieu_rurale_mines) ).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_industrie)+ Number(value.milieu_rurale_industrie) ).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_service)+ Number(value.milieu_rurale_service) ).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_agriculture) + Number(value.milieu_rurale_agriculture) + Number(value.milieu_urbaine_mines)+ Number(value.milieu_rurale_mines) + Number(value.milieu_urbaine_industrie)+ Number(value.milieu_rurale_industrie) + Number(value.milieu_urbaine_service)+ Number(value.milieu_rurale_service)).toFixed())}</b></td>
             </tr>     
         }) 
         }
@@ -209,6 +226,13 @@ function DonneeImportationsInfo(props)
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_industrie).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_service).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur).toFixed())}</b></i></td>
+        <td></td>
+        <td className='text-primary'>Total</td>
+        <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(total_secteur_agriculture) + Number(total_secteur_mines)).toFixed())}</b></i></td>
+          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_industrie).toFixed())}</b></i></td>
+          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_service).toFixed())}</b></i></td>
+          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur).toFixed())}</b></i></td>
+        <td></td>
         </tr>
       </tbody>
     </Table>
@@ -249,4 +273,4 @@ function DonneeImportationsInfo(props)
     )
 }
 
-export default DonneeImportationsInfo;
+export default ProductionInfo;

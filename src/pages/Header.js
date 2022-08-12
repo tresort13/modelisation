@@ -77,7 +77,7 @@ function Header(props)
         <Nav.Link href="/taux_croissance_info_execution"><p className=' zoom text-warning'>1.3 Taux de croissance par province/milieu</p></Nav.Link>
         <Nav.Link href="/taille_reelle_population_execution"><p className=' zoom text-warning'>1.4 Taille réelle de la population par province/milieu</p></Nav.Link>
         <Nav.Link href="/form_taux_migration"><p className=' zoom text-warning'>1.5 Taux de migration par province/milieu</p></Nav.Link>
-        <Nav.Link href="/Population_Total_ApresMigration_Info_Executio"><p className=' zoom text-warning'>1.6 Population totale après migration</p></Nav.Link>  
+        <Nav.Link href="/Population_Total_ApresMigration_Info_Execution"><p className=' zoom text-warning'>1.6 Population totale après migration</p></Nav.Link>  
         <Nav.Link href="/population_active_menu"><p className=' zoom text-warning'>1.7 Population Active</p></Nav.Link>     
         </Nav>
         </Col>

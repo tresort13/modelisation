@@ -82,9 +82,9 @@ function PopulationTotalProvinceInfo(props)
 
        
 
-          const total_final_split_urbain = Number((total_general_split_urbain) + ((total_general_split_urbain * Number(total_taux_migration)))).toFixed()
+          const total_final_split_urbain = Number((total_general_split_urbain) + ((total_general_split_urbain * Number(total_taux_migration).toFixed(4)))).toFixed()
 
-          const total_final_split_rural =Number((total_general_split_rural) + ((total_general_split_rural * Number(total_taux_migration)))).toFixed()
+          const total_final_split_rural =Number((total_general_split_rural) + ((total_general_split_rural * Number(total_taux_migration).toFixed(4)))).toFixed()
 
           const total_final_province = Number(total_final_split_urbain + total_final_split_rural).toFixed()
 

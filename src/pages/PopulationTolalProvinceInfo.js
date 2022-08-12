@@ -72,7 +72,7 @@ function PopulationTotalProvinceInfo(props)
           },0)
           
   
-          const total_taux_migration = tauxMigrationInfo.reduce((total,value)=>
+          const total_taux_migration = props.tauxMigrationInfo.reduce((total,value)=>
           {
             total = total + Number(value.taux_migration).toFixed(4)
             return total

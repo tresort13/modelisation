@@ -88,9 +88,9 @@ function PopulationTotalProvinceInfo(props)
 
           const total_final_province = Number(total_final_split_urbain + total_final_split_rural).toFixed()
 
-          console.log(total_final_split_urbain)
-          console.log(total_final_split_rural )
-          console.log(total_final_province)
+          console.log(total_general_split_urbain)
+          console.log(total_general_split_rural )
+          console.log(total_taux_migration)
          
     return (
         <>

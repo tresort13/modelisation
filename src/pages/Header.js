@@ -85,14 +85,11 @@ function Header(props)
         <Col>
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column ">
         <p className='text-warning'><b><u>2. DETERMINATION PIB :</u></b> </p>
-        <Nav.Link href=""><p className=' zoom text-warning'>2.1 Production</p></Nav.Link>
-        <Nav.Link href=""><p className=' zoom text-warning'>2.2 Révenus</p></Nav.Link>
-        <Nav.Link href=""><p className=' zoom text-warning'>2.3 Dépenses : </p></Nav.Link>
-        <Nav.Link href="/form_donnees_consommation"><p className=' zoom text-warning'>2.3.1 données de la consommation</p></Nav.Link>
-        <Nav.Link href="/form_investissement_prive"><p className=' zoom text-warning'>2.3.2 données de l'investissement privé</p></Nav.Link>
-        <Nav.Link href="/form_depense_courante"><p className=' zoom text-warning'>2.3.3 données de dépenses Courante</p></Nav.Link>
-        <Nav.Link href="/form_depense_capital"><p className=' zoom text-warning'>2.3.4 données de dépenses en Capital</p></Nav.Link>
-        <Nav.Link href="/donnees_depense_publique_info_execution"><p className=' zoom text-warning'>2.3.5 données de dépenses publique</p></Nav.Link>
+        <Nav.Link href="/form_donnees_consommation"><p className=' zoom text-warning'> données de la consommation</p></Nav.Link>
+        <Nav.Link href="/form_investissement_prive"><p className=' zoom text-warning'> données de l'investissement privé</p></Nav.Link>
+        <Nav.Link href="/form_depense_courante"><p className=' zoom text-warning'>données de dépenses Courante</p></Nav.Link>
+        <Nav.Link href="/form_depense_capital"><p className=' zoom text-warning'>données de dépenses en Capital</p></Nav.Link>
+        <Nav.Link href="/donnees_depense_publique_info_execution"><p className=' zoom text-warning'>données de dépenses publique</p></Nav.Link>
         <Nav.Link href="/form_donnee_exportations"><p className=' zoom text-warning'>données des exportations</p></Nav.Link>
         <Nav.Link href="/form_donnee_importations"><p className=' zoom text-warning'>données des importations</p></Nav.Link>
         <Nav.Link href="/donnee_exportations_nettes_info_execution"><p className=' zoom text-warning'>données des exportations nettes du pays</p></Nav.Link>
@@ -105,8 +102,8 @@ function Header(props)
         <Col>
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column ">
         <p className='text-warning'><b><u>3. CALCULS</u></b> </p>
-        <Nav.Link href=""><p className=' zoom text-warning'>3.1 Calculs des indicateurs économiques</p></Nav.Link>
-        <Nav.Link href=""><p className=' zoom text-warning'>3.2 Calcul des recettes publiques</p></Nav.Link>
+        <Nav.Link href=""><p className=' zoom text-warning'> Calculs des indicateurs économiques</p></Nav.Link>
+        <Nav.Link href=""><p className=' zoom text-warning'>Calcul des recettes publiques</p></Nav.Link>
         
         
         </Nav>

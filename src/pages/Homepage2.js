@@ -105,7 +105,7 @@ function Homepage2(props)
             <Col md={4} className="my-auto text-center">
             <Link to="/donnee_demande_interieure_info_execution" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Calcule de la Démande intérieure</b></i>
+            <i className="text-secondary"><b>Calcul de la Démande intérieure</b></i>
         </Button>
         </Link>    
             </Col>
@@ -119,7 +119,7 @@ function Homepage2(props)
             <Col mdmd={4} className=" mx-auto text-center">
             <Link to="/production_domestique_info_execution" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Calcule de la production domestique</b></i>
+            <i className="text-secondary"><b>Calcul de la production domestique</b></i>
         </Button>
         </Link>            
             </Col>
@@ -127,7 +127,7 @@ function Homepage2(props)
             <Col md={4} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Calcule de la production domestique par secteur</b></i>
+            <i className="text-secondary"><b>Calcul de la production domestique par secteur</b></i>
         </Button>
         </Link>     
             </Col>

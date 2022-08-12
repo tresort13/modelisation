@@ -71,34 +71,34 @@ function Header(props)
           <Row>
           <Col>
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column ">
-        <Nav.Link href="/form_population_province"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Population par province</i></Button></Nav.Link>
-        <Nav.Link href="/form_taux_natalite_mortalite"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Taux de natalité/mortalié</i></Button></Nav.Link>
-        <Nav.Link href="/taux_croissance_info_execution"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Taux de croissance par province/milieu</i></Button></Nav.Link>
-        <Nav.Link href="/taille_reelle_population_execution"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Taille réelle de la population par province/milieu</i></Button></Nav.Link>
-        <Nav.Link href="/form_taux_migration"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Taux de migration par province/milieu</i></Button></Nav.Link>
-        <Nav.Link href="/Population_Total_ApresMigration_Info_Executio"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Population totale après migration</i></Button></Nav.Link>       
+        <Nav.Link href="/form_population_province"><p className=' zoom btn-warning'>Population par province</p></Nav.Link>
+        <Nav.Link href="/form_taux_natalite_mortalite"><p className=' zoom btn-warning'>Taux de natalité/mortalié</p></Nav.Link>
+        <Nav.Link href="/taux_croissance_info_execution"><p className=' zoom btn-warning'>Taux de croissance par province/milieu</p></Nav.Link>
+        <Nav.Link href="/taille_reelle_population_execution"><p className=' zoom btn-warning'>Taille réelle de la population par province/milieu</p></Nav.Link>
+        <Nav.Link href="/form_taux_migration"><p className=' zoom btn-warning'>Taux de migration par province/milieu</p></Nav.Link>
+        <Nav.Link href="/Population_Total_ApresMigration_Info_Executio"><p className=' zoom btn-warning'>Population totale après migration</p></Nav.Link>       
         </Nav>
         </Col>
 
         <Col>
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column ">
-        <Nav.Link href="/population_active_menu"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Population Active</i></Button></Nav.Link>
-        <Nav.Link href="/form_donnees_consommation"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>données de la consommation</i></Button></Nav.Link>
-        <Nav.Link href="/form_investissement_prive"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>données de l'investissement privé</i></Button></Nav.Link>
-        <Nav.Link href="/form_depense_courante"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>données de dépenses Courante</i></Button></Nav.Link>
-        <Nav.Link href="/form_depense_capital"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>données de dépenses en Capital</i></Button></Nav.Link>
-        <Nav.Link href="/donnees_depense_publique_info_execution"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>données de dépenses publique</i></Button></Nav.Link>       
+        <Nav.Link href="/population_active_menu"><p className=' zoom btn-warning'>Population Active</p></Nav.Link>
+        <Nav.Link href="/form_donnees_consommation"><p className=' zoom btn-warning'>données de la consommation</p></Nav.Link>
+        <Nav.Link href="/form_investissement_prive"><p className=' zoom btn-warning'>données de l'investissement privé</p></Nav.Link>
+        <Nav.Link href="/form_depense_courante"><p className=' zoom btn-warning'>données de dépenses Courante</p></Nav.Link>
+        <Nav.Link href="/form_depense_capital"><p className=' zoom btn-warning'>données de dépenses en Capital</p></Nav.Link>
+        <Nav.Link href="/donnees_depense_publique_info_execution"><p className=' zoom btn-warning'>données de dépenses publique</p></Nav.Link>
         </Nav>
         </Col>
 
         <Col>
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column ">
-        <Nav.Link href="/form_donnee_exportations"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>données des exportations</i></Button></Nav.Link>
-        <Nav.Link href="/form_donnee_importations"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>données des importations</i></Button></Nav.Link>
-        <Nav.Link href="/donnee_exportations_nettes_info_execution"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>données des exportations nettes du pays</i></Button></Nav.Link>
-        <Nav.Link href="/donnee_demande_interieure_info_execution"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Calcule de la Démande intérieure</i></Button></Nav.Link>
-        <Nav.Link href="/production_domestique_info_execution"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Calcule de la production domestique</i></Button></Nav.Link>
-        <Nav.Link href="/production_domestique_secteur_info_execution"><Button style={{width:300,height:70}} className='btn-lg rounded-pill zoom btn-warning'><i>Calcule de la production domestique par secteur</i></Button></Nav.Link>       
+        <Nav.Link href="/form_donnee_exportations"><p className=' zoom btn-warning'>données des exportations</p></Nav.Link>
+        <Nav.Link href="/form_donnee_importations"><p className=' zoom btn-warning'>données des importations</p></Nav.Link>
+        <Nav.Link href="/donnee_exportations_nettes_info_execution"><p className=' zoom btn-warning'>données des exportations nettes du pays</p></Nav.Link>
+        <Nav.Link href="/donnee_demande_interieure_info_execution"><p className=' zoom btn-warning'>Calcule de la Démande intérieure</p></Nav.Link>
+        <Nav.Link href="/production_domestique_info_execution"><p className=' zoom btn-warning'>Calcule de la production domestique</p></Nav.Link>
+        <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom btn-warning'>Calcule de la production domestique par secteur</p></Nav.Link>     
         </Nav>
         </Col>
         </Row>

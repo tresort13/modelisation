@@ -141,17 +141,17 @@ function DonneesDepenseCouranteInfo(props)
           <td></td>
           <td><b className='text-primary'>Agriculture</b></td>
           <td><b className='text-primary'>Mines</b></td>
-          <td><b className='text-primary'>insdustrie</b></td>
+          <td><b className='text-primary'>industrie</b></td>
           <td><b className='text-primary'>Service</b></td>
           <td></td>
           <td><b className='text-primary'>Agriculture</b></td>
           <td><b className='text-primary'>Mines</b></td>
-          <td><b className='text-primary'>insdustrie</b></td>
+          <td><b className='text-primary'>industrie</b></td>
           <td><b className='text-primary'>Service</b></td>
           <td></td>
           <td><b className='text-primary'>Agriculture</b></td>
           <td><b className='text-primary'>Mines</b></td>
-          <td><b className='text-primary'>insdustrie</b></td>
+          <td><b className='text-primary'>industrie</b></td>
           <td><b className='text-primary'>Service</b></td>
           <td></td>
 

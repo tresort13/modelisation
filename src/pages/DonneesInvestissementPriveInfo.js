@@ -140,7 +140,7 @@ function DonneesInvestissementPriveInfo(props)
           <th colSpan={4}>Données Investissement Privé Milieu Rural</th>
           <th>Total Données Investissement Privé Milieu Rural</th>
           <th colSpan={4}>Données Investissement Privé/secteur</th>
-          <th>Total Dépenses en Capital /Province</th>
+          <th>Total Investissement Privé/Province</th>
         </tr>
       </thead>
       <tbody>
@@ -149,17 +149,17 @@ function DonneesInvestissementPriveInfo(props)
           <td></td>
           <td><b className='text-primary'>Agriculture</b></td>
           <td><b className='text-primary'>Mines</b></td>
-          <td><b className='text-primary'>insdustrie</b></td>
+          <td><b className='text-primary'>industrie</b></td>
           <td><b className='text-primary'>Service</b></td>
           <td></td>
           <td><b className='text-primary'>Agriculture</b></td>
           <td><b className='text-primary'>Mines</b></td>
-          <td><b className='text-primary'>insdustrie</b></td>
+          <td><b className='text-primary'>industrie</b></td>
           <td><b className='text-primary'>Service</b></td>
           <td></td>
           <td><b className='text-primary'>Agriculture</b></td>
           <td><b className='text-primary'>Mines</b></td>
-          <td><b className='text-primary'>insdustrie</b></td>
+          <td><b className='text-primary'>industrie</b></td>
           <td><b className='text-primary'>Service</b></td>
           <td></td>
 

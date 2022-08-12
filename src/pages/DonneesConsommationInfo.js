@@ -122,11 +122,11 @@ function DonneesConsommationInfo(props)
           <td></td>
           <td></td>
           <td><b className='text-primary'>Consommation alimentaire</b></td>
-          <td><b className='text-primary'>Consommation bien durables</b></td>
+          <td><b className='text-primary'>Consommation biens durables</b></td>
           <td><b className='text-primary'>Consommation autres biens</b></td>
           <td></td>
           <td><b className='text-primary'>Consommation alimentaire</b></td>
-          <td><b className='text-primary'>Consommation bien durables</b></td>
+          <td><b className='text-primary'>Consommation biens durables</b></td>
           <td><b className='text-primary'>Consommation autres biens</b></td>
           <td></td>
           <td><b className='text-primary'>Consommation alimentaire</b></td>

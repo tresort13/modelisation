@@ -85,25 +85,28 @@ function Header(props)
         <Col>
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column ">
         <p className='text-warning'><b><u>2. DETERMINATION PIB :</u></b> </p>
-        <Nav.Link href="/form_donnees_consommation"><p className=' zoom text-warning'> données de la consommation</p></Nav.Link>
-        <Nav.Link href="/form_investissement_prive"><p className=' zoom text-warning'> données de l'investissement privé</p></Nav.Link>
-        <Nav.Link href="/form_depense_courante"><p className=' zoom text-warning'>données de dépenses Courante</p></Nav.Link>
-        <Nav.Link href="/form_depense_capital"><p className=' zoom text-warning'>données de dépenses en Capital</p></Nav.Link>
-        <Nav.Link href="/donnees_depense_publique_info_execution"><p className=' zoom text-warning'>données de dépenses publique</p></Nav.Link>
-        <Nav.Link href="/form_donnee_exportations"><p className=' zoom text-warning'>données des exportations</p></Nav.Link>
-        <Nav.Link href="/form_donnee_importations"><p className=' zoom text-warning'>données des importations</p></Nav.Link>
-        <Nav.Link href="/donnee_exportations_nettes_info_execution"><p className=' zoom text-warning'>données des exportations nettes du pays</p></Nav.Link>
-        <Nav.Link href="/donnee_demande_interieure_info_execution"><p className=' zoom text-warning'>Calcule de la Démande intérieure</p></Nav.Link>
-        <Nav.Link href="/production_domestique_info_execution"><p className=' zoom text-warning'>Calcule de la production domestique</p></Nav.Link>
-        <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>Calcule de la production domestique par secteur</p></Nav.Link>     
+        <Nav.Link href="/form_donnees_consommation"><p className=' zoom text-warning'>2.1 données de la consommation</p></Nav.Link>
+        <Nav.Link href="/form_investissement_prive"><p className=' zoom text-warning'>2.2 données de l'investissement privé</p></Nav.Link>
+        <Nav.Link href="/form_depense_courante"><p className=' zoom text-warning'>2.3 données de dépenses Courante</p></Nav.Link>
+        <Nav.Link href="/form_depense_capital"><p className=' zoom text-warning'>2.4 données de dépenses en Capital</p></Nav.Link>
+        <Nav.Link href="/donnees_depense_publique_info_execution"><p className=' zoom text-warning'>2.5 données de dépenses publique</p></Nav.Link>
+        <Nav.Link href="/form_donnee_exportations"><p className=' zoom text-warning'>2.6 données des exportations</p></Nav.Link>
+        <Nav.Link href="/form_donnee_importations"><p className=' zoom text-warning'>2.7 données des importations</p></Nav.Link>
+        <Nav.Link href="/donnee_exportations_nettes_info_execution"><p className=' zoom text-warning'>2.8 données des exportations nettes du pays</p></Nav.Link>
+        <Nav.Link href="/donnee_demande_interieure_info_execution"><p className=' zoom text-warning'>2.9 Calcul de la Démande intérieure</p></Nav.Link>
+        <Nav.Link href="/production_domestique_info_execution"><p className=' zoom text-warning'>2.10 Calcul de la production domestique</p></Nav.Link>
+        <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>2.11 Calcul de la production domestique par secteur</p></Nav.Link>     
         </Nav>
         </Col>
 
         <Col>
+        <Nav.Link href="/donnee_demande_interieure_info_execution"><p className=' zoom text-warning'>2.12 Calcul de la Démande intérieure</p></Nav.Link>
+        <Nav.Link href="/production_domestique_info_execution"><p className=' zoom text-warning'>2.13 Calcul de la production domestique</p></Nav.Link>
+        <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>2.14Calcul de la production domestique par secteur</p></Nav.Link>     
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column ">
         <p className='text-warning'><b><u>3. CALCULS</u></b> </p>
-        <Nav.Link href=""><p className=' zoom text-warning'> Calculs des indicateurs économiques</p></Nav.Link>
-        <Nav.Link href=""><p className=' zoom text-warning'>Calcul des recettes publiques</p></Nav.Link>
+        <Nav.Link href=""><p className=' zoom text-warning'>3.1 Calculs des indicateurs économiques</p></Nav.Link>
+        <Nav.Link href=""><p className=' zoom text-warning'>3.2 Calcul des recettes publiques</p></Nav.Link>
         
         
         </Nav>

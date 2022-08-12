@@ -103,7 +103,7 @@ function Header(props)
         <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>2.11 Calcul de la production domestique par secteur</p></Nav.Link>     
         <Nav.Link href="/donnee_demande_interieure_info_execution"><p className=' zoom text-warning'>2.12 Calcul de la Démande intérieure</p></Nav.Link>
         <Nav.Link href="/production_domestique_info_execution"><p className=' zoom text-warning'>2.13 Calcul de la production domestique</p></Nav.Link>
-        <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>2.14Calcul de la production domestique par secteur</p></Nav.Link>     
+        <Nav.Link href="/production_domestique_secteur_info_execution"><p className=' zoom text-warning'>2.14 Calcul de la production domestique par secteur</p></Nav.Link>     
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column ">
         <p className='text-warning'><b><u>3. CALCULS</u></b> </p>
         <Nav.Link href=""><p className=' zoom text-warning'>3.1 Calculs des indicateurs économiques</p></Nav.Link>

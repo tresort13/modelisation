@@ -404,13 +404,13 @@ function ProductionDomestiqueInfo(props)
       <thead>
       <tr className='text-primary' style={{border:"2px solid white"}}>
            <th>Province</th>
-          <th>Nature : Démande Intérieure</th>
-          <th colSpan={4}>Données Démande Intérieure Milieu Urbain</th>
-          <th>Total Dépenses Démande Intérieure Milieu Urbain</th>
-          <th colSpan={4}>Données Démande Intérieure Milieu Rural</th>
-          <th>Total  Démande Intérieure Milieu Rural</th>
-          <th colSpan={4}>Données Démande Intérieure/secteur</th>
-          <th>Total Démande Intérieure/Province</th>
+          <th>Nature : Production Domestique Provinciale</th>
+          <th colSpan={4}>Production Domestique "Q" Milieu Urbain</th>
+          <th>Total Production Domestique "Q" Milieu Urbain</th>
+          <th colSpan={4}>Production Domestique "Q" Milieu Rural</th>
+          <th>Total  Production Domestique "Q" Milieu Rural</th>
+          <th colSpan={4}>Production Domestique "Q"/secteur</th>
+          <th>Total Production Domestique "Q"/Province</th>
           <th colSpan={3}>Données Consommation "C"/Catégories</th>
           <th>Total Consommation "C"/Province</th>
         </tr>

@@ -140,9 +140,6 @@ function ProductionInfo(props)
           <th>Total Données Production Milieu Rural</th>
           <th colSpan={4}>Données Production/secteur</th>
           <th>Total Production/Province</th>
-          <th></th>
-          <th>Province</th>
-          <th>Nature : Production</th>
           <th colSpan={3}>Données Production/secteur(3)</th>
           <th>Total Production: valeur Ajoutée/Province </th>
         </tr>
@@ -165,9 +162,6 @@ function ProductionInfo(props)
           <td><b className='text-primary'>Mines</b></td>
           <td><b className='text-primary'>industrie</b></td>
           <td><b className='text-primary'>Service</b></td>
-          <td></td>
-          <td></td>
-          <td></td>
           <td></td>
           <td><b className='text-primary'>Primaire</b></td>
           <td><b className='text-primary'>Secondaire</b></td>
@@ -197,9 +191,6 @@ function ProductionInfo(props)
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_service)+ Number(value.milieu_rurale_service) ).toFixed())}</b></td>
 
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_agriculture) + Number(value.milieu_rurale_agriculture) + Number(value.milieu_urbaine_mines)+ Number(value.milieu_rurale_mines) + Number(value.milieu_urbaine_industrie)+ Number(value.milieu_rurale_industrie) + Number(value.milieu_urbaine_service)+ Number(value.milieu_rurale_service)).toFixed())}</b></td>
-             <td></td>
-             <td><b>{value.nom_province}</b></td>
-             <td><b>Production</b></td>
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_agriculture)+ Number(value.milieu_rurale_agriculture) + Number(value.milieu_urbaine_mines)+ Number(value.milieu_rurale_mines) ).toFixed())}</b></td>
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_industrie)+ Number(value.milieu_rurale_industrie) ).toFixed())}</b></td>
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.milieu_urbaine_service)+ Number(value.milieu_rurale_service) ).toFixed())}</b></td>
@@ -227,9 +218,7 @@ function ProductionInfo(props)
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_industrie).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_service).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur).toFixed())}</b></i></td>
-        <td></td>
-        <td className='text-primary'>Total</td>
-        <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(total_secteur_agriculture) + Number(total_secteur_mines)).toFixed())}</b></i></td>
+          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(total_secteur_agriculture) + Number(total_secteur_mines)).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_industrie).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_service).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur).toFixed())}</b></i></td>

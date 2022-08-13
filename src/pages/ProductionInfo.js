@@ -118,7 +118,7 @@ function ProductionInfo(props)
         <>
             <Header username={props.username}/>
             <div>
-{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20,width:2600}} >
+{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20,width:2750}} >
 
 
     
@@ -222,7 +222,7 @@ function ProductionInfo(props)
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_industrie).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_service).toFixed())}</b></i></td>
           <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur).toFixed())}</b></i></td>
-        <td></td>
+
         </tr>
       </tbody>
     </Table>

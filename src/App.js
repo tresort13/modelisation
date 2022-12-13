@@ -59,6 +59,7 @@ import MenuDeterminationPIB from "./pages/MenuDeterminationPIB";
 import MenuCalculs from "./pages/MenuCalculs";
 import FormProduction from "./pages/FormProduction";
 import ProductionInfo from "./pages/ProductionInfo";
+import MenuRecettes from "./pages/MenuRecettes";
 
 
 const useState = React.useState
@@ -282,6 +283,9 @@ const dataDonneeProduction = (data)=>
     </Route>
 
     <Route path="/homepage2" element={<Homepage2 username = {username} />} >
+    </Route>
+
+    <Route path="/menu_recettes" element={<MenuRecettes username = {username} />} >
     </Route>
 
     <Route path="/form_population_province" element={<FormPopulationProvince username = {username} dataPopulation={dataPopulation}/>} >

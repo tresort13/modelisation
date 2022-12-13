@@ -60,6 +60,7 @@ import MenuCalculs from "./pages/MenuCalculs";
 import FormProduction from "./pages/FormProduction";
 import ProductionInfo from "./pages/ProductionInfo";
 import MenuRecettes from "./pages/MenuRecettes";
+import FormDGI from "./pages/FormDGI";
 
 
 const useState = React.useState
@@ -342,7 +343,10 @@ const dataDonneeProduction = (data)=>
     <Route path="/form_population_active_secteur" element={<FormPopulationActiveSecteur username = {username} dataPopulationActiveSecteur={dataPopulationActiveSecteur}/>} >
     </Route>
 
-    <Route path="/form_production" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
+    <Route path="/form_production" element={<FormDGI username = {username} />} >
+    </Route>
+
+    <Route path="/form_dgi" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >

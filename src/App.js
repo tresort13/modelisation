@@ -343,10 +343,10 @@ const dataDonneeProduction = (data)=>
     <Route path="/form_population_active_secteur" element={<FormPopulationActiveSecteur username = {username} dataPopulationActiveSecteur={dataPopulationActiveSecteur}/>} >
     </Route>
 
-    <Route path="/form_production" element={<FormDGI username = {username} />} >
+    <Route path="/form_production" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
     </Route>
 
-    <Route path="/form_dgi" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
+    <Route path="/form_dgi" element={<FormDGI username = {username} />} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >

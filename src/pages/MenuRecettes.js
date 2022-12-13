@@ -22,9 +22,9 @@ function MenuRecettes(props)
     return (
     <>
      <Header username={props.username}/>
-       {isDesktop && <Container className=" mb-5" style={{marginTop:100}}>
+       {isDesktop && <Container className=" mb-5" style={{marginTop:50}}>
        <Row className="text-center justify-content-center">
-            <Col md={6} className="my-auto text-center">
+            <Col md={4} className="my-auto text-center">
             <Link to="/menu_dgi" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>D G I</b></i>
@@ -32,7 +32,7 @@ function MenuRecettes(props)
             </Link>    
             </Col>
 
-            <Col mdmd={6} className="my-auto text-center">
+            <Col mdmd={4} className="my-auto text-center">
             <Link to="/menu_dgda" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>D G D A</b></i>
@@ -41,8 +41,8 @@ function MenuRecettes(props)
             </Col>
       </Row>
 
-        <Row>
-            <Col md={6} className="my-auto text-center">
+        <Row className="text-center justify-content-center mt-3">
+            <Col md={4} className="my-auto text-center">
             <Link to="/menu_dgrad" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>D G R A D</b></i>
@@ -50,7 +50,7 @@ function MenuRecettes(props)
              </Link>     
             </Col>
 
-            <Col md={6} className="my-auto text-center">
+            <Col md={4} className="my-auto text-center">
             <Link to="/menu_recettes_publiques" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Recettes publiques</b></i>

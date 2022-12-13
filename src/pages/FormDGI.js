@@ -44,6 +44,8 @@ const submitManifest = (e)=>
    const uploadData = new FormData();
   uploadData.append('fichier', fichier);
   setTauxCroissance(tauxCroissance.infoTauxCroissance.file_upload=uploadData)
+
+  console.log(tauxCroissance);
     
     fetch('https://modelisationfiscaleapi.herokuapp.com/api/impots/', {
             method:'POST',

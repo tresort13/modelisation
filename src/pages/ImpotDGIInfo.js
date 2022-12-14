@@ -31,8 +31,9 @@ function ImpotDGIInfo(props)
 console.log(props.impotDGIInfo)
 const total_fiscale_2018 = props.impotDGIInfo.reduce((total,value,index)=>
 {
-    if(index!=2)
+    if(index == 0 || index ==1)
     {
+        console.log(index)
     total = total + parseInt(value.annee_fiscale_2018)
     return total
     }
@@ -40,25 +41,39 @@ const total_fiscale_2018 = props.impotDGIInfo.reduce((total,value,index)=>
 
 const total_fiscale_2019 = props.impotDGIInfo.reduce((total,value)=>
 {
-  console.log(value.annee_fiscale_2019)
-  total = total + parseInt(value.annee_fiscale_2019)
-  return total
+    if(index == 0 || index ==1)
+    {
+    console.log(index)
+    total = total + parseInt(value.annee_fiscale_2019)
+    return total
+    }
 },0)
 
 const total_fiscale_2020 = props.impotDGIInfo.reduce((total,value)=>
 {
-  console.log(value.annee_fiscale_2020)
-  total = total + parseInt(value.annee_fiscale_2020)
-  return total
+    if(index == 0 || index ==1)
+    {
+    console.log(index)
+    total = total + parseInt(value.annee_fiscale_2020)
+    return total
+    }
 },0)
 
 const total_fiscale_2021 = props.impotDGIInfo.reduce((total,value)=>
 {
-  console.log(value.annee_fiscale_2021)
-  total = total + parseInt(value.annee_fiscale_2021)
-  return total
+    if(index == 0 || index ==1)
+    {
+    console.log(index)
+    total = total + parseInt(value.annee_fiscale_2021)
+    return total
+    }
 },0)
 
+const ca_annee_fiscale_2022_temp1 = props.impotDGIInfo[0].annee_fiscale_2021 / props.impotDGIInfo[2].annee_fiscale_2020
+const ca_annee_fiscale_2022_temp2 = props.impotDGIInfo[0].annee_fiscale_2020 / props.impotDGIInfo[2].annee_fiscale_2019
+const ca_annee_fiscale_2022_temp3 = props.impotDGIInfo[0].annee_fiscale_2019 / props.impotDGIInfo[2].annee_fiscale_2018
+const ca_annee_fiscale_2022_average = (ca_annee_fiscale_2022_temp1 + ca_annee_fiscale_2022_temp2 + ca_annee_fiscale_2022_temp3) / 3
+const ca_annee_fiscale_2022_final = props.impotDGIInfo[2].annee_fiscale_2021 * ca_annee_fiscale_2022_average
   
   
     return (
@@ -97,6 +112,7 @@ const total_fiscale_2021 = props.impotDGIInfo.reduce((total,value)=>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed())}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed())}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2021).toFixed())}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(ca_annee_fiscale_2022_final).toFixed())}</b></i></td>
             </tr>     
         }) 
         }

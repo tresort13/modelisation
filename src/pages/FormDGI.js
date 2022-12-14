@@ -27,8 +27,7 @@ function FormDGI(props)
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
-    taux_croissance :"",
-    file_upload : new FormData()
+    taux_croissance :""
 }});
 
 const [message,setMessage] = useState("Impôts sur CA et autres pour l'année courante");
@@ -41,13 +40,15 @@ const resetFileInput = () => {
   };
 const submitManifest = (e)=>
 {
-  setTauxCroissance(tauxCroissance.infoTauxCroissance.file_upload.append('fichier', fichier))
+   const uploadData = new FormData();
+  uploadData.append('fichier', fichier);
+  uploadData.append('taux_croissance',tauxCroissance.infoTauxCroissance.taux_croissance)
 
   console.log(tauxCroissance);
     
     fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
             method:'POST',
-            body: JSON.stringify(tauxCroissance.infoTauxCroissance) 
+            body: uploadData 
           })
           .then( res => res.json())
           .then(

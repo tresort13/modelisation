@@ -61,6 +61,7 @@ import FormProduction from "./pages/FormProduction";
 import ProductionInfo from "./pages/ProductionInfo";
 import MenuRecettes from "./pages/MenuRecettes";
 import FormDGI from "./pages/FormDGI";
+import ImpotDGIInfo from "./pages/ImpotDGIInfo";
 
 
 const useState = React.useState
@@ -203,6 +204,16 @@ useEffect(() => {
   window.localStorage.setItem("productionInfo", JSON.stringify(productionInfo))
 }, [productionInfo])
 
+const [impotDGIInfo,setImpotDGIInfo] = useState(()=>
+{
+  const localData = localStorage.getItem('impotDGIInfo');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("impotDGIInfo", JSON.stringify(impotDGIInfo))
+}, [impotDGIInfo])
+
 
 const dataPopulation = (data)=>
 {
@@ -262,6 +273,11 @@ const dataDonneeImportations = (data)=>
 const dataDonneeProduction = (data)=>
 {
   setProductionInfo(data)
+}
+
+const dataDonneeImpotDGI = (data)=>
+{
+  setImpotDGIInfo(data)
 }
 
   return (
@@ -346,7 +362,7 @@ const dataDonneeProduction = (data)=>
     <Route path="/form_production" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
     </Route>
 
-    <Route path="/form_dgi" element={<FormDGI username = {username} />} >
+    <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDGI={dataDonneeImpotDGI}/>} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >
@@ -421,6 +437,10 @@ const dataDonneeProduction = (data)=>
 
     <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo}/>} >
     </Route>
+
+    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDGIInfo={impotDGIInfo}/>} >
+    </Route>
+
 
     
 

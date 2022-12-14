@@ -47,14 +47,14 @@ const submitManifest = (e)=>
 
   console.log(tauxCroissance);
     
-    fetch('https://modelisationfiscaleapi.herokuapp.com/api/impots/', {
+    fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
             method:'POST',
             body: JSON.stringify(tauxCroissance.infoTauxCroissance) 
           })
           .then( res => res.json())
           .then(
             res => {   
-                props.dataPopulation(res)
+                props.dataDonneeImpotDGI(res)
                 console.log(res)
                         
             }
@@ -113,7 +113,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/population_province_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/impot_dgi_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={e=>submitManifest(e)}>
         chargement fichier
         </Button>

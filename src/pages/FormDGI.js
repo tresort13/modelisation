@@ -28,7 +28,7 @@ const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :"",
-    file_upload : ""
+    file_upload : new FormData()
 }});
 
 const [message,setMessage] = useState("Impôts sur CA et autres pour l'année courante");
@@ -41,9 +41,7 @@ const resetFileInput = () => {
   };
 const submitManifest = (e)=>
 {
-   const uploadData = new FormData();
-  uploadData.append('fichier', fichier);
-  setTauxCroissance(tauxCroissance.infoTauxCroissance.file_upload=uploadData)
+  setTauxCroissance(tauxCroissance.infoTauxCroissance.file_upload.append('fichier', fichier))
 
   console.log(tauxCroissance);
     

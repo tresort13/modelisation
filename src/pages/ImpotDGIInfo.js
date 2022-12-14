@@ -29,45 +29,13 @@ function ImpotDGIInfo(props)
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
 console.log(props.impotDGIInfo)
-const total_fiscale_2018 = props.impotDGIInfo.reduce((total,value,index)=>
-{
-    if(index == 0 || index ==1)
-    {
-        console.log(index)
-    total = total + parseInt(value.annee_fiscale_2018)
-    return total
-    }
-},0)
+const total_fiscale_2018 = props.impotDGIInfo[0].annee_fiscale_2018 + props.impotDGIInfo[1].annee_fiscale_2018 
 
-const total_fiscale_2019 = props.impotDGIInfo.reduce((total,value)=>
-{
-    if(index == 0 || index ==1)
-    {
-    console.log(index)
-    total = total + parseInt(value.annee_fiscale_2019)
-    return total
-    }
-},0)
+const total_fiscale_2019 = props.impotDGIInfo[0].annee_fiscale_2019 + props.impotDGIInfo[1].annee_fiscale_2019 
 
-const total_fiscale_2020 = props.impotDGIInfo.reduce((total,value)=>
-{
-    if(index == 0 || index ==1)
-    {
-    console.log(index)
-    total = total + parseInt(value.annee_fiscale_2020)
-    return total
-    }
-},0)
+const total_fiscale_2020 = props.impotDGIInfo[0].annee_fiscale_2020 + props.impotDGIInfo[1].annee_fiscale_2020 
 
-const total_fiscale_2021 = props.impotDGIInfo.reduce((total,value)=>
-{
-    if(index == 0 || index ==1)
-    {
-    console.log(index)
-    total = total + parseInt(value.annee_fiscale_2021)
-    return total
-    }
-},0)
+const total_fiscale_2021 = props.impotDGIInfo[0].annee_fiscale_2021 + props.impotDGIInfo[1].annee_fiscale_2021 
 
 const ca_annee_fiscale_2022_temp1 = props.impotDGIInfo[0].annee_fiscale_2021 / props.impotDGIInfo[2].annee_fiscale_2020
 const ca_annee_fiscale_2022_temp2 = props.impotDGIInfo[0].annee_fiscale_2020 / props.impotDGIInfo[2].annee_fiscale_2019

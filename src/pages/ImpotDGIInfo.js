@@ -28,7 +28,7 @@ function ImpotDGIInfo(props)
         {
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
-console.log(impotDGIInfo)
+console.log(props.impotDGIInfo)
 const total_fiscale_2018 = props.impotDGIInfo.reduce((total,value)=>
 {
   console.log(value.annee_fiscale_2018)

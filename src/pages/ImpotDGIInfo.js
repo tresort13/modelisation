@@ -29,7 +29,7 @@ function ImpotDGIInfo(props)
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
 console.log(props.impotDGIInfo)
-const impotDGI = []
+let impotDGI = [{}]
 const total_fiscale_2018 = props.impotDGIInfo[0].annee_fiscale_2018 + props.impotDGIInfo[1].annee_fiscale_2018 
 
 const total_fiscale_2019 = props.impotDGIInfo[0].annee_fiscale_2019 + props.impotDGIInfo[1].annee_fiscale_2019 

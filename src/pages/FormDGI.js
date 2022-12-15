@@ -54,7 +54,7 @@ const submitManifest = (e)=>
           .then(
             res => {   
                 props.dataDonneeImpotDGI(res)
-                props.dataDonneeImpotTauxCroissance(tauxCroissance.infoTauxCroissance.taux_croissance/100)
+                props.dataDonneeImpotTauxCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) * 100)
                 console.log(res)
                         
             }
@@ -96,7 +96,7 @@ return (
 <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control name="taux_croissance" value={tauxCroissance.infoTauxCroissance.taux_croissance} onChange={e=>inputChanged(e)} type="text" placeholder='taux de Croissance' autoFocus   required/>
+        <Form.Control name="taux_croissance"  onChange={e=>inputChanged(e)} type="text" placeholder='taux de Croissance' autoFocus   required/>
          </Form.Group>
         </Col>
     </Row>

@@ -54,6 +54,7 @@ const submitManifest = (e)=>
           .then(
             res => {   
                 props.dataDonneeImpotDGI(res)
+                props.dataDonneeImpotTauxCroissance(res)
                 console.log(res)
                         
             }

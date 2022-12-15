@@ -218,12 +218,12 @@ useEffect(() => {
 const [impotTauxCroissance,setImpotTauxCroissance] = useState(()=>
   {
     const localData = localStorage.getItem('impotTauxCroissance');
-    return localData ? JSON.parse(localData) : "";
+    return localData ? JSON.parse(localData) :0;
   });
 
   useEffect(() => {
     window.localStorage.setItem("impotTauxCroissance", JSON.stringify(impotTauxCroissance))
-  }, [username])
+  }, [impotTauxCroissance])
 
 
 const dataPopulation = (data)=>

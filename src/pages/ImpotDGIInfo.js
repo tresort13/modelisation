@@ -55,7 +55,7 @@ const autre_impots_annee_fiscale_2022_final = Number(Number(pib_annee_fiscale_20
 
 console.log(props.impotTauxCroissance)
 
-console.log(props.autre_impots_annee_fiscale_2022_average)
+console.log(autre_impots_annee_fiscale_2022_average)
 
 impotDGI = [...props.impotDGIInfo]
 impotDGI[0].annee_fiscale_2022 = ca_annee_fiscale_2022_final

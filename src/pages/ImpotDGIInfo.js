@@ -44,9 +44,20 @@ const ca_annee_fiscale_2022_temp2 = Number(Number(props.impotDGIInfo[0].annee_fi
 const ca_annee_fiscale_2022_temp3 = Number(Number(props.impotDGIInfo[0].annee_fiscale_2019) / Number(props.impotDGIInfo[2].annee_fiscale_2018)).toFixed(2)
 const ca_annee_fiscale_2022_average = Number((Number(ca_annee_fiscale_2022_temp1) + Number(ca_annee_fiscale_2022_temp2) + Number(ca_annee_fiscale_2022_temp3)) / 3).toFixed(2)
 const ca_annee_fiscale_2022_final = Number(Number(props.impotDGIInfo[2].annee_fiscale_2021 ) * Number(ca_annee_fiscale_2022_average)).toFixed()
+
+const autre_impots_annee_fiscale_2022_temp1 = Number( Number(props.impotDGIInfo[0].annee_fiscale_2021) / Number(props.impotDGIInfo[2].annee_fiscale_2021)).toFixed(2)
+const autre_impots_annee_fiscale_2022_temp2 = Number(Number(props.impotDGIInfo[0].annee_fiscale_2020) / Number(props.impotDGIInfo[2].annee_fiscale_2020)).toFixed(2)
+const autre_impots_annee_fiscale_2022_temp3 = Number(Number(props.impotDGIInfo[0].annee_fiscale_2019) / Number(props.impotDGIInfo[2].annee_fiscale_2019)).toFixed(2)
+const autre_impots_annee_fiscale_2022_average = Number((Number(autre_impots_annee_fiscale_2022_temp1) + Number(autre_impots_annee_fiscale_2022_temp2) + Number(autre_impots_annee_fiscale_2022_temp3)) / 3).toFixed(2)
+const pib_annee_fiscale_2022= Number(Number(props.impotDGIInfo[2].annee_fiscale_2021) * (1 + Number(props.impotTauxCroissance).toFixed(1))).toFixed()
+
+const autre_impots_annee_fiscale_2022_final = Number(Number(pib_annee_fiscale_2022) * Number(autre_impots_annee_fiscale_2022_average)).toFixed()
+
+
+
 impotDGI = [...props.impotDGIInfo]
 impotDGI[0].annee_fiscale_2022 = ca_annee_fiscale_2022_final
-impotDGI[1].annee_fiscale_2022 = 0
+impotDGI[1].annee_fiscale_2022 = autre_impots_annee_fiscale_2022_final
 impotDGI[2].annee_fiscale_2022 = 0
 
 console.log(impotDGI)

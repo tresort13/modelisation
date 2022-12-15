@@ -215,6 +215,17 @@ useEffect(() => {
 }, [impotDGIInfo])
 
 
+const [impotTauxCroissance,setImpotTauxCroissance] = useState(()=>
+  {
+    const localData = localStorage.getItem('impotTauxCroissance');
+    return localData ? JSON.parse(localData) : "";
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem("impotTauxCroissance", JSON.stringify(impotTauxCroissance))
+  }, [username])
+
+
 const dataPopulation = (data)=>
 {
   setPopulationInfo(data)
@@ -278,6 +289,11 @@ const dataDonneeProduction = (data)=>
 const dataDonneeImpotDGI = (data)=>
 {
   setImpotDGIInfo(data)
+}
+
+const dataDonneeImpotTauxCroissance = (data)=>
+{
+  setImpotTauxCroissance(data)
 }
 
   return (
@@ -362,7 +378,7 @@ const dataDonneeImpotDGI = (data)=>
     <Route path="/form_production" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
     </Route>
 
-    <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDGI={dataDonneeImpotDGI}/>} >
+    <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDGI={dataDonneeImpotDGI} dataDonneeImpotTauxCroissance={dataDonneeImpotTauxCroissance}/>} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >
@@ -438,7 +454,7 @@ const dataDonneeImpotDGI = (data)=>
     <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo}/>} >
     </Route>
 
-    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDGIInfo={impotDGIInfo}/>} >
+    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >
     </Route>
 
 

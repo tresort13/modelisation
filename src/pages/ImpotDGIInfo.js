@@ -45,12 +45,8 @@ const ca_annee_fiscale_2022_temp3 = Number(Number(props.impotDGIInfo[0].annee_fi
 const ca_annee_fiscale_2022_average = Number((Number(ca_annee_fiscale_2022_temp1) + Number(ca_annee_fiscale_2022_temp2) + Number(ca_annee_fiscale_2022_temp3)) / 3).toFixed(2)
 const ca_annee_fiscale_2022_final = Number(Number(props.impotDGIInfo[2].annee_fiscale_2021 ) * Number(ca_annee_fiscale_2022_average)).toFixed()
 impotDGI.concat(props.impotDGIInfo)
-impotDGI[0].annee_fiscale_2022=ca_annee_fiscale_2022_final
-console.log(impotDGI[0].annee_fiscale_2022)
-
-
-
-
+console.log(impotDGI)
+//impotDGI[0].annee_fiscale_2022=ca_annee_fiscale_2022_final
   
   
     return (

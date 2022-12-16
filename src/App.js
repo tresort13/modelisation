@@ -62,6 +62,9 @@ import ProductionInfo from "./pages/ProductionInfo";
 import MenuRecettes from "./pages/MenuRecettes";
 import FormDGI from "./pages/FormDGI";
 import ImpotDGIInfo from "./pages/ImpotDGIInfo";
+import MenuDGDA from "./pages/MenuDGDA";
+import FormImpoExpoDGDA from "./pages/FormImpoExpoDGDA";
+import ImpoExpoDGDAInfo from "./pages/ImpoExpoDGDAInfo";
 
 
 const useState = React.useState
@@ -226,6 +229,38 @@ const [impotTauxCroissance,setImpotTauxCroissance] = useState(()=>
   }, [impotTauxCroissance])
 
 
+  const [infoExpoImpo,setInfoExpoImpo] = useState(()=>
+{
+  const localData = localStorage.getItem('infoExpoImpo');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("infoExpoImpo", JSON.stringify(infoExpoImpo))
+}, [infoExpoImpo])
+
+const [tauxExportation,setTauxExportation] = useState(()=>
+  {
+    const localData = localStorage.getItem('tauxExportation');
+    return localData ? JSON.parse(localData) :0;
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem("tauxExportation", JSON.stringify(tauxExportation))
+  }, [tauxExportation])
+
+  const [tauxImportation,setTauxImportation] = useState(()=>
+  {
+    const localData = localStorage.getItem('tauxImportation');
+    return localData ? JSON.parse(localData) :0;
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem("tauxImportation", JSON.stringify(tauxImportation))
+  }, [tauxImportation])
+
+
+
 const dataPopulation = (data)=>
 {
   setPopulationInfo(data)
@@ -296,6 +331,21 @@ const dataDonneeImpotTauxCroissance = (data)=>
   setImpotTauxCroissance(data)
 }
 
+const dataDonneeInfoExpoImpo = (data)=>
+{
+  setInfoExpoImpo(data)
+}
+
+const dataDonneeTauxExportation = (data)=>
+{
+  setTauxExportation(data)
+}
+
+const dataDonneeTauxImportation = (data)=>
+{
+  setTauxImportation(data)
+}
+
   return (
     <BrowserRouter>
     <Routes>
@@ -319,6 +369,9 @@ const dataDonneeImpotTauxCroissance = (data)=>
     </Route>
 
     <Route path="/menu_recettes" element={<MenuRecettes username = {username} />} >
+    </Route>
+
+    <Route path="/menu_dgda" element={<MenuDGDA username = {username} />} >
     </Route>
 
     <Route path="/form_population_province" element={<FormPopulationProvince username = {username} dataPopulation={dataPopulation}/>} >
@@ -379,6 +432,9 @@ const dataDonneeImpotTauxCroissance = (data)=>
     </Route>
 
     <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDGI={dataDonneeImpotDGI} dataDonneeImpotTauxCroissance={dataDonneeImpotTauxCroissance}/>} >
+    </Route>
+
+    <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} impotDGIInfo={impotDGIInfo}/>} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >
@@ -457,7 +513,10 @@ const dataDonneeImpotTauxCroissance = (data)=>
     <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >
     </Route>
 
+    <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDGIInfo={impotDGIInfo}/>} >
+    </Route>
 
+    
     
 
     <Route path="/taux_croissance_info_execution" element={<TauxCroissanceInfoExecution username = {username} dataTauxNataliteMortalite={dataTauxNataliteMortalite} tauxNataliteMortaliteInfo={tauxNataliteMortaliteInfo}/>} >

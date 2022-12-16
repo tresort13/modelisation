@@ -333,21 +333,22 @@ const dataDonneeImpotTauxCroissance = (data)=>
 
 const dataDonneeInfoExpoImpo = (data)=>
 {
-  console.log(data)
   setInfoExpoImpo(data)
 }
 
 const dataDonneeTauxExportation = (data)=>
 {
-  console.log(data)
   setTauxExportation(data)
 }
 
 const dataDonneeTauxImportation = (data)=>
 {
-  console.log(data)
   setTauxImportation(data)
 }
+
+console.log(infoExpoImpo)
+console.log(tauxExportation)
+console.log(tauxImportation)
 
   return (
     <BrowserRouter>

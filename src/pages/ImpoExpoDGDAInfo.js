@@ -33,7 +33,6 @@ const pib_annee_fiscale_2022= Number(Number((props.impotDGIInfo[2].annee_fiscale
 
 const exportation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  Number(props.tauxExportation)).toFixed()
 const importation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  Number(props.tauxImportation)).toFixed()
-console.log(autre_impots_annee_fiscale_2022_average_final)
 
 expoImpo = [...props.infoExpoImpo]
 expoImpo[0].annee_fiscale_2022 = exportation_annee_fiscale_2022

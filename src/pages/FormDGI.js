@@ -27,7 +27,7 @@ function FormDGI(props)
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
-    taux_croissance :0
+    taux_croissance :""
 }});
 
 const [message,setMessage] = useState("Impôts sur CA et autres pour l'année courante");

@@ -55,7 +55,7 @@ const submitManifest = (e)=>
           .then(
             res => {   
                 props.dataDonneeInfoExpoImpo(res)
-                props.dataDonneeTauxExportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_exportation) / 100)
+                props.dataDonneeTauxImportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_exportation) / 100)
                 props.dataDonneeTauxExportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_importation) / 100)
                 console.log(res)
                         

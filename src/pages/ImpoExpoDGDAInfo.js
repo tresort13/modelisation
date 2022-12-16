@@ -28,7 +28,8 @@ function ImpoExpoDGDAInfo(props)
         {
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
-let expoImpo = [{}]
+const expoImpo = [{}]
+console.log(props.impotDGIInfo)
 
 const pib_annee_fiscale_2022= Number(Number((props.impotDGIInfo[2].annee_fiscale_2021) * (1 + Number(props.impotTauxCroissance)))).toFixed()
 
@@ -37,6 +38,7 @@ const importation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  
 
 expoImpo = [...props.infoExpoImpo]
 console.log(expoImpo)
+
 
 expoImpo[0].annee_fiscale_2022 = exportation_annee_fiscale_2022
 expoImpo[1].annee_fiscale_2022 = importation_annee_fiscale_2022

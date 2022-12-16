@@ -30,13 +30,7 @@ function ImpotDGIInfo(props)
         }
 console.log(props.impotDGIInfo)
 let impotDGI = [{}]
-const total_fiscale_2018 = props.impotDGIInfo[0].annee_fiscale_2018 + props.impotDGIInfo[1].annee_fiscale_2018 
 
-const total_fiscale_2019 = props.impotDGIInfo[0].annee_fiscale_2019 + props.impotDGIInfo[1].annee_fiscale_2019 
-
-const total_fiscale_2020 = props.impotDGIInfo[0].annee_fiscale_2020 + props.impotDGIInfo[1].annee_fiscale_2020 
-
-const total_fiscale_2021 = props.impotDGIInfo[0].annee_fiscale_2021 + props.impotDGIInfo[1].annee_fiscale_2021
 
 
 const ca_annee_fiscale_2022_temp1 = Number( Number(props.impotDGIInfo[0].annee_fiscale_2021) / Number(props.impotDGIInfo[2].annee_fiscale_2020)).toFixed(2)
@@ -54,7 +48,7 @@ const autre_impots_annee_fiscale_2022_average_final = autre_impots_annee_fiscale
 
 const pib_annee_fiscale_2022= Number(Number((props.impotDGIInfo[2].annee_fiscale_2021) * (1 + Number(props.impotTauxCroissance)))).toFixed()
 
-const autre_impots_annee_fiscale_2022_final = Number(Number(pib_annee_fiscale_2022) *  parseFloat(autre_impots_annee_fiscale_2022_average_final)).toFixed()
+const autre_impots_annee_fiscale_2022_final = Number(Number(pib_annee_fiscale_2022) *  Number(autre_impots_annee_fiscale_2022_average_final)).toFixed()
 console.log(autre_impots_annee_fiscale_2022_average_final)
 
 impotDGI = [...props.impotDGIInfo]
@@ -64,7 +58,15 @@ impotDGI[2].annee_fiscale_2022 = pib_annee_fiscale_2022
 
 console.log(impotDGI)
 //impotDGI[0].annee_fiscale_2022=ca_annee_fiscale_2022_final
-  
+const total_fiscale_2018 = impotDGI[0].annee_fiscale_2018 + impotDGI[1].annee_fiscale_2018 
+
+const total_fiscale_2019 = impotDGI[0].annee_fiscale_2019 + impotDGI[1].annee_fiscale_2019 
+
+const total_fiscale_2020 = impotDGI[0].annee_fiscale_2020 + impotDGI[1].annee_fiscale_2020 
+
+const total_fiscale_2021 = impotDGI[0].annee_fiscale_2021 + impotDGI[1].annee_fiscale_2021
+
+const total_fiscale_2022 = Number(impotDGI[0].annee_fiscale_2022) + Number(impotDGI[1].annee_fiscale_2022)
   
     return (
         <>
@@ -112,6 +114,7 @@ console.log(impotDGI)
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2019).toFixed())}</b></i></td>
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2020).toFixed())}</b></i></td>
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2021).toFixed())}</b></i></td>
+         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2022).toFixed())}</b></i></td>
        </tr>
          
       </tbody>

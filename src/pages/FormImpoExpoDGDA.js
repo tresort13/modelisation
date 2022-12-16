@@ -98,7 +98,7 @@ return (
 <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={pib_annee_fiscale_2022 + "(PIB Année Courante)"} name="PIB"   type="text"  disabled/>
+        <Form.Control value={pib_annee_fiscale_2022} name="PIB"   type="text"  disabled/>
          </Form.Group>
         </Col>
     </Row>
@@ -106,13 +106,13 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {3}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Pourcentage exportations (PIB)' autoFocus   required/>
+        <Form.Control name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Expo (PIB)' autoFocus   required/>
          </Form.Group>
         </Col>
 
         <Col xs = {3}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control name="taux_importation"  onChange={e=>inputChanged(e)} type="text" placeholder='Pourcentage importations (PIB)'    required/>
+        <Form.Control name="taux_importation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Impo (PIB)'    required/>
          </Form.Group>
         </Col>
     </Row>

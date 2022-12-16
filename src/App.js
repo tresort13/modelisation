@@ -434,7 +434,7 @@ const dataDonneeTauxImportation = (data)=>
     <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDGI={dataDonneeImpotDGI} dataDonneeImpotTauxCroissance={dataDonneeImpotTauxCroissance}/>} >
     </Route>
 
-    <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} impotDGIInfo={impotDGIInfo}/>} >
+    <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >
@@ -513,7 +513,7 @@ const dataDonneeTauxImportation = (data)=>
     <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >
     </Route>
 
-    <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDGIInfo={impotDGIInfo}/>} >
+    <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >
     </Route>
 
     

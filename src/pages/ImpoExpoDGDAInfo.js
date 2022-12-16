@@ -29,12 +29,15 @@ function ImpoExpoDGDAInfo(props)
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
 let expoImpo = [{}]
+
 const pib_annee_fiscale_2022= Number(Number((props.impotDGIInfo[2].annee_fiscale_2021) * (1 + Number(props.impotTauxCroissance)))).toFixed()
 
 const exportation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  Number(props.tauxExportation)).toFixed()
 const importation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  Number(props.tauxImportation)).toFixed()
 
 expoImpo = [...props.infoExpoImpo]
+console.log(expoImpo)
+
 expoImpo[0].annee_fiscale_2022 = exportation_annee_fiscale_2022
 expoImpo[1].annee_fiscale_2022 = importation_annee_fiscale_2022
 
@@ -71,7 +74,7 @@ expoImpo[1].annee_fiscale_2022 = importation_annee_fiscale_2022
         {expoImpo.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}}>
-             <td><i ><b>{value.recettes_dgi}</b></i></td>
+             <td><i ><b>{value.recettes_dgda}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed()) }</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed())}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed())}</b></i></td>

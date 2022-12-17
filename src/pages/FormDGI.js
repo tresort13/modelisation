@@ -41,6 +41,7 @@ const resetFileInput = () => {
   };
 const submitManifest = (e)=>
 {
+    setTemp("tresor")
    const uploadData = new FormData();
   uploadData.append('fichier', fichier);
   console.log(tauxCroissance);
@@ -54,9 +55,7 @@ const submitManifest = (e)=>
             res => {   
               
                 props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
-                setTemp("tresor")
-                console.log(res[0].recettes_dgi)
-                        
+                
             }
             
           )
@@ -64,10 +63,12 @@ const submitManifest = (e)=>
             {
                 setMessage("echec de chargement")
             } )
+            console.log(temp)
             
     resetFileInput()
     setTauxCroissance({infoTauxCroissance :{ taux_croissance :""}})
-    console.log(temp)
+
+   
 }
 
 const inputChanged = (event)=>

@@ -221,13 +221,13 @@ useEffect(() => {
 
 const [impotPourcentageCroissance,setImpotPourcentageCroissance] = useState(()=>
   {
-    const localData = localStorage.getItem('impotTauxCroissance');
+    const localData = localStorage.getItem('impotPourcentageCroissance');
     return localData ? JSON.parse(localData) :0;
   });
 
   useEffect(() => {
-    window.localStorage.setItem("impotTauxCroissance", JSON.stringify(impotTauxCroissance))
-  }, [impotTauxCroissance])
+    window.localStorage.setItem("impotPourcentageCroissance", JSON.stringify(impotPourcentageCroissance))
+  }, [impotPourcentageCroissance])
 
 
   const [infoExpoImpo,setInfoExpoImpo] = useState(()=>
@@ -439,7 +439,7 @@ return (
     <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDgi={dataDonneeImpotDgi}  dataDonneeImpotPourcentageCroissance={dataDonneeImpotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >
+    <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} />} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >

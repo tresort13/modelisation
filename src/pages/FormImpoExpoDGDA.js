@@ -23,7 +23,8 @@ function FormImpoExpoDGDA(props)
       });
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
-      });    
+      });   
+      const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed() 
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
 const[tauxExpoImpo,setTauxExpoImpo] = useState({infoTauxExpoImpo :{
@@ -95,7 +96,7 @@ return (
 <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control  name="PIB"   type="text"  disabled/>
+        <Form.Control value={pib_annee_fiscale_2022 + ("PIB Année Courante")} name="PIB"   type="text"  disabled/>
          </Form.Group>
         </Col>
     </Row>

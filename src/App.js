@@ -439,7 +439,7 @@ return (
     <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDgi={dataDonneeImpotDgi}  dataDonneeImpotPourcentageCroissance={dataDonneeImpotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} />} >
+    <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >

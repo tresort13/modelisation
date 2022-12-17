@@ -26,8 +26,8 @@ const isMobileOrTablet = useMediaQuery({
       });    
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState()
-const navigate = useNavigate()
 const [value,setValue] = useState("")
+const navigate = useNavigate()
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :""
 }});
@@ -76,16 +76,13 @@ const submitManifest = (e)=>
    
 }
 
-useEffect(() => {
-    console.log(value)
-    window.localStorage.setItem("value", JSON.stringify(value))
-  }, [value])
 
 const inputChanged = (event)=>
     {
         const cred = tauxCroissance.infoTauxCroissance;
         cred[event.target.name] = event.target.value;
         setTauxCroissance({infoTauxCroissance:cred})
+        setValue("tresor")
     }
 
     

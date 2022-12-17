@@ -81,7 +81,7 @@ function App() {
   }, [username])
 
   
-
+const [test,setTest] = useState("")
 
 const [populationInfo,setPopulationInfo] = useState(()=>
 {
@@ -328,6 +328,8 @@ const dataDonneeProduction = (data)=>
 const dataDonneeImpotDgi = (data)=>
 {
   setImpotDgiInfo(data) 
+  setTest(data[0].recettes_dgi)
+  console.log(test)
 }
 
 const dataDonneeImpotPourcentageCroissance = (data)=>

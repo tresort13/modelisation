@@ -210,7 +210,7 @@ useEffect(() => {
 const [impotDGIInfo,setImpotDGIInfo] = useState(()=>
 {
   const localData = localStorage.getItem('impotDGIInfo');
-  return localData ? JSON.parse(localData) :[{}];
+  return localData ? JSON.parse(localData) :[];
 });
 
 useEffect(() => {
@@ -325,7 +325,7 @@ const dataDonneeProduction = (data)=>
 const dataDonneeImpotDGI = (data)=>
 {
  
-  setImpotDGIInfo([...data])
+  setImpotDGIInfo()
  
 }
 
@@ -435,7 +435,7 @@ return (
     <Route path="/form_production" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
     </Route>
 
-    <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDGI={dataDonneeImpotDGI} dataDonneeImpotTauxCroissance={dataDonneeImpotTauxCroissance}/>} >
+    <Route path="/form_dgi" element={<FormDGI username = {username} setImpotDGIInfo={setImpotDGIInfo} setImpotTauxCroissance={setImpotTauxCroissance} dataDonneeImpotDGI={dataDonneeImpotDGI} dataDonneeImpotTauxCroissance={dataDonneeImpotTauxCroissance}/>} >
     </Route>
 
     <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >

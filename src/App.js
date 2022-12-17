@@ -207,17 +207,7 @@ useEffect(() => {
   window.localStorage.setItem("productionInfo", JSON.stringify(productionInfo))
 }, [productionInfo])
 
-const [impotDgiInfo,setImpotDgiInfo] = useState(()=>
-{
-  const localData = localStorage.getItem('impotDgiInfo');
-  return localData ? JSON.parse(localData) :[];
-});
-
-useEffect(() => {
-  window.localStorage.setItem("impotDgiInfo", JSON.stringify(impotDgiInfo))
-}, [impotDgiInfo])
-
-
+const [impotDgiInfo,setImpotDgiInfo] = useState([]);
 
 const [impotPourcentageCroissance,setImpotPourcentageCroissance] = useState(()=>
   {
@@ -325,9 +315,7 @@ const dataDonneeProduction = (data)=>
 
 const dataDonneeImpotDgi = (data)=>
 {
- console.log(data)
-  setImpotDgiInfo(data)
- 
+  setImpotDgiInfo(data) 
 }
 
 const dataDonneeImpotPourcentageCroissance = (data)=>

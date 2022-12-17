@@ -327,9 +327,8 @@ const dataDonneeProduction = (data)=>
 
 const dataDonneeImpotDgi = (data)=>
 {
-  setImpotDgiInfo(data) 
-  setTest(data[0].recettes_dgi)
-  console.log(data[0].recettes_dgi)
+  setTest(data)
+  console.log(data)
   console.log(test)
 }
 

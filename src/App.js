@@ -210,7 +210,7 @@ useEffect(() => {
 const [impotDGIInfo,setImpotDGIInfo] = useState(()=>
 {
   const localData = localStorage.getItem('impotDGIInfo');
-  return localData ? JSON.parse(localData) :[];
+  return localData ? JSON.parse(localData) :[{}];
 });
 
 useEffect(() => {
@@ -325,7 +325,7 @@ const dataDonneeProduction = (data)=>
 const dataDonneeImpotDGI = (data)=>
 {
  
-  setImpotDGIInfo(data)
+  setImpotDGIInfo([...data])
  
 }
 

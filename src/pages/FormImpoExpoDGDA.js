@@ -43,10 +43,6 @@ const submitManifest = (e)=>
 {
    const uploadData = new FormData();
   uploadData.append('fichier', fichier);
-  uploadData.append('taux_exportation',tauxExpoImpo.infoTauxExpoImpo.taux_exportation)
-  uploadData.append('taux_importation',tauxExpoImpo.infoTauxExpoImpo.taux_importation)
-
-    
     fetch('https://modelisationfiscaleapi.herokuapp.com/api/infoImpoExpo/', {
             method:'POST',
             body: uploadData 
@@ -106,7 +102,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {3}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Expo (PIB)' autoFocus   required/>
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Expo (PIB)' autoFocus   required/>
          </Form.Group>
         </Col>
 

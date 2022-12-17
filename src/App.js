@@ -65,6 +65,8 @@ import ImpotDGIInfo from "./pages/ImpotDGIInfo";
 import MenuDGDA from "./pages/MenuDGDA";
 import FormImpoExpoDGDA from "./pages/FormImpoExpoDGDA";
 import ImpoExpoDGDAInfo from "./pages/ImpoExpoDGDAInfo";
+import FormRecettesDGDA from "./pages/FormRecettesDGDA";
+import RecettesDGDAInfo from "./pages/RecettesDGDAInfo";
 
 
 const useState = React.useState
@@ -232,7 +234,7 @@ const [impotPourcentageCroissance,setImpotPourcentageCroissance] = useState(()=>
   }, [impotPourcentageCroissance])
 
 
-  const [infoExpoImpo,setInfoExpoImpo] = useState(()=>
+const [infoExpoImpo,setInfoExpoImpo] = useState(()=>
 {
   const localData = localStorage.getItem('infoExpoImpo');
   return localData ? JSON.parse(localData) :[];
@@ -262,6 +264,15 @@ const [tauxExportation,setTauxExportation] = useState(()=>
     window.localStorage.setItem("tauxImportation", JSON.stringify(tauxImportation))
   }, [tauxImportation])
 
+const [recettesDGDA,setRecettesDGDA] = useState(()=>
+{
+  const localData = localStorage.getItem('recettesDGDA');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("recettesDGDA", JSON.stringify(recettesDGDA))
+}, [recettesDGDA])
 
 
 const dataPopulation = (data)=>
@@ -348,6 +359,11 @@ const dataDonneeTauxExportation = (data)=>
 const dataDonneeTauxImportation = (data)=>
 {
   setTauxImportation(data)
+}
+
+const dataDonneeRecettesDgda = (data)=>
+{
+  setRecettesDGDA(data)
 }
 
 
@@ -441,6 +457,9 @@ return (
 
     <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
+
+    <Route path="/form_recettes_dgda" element={<FormRecettesDGDA username = {username} dataDonneeRecettesDgda={dataDonneeRecettesDgda}/>} >
+    </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >
     </Route>
@@ -519,6 +538,9 @@ return (
     </Route>
 
     <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    </Route>
+
+    <Route path="/recettes_dgda_info" element={<RecettesDGDAInfo username = {username} recettesDGDA={recettesDGDA} infoExpoImpo={infoExpoImpo} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} tauxExportation={tauxExportation} tauxImportation={tauxImportation}/>} >
     </Route>
 
     

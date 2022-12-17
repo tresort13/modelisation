@@ -96,7 +96,7 @@ return (
 <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={pib_annee_fiscale_2022 + ("PIB Année Courante")} name="PIB"   type="text"  disabled/>
+        <Form.Control value={pib_annee_fiscale_2022 + " (PIB Année Courante)"} name="PIB"   type="text"  disabled/>
          </Form.Group>
         </Col>
     </Row>

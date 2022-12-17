@@ -71,7 +71,7 @@ expoImpo[1].annee_fiscale_2022 = importation_annee_fiscale_2022
         <Table striped bordered hover variant="primary">
       <thead>
         <tr className='text-primary' style={{border:"2px solid white"}}>
-          <th>Recettes DGDA</th>
+          <th>DGDA Importations/Exportations</th>
           <th>Année Fiscale 2018</th>
           <th>Année Fiscale 2019</th>
           <th>Année Fiscale 2020</th>
@@ -83,7 +83,7 @@ expoImpo[1].annee_fiscale_2022 = importation_annee_fiscale_2022
         {expoImpo.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}}>
-             <td><i ><b>{value.recettes_dgda}</b></i></td>
+             <td><i ><b>{value.expo_impo_dgda}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed()) }</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed())}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed())}</b></i></td>

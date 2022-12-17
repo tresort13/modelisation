@@ -39,7 +39,7 @@ const resetFileInput = () => {
     // 👇️ reset input value
     inputRef.current.value = null;
   };
-const submitManifest = (e)=>
+const submitManifest = ()=>
 {
     setTemp("tresor")
    const uploadData = new FormData();
@@ -120,7 +120,7 @@ return (
         <Col xs ={4}>
         
         <Link to="/impot_dgi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitManifest(e)}>
+        <Button variant="warning" type="submit" onClick={()=>submitManifest()}>
         chargement fichier
         </Button>
         </Link>

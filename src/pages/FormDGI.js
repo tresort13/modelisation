@@ -54,7 +54,7 @@ const submitManifest = (e)=>
             res => {   
               
                 props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
-                setTemp(res[0].recettes_dgi)
+                setTemp("tresor")
                 console.log(res[0].recettes_dgi)
                         
             }

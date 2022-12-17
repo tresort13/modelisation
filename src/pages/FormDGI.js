@@ -32,6 +32,10 @@ const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :""
 }});
 
+useEffect(() => {
+    window.localStorage.setItem("temp", JSON.stringify(temp))
+  }, [temp])
+
 const [message,setMessage] = useState("Impôts sur CA et autres pour l'année courante");
 const [couleur,setCouleur] = useState("text-warning");
 

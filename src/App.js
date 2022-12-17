@@ -325,7 +325,7 @@ const dataDonneeProduction = (data)=>
 
 const dataDonneeImpotDgi = (data)=>
 {
- 
+ console.log(data)
   setImpotDgiInfo(data)
  
 }

@@ -25,8 +25,9 @@ function FormDGI(props)
         query: "(max-width: 1224px)"
       });    
 const inputRef = useRef(null);
-const [fichier,setFichier] = useState();
-const [temp,setTemp] = useState("")
+const [fichier,setFichier] = useState()
+const [temp,setTemp] = React.useState("")
+const navigate = useNavigate()
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :""
 }});
@@ -45,7 +46,7 @@ const submitManifest = (e)=>
     const uploadData = new FormData();
     uploadData.append('fichier', fichier);
     console.log(tauxCroissance);
-    setTemp((prev)=>(prev + "Tresor"))
+    setTemp("Tresor")
     console.log(temp)
     
    fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
@@ -58,6 +59,8 @@ const submitManifest = (e)=>
               
                 props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
                 props.dataDonneeImpotDgi(res)
+                navigate('/impot_dgi_info')
+
                 
             }
             
@@ -122,7 +125,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/impot_dgi_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={(e)=>submitManifest(e)}>
         chargement fichier
         </Button>

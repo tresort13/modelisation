@@ -26,7 +26,7 @@ function FormDGI(props)
       });    
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
-const [temp,setTemp] = useState("")
+const [temp,setTemp] = useState()
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :""
 }});
@@ -39,14 +39,16 @@ const resetFileInput = () => {
     // 👇️ reset input value
     inputRef.current.value = null;
   };
-const submitManifest = ()=>
+const submitManifest = (e)=>
 {
+    e.preventDefault();
+    const uploadData = new FormData();
+    uploadData.append('fichier', fichier);
+    console.log(tauxCroissance);
     setTemp("tresor")
-   const uploadData = new FormData();
-  uploadData.append('fichier', fichier);
-  console.log(tauxCroissance);
+    console.log(temp)
     
-    fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
+   await fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
             method:'POST',
             body: uploadData 
           })
@@ -55,6 +57,7 @@ const submitManifest = ()=>
             res => {   
               
                 props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
+                props.dataDonneeImpotDgi(res)
                 
             }
             

@@ -209,7 +209,7 @@ useEffect(() => {
   window.localStorage.setItem("productionInfo", JSON.stringify(productionInfo))
 }, [productionInfo])
 
-let [impotDgiInfo,setImpotDgiInfo] = useState(()=>
+const [impotDgiInfo,setImpotDgiInfo] = useState(()=>
 {
   const localData = localStorage.getItem('impotDgiInfo');
   return localData ? JSON.parse(localData) :[];
@@ -327,9 +327,7 @@ const dataDonneeProduction = (data)=>
 
 const dataDonneeImpotDgi = (data)=>
 {
-  console.log(data)
-  test=data
-  console.log(test)
+  setImpotDgiInfo(data)
 }
 
 const dataDonneeImpotPourcentageCroissance = (data)=>

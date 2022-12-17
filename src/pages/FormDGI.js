@@ -26,6 +26,7 @@ function FormDGI(props)
       });    
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
+const [temp,setTemp] = useState([])
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :""
 }});
@@ -51,11 +52,13 @@ const submitManifest = (e)=>
           .then( res => res.json())
           .then(
             res => {   
-                props.dataDonneeImpotDgi("dont worry tresor")
+              
                 props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
+                setTemp(res)
                 console.log(res)
                         
             }
+            
           )
           .catch( (error) =>
             {
@@ -72,6 +75,8 @@ const inputChanged = (event)=>
         cred[event.target.name] = event.target.value;
         setTauxCroissance({infoTauxCroissance:cred})
     }
+
+    console.log(temp)
 return (
 <>
 <Header username={props.username}/>

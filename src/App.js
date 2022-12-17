@@ -304,6 +304,7 @@ const dataDonneeDepenseCourante = (data)=>
 const dataDonneeDepenseCapital = (data)=>
 {
   setDonneeDepenseCapitalInfo(data)
+
 }
 
 const dataDonneeExportations = (data)=>
@@ -323,7 +324,9 @@ const dataDonneeProduction = (data)=>
 
 const dataDonneeImpotDGI = (data)=>
 {
+ 
   setImpotDGIInfo(data)
+ 
 }
 
 const dataDonneeImpotTauxCroissance = (data)=>
@@ -333,7 +336,9 @@ const dataDonneeImpotTauxCroissance = (data)=>
 
 const dataDonneeInfoExpoImpo = (data)=>
 {
+  console.log(data)
   setInfoExpoImpo(data)
+  console.log(infoExpoImpo)
 }
 
 const dataDonneeTauxExportation = (data)=>

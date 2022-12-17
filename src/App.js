@@ -337,8 +337,8 @@ const dataDonneeImpotTauxCroissance = (data)=>
 const dataDonneeInfoExpoImpo = (data)=>
 {
   console.log(data)
-  setInfoExpoImpo([...data])
-  console.log(infoExpoImpo)
+  setImpotDGIInfo(data)
+  console.log(impotDGIInfo)
 }
 
 const dataDonneeTauxExportation = (data)=>

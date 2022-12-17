@@ -81,7 +81,7 @@ function App() {
   }, [username])
 
   
-const [test,setTest] = useState("")
+const test= ""
 
 const [populationInfo,setPopulationInfo] = useState(()=>
 {
@@ -327,8 +327,8 @@ const dataDonneeProduction = (data)=>
 
 const dataDonneeImpotDgi = (data)=>
 {
-  setTest(data)
   console.log(data)
+  test=data
   console.log(test)
 }
 

@@ -48,7 +48,7 @@ const submitManifest = (e)=>
     setTemp("tresor")
     console.log(temp)
     
-   await fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
+   fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
             method:'POST',
             body: uploadData 
           })

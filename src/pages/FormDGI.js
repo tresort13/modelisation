@@ -18,23 +18,19 @@ const useState = React.useState
 function FormDGI(props)
 {
 
-    const isDesktop = useMediaQuery({
-        query: "(min-width: 1224px)"
+const isDesktop = useMediaQuery({
+      query: "(min-width: 1224px)"
       });
-      const isMobileOrTablet = useMediaQuery({
-        query: "(max-width: 1224px)"
+const isMobileOrTablet = useMediaQuery({
+       query: "(max-width: 1224px)"
       });    
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState()
-const [temp,setTemp] = useState("")
 const navigate = useNavigate()
+const [value,setValue] = useState("")
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :""
 }});
-
-useEffect(() => {
-    window.localStorage.setItem("temp", JSON.stringify(temp))
-  }, [temp])
 
 const [message,setMessage] = useState("Impôts sur CA et autres pour l'année courante");
 const [couleur,setCouleur] = useState("text-warning");
@@ -47,11 +43,15 @@ const resetFileInput = () => {
 const submitManifest = (e)=>
 {
     e.preventDefault();
+    useEffect(() => {
+        setValue("tresor")
+        window.localStorage.setItem("value", JSON.stringify(value))
+      }, [value])
+      
     const uploadData = new FormData();
     uploadData.append('fichier', fichier);
-    console.log(tauxCroissance);
-   
-    
+    console.log(value)
+
    fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
             method:'POST',
             body: uploadData 
@@ -62,11 +62,7 @@ const submitManifest = (e)=>
               
                 props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
                 props.dataDonneeImpotDgi(res)
-                setTemp("Tresor")
-                console.log(temp)
                 navigate('/impot_dgi_info')
-
-                
             }
             
           )

@@ -80,6 +80,8 @@ function App() {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
 
+  
+
 
 const [populationInfo,setPopulationInfo] = useState(()=>
 {
@@ -207,7 +209,17 @@ useEffect(() => {
   window.localStorage.setItem("productionInfo", JSON.stringify(productionInfo))
 }, [productionInfo])
 
-const [impotDgiInfo,setImpotDgiInfo] = useState([]);
+let [impotDgiInfo,setImpotDgiInfo] = useState(()=>
+{
+  const localData = localStorage.getItem('impotDgiInfo');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("impotDgiInfo", JSON.stringify(impotDgiInfo))
+}, [impotDgiInfo])
+
+
 
 const [impotPourcentageCroissance,setImpotPourcentageCroissance] = useState(()=>
   {

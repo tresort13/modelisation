@@ -26,7 +26,7 @@ function FormDGI(props)
       });    
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
-const [temp,setTemp] = useState()
+const [temp,setTemp] = useState("")
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :""
 }});
@@ -45,7 +45,7 @@ const submitManifest = (e)=>
     const uploadData = new FormData();
     uploadData.append('fichier', fichier);
     console.log(tauxCroissance);
-    setTemp("tresor")
+    setTemp((prev)=>(prev + "Tresor"))
     console.log(temp)
     
    fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {

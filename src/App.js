@@ -336,9 +336,7 @@ const dataDonneeImpotTauxCroissance = (data)=>
 
 const dataDonneeInfoExpoImpo = (data)=>
 {
-  console.log(data)
-  setImpotDGIInfo(data)
-  console.log(impotDGIInfo)
+  setInfoExpoImpo(data)
 }
 
 const dataDonneeTauxExportation = (data)=>
@@ -351,11 +349,8 @@ const dataDonneeTauxImportation = (data)=>
   setTauxImportation(data)
 }
 
-console.log(infoExpoImpo)
-console.log(tauxExportation)
-console.log(tauxImportation)
 
-  return (
+return (
     <BrowserRouter>
     <Routes>
     <Route path="/" element={<Login setUsername = {setUsername} />} >

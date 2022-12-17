@@ -518,7 +518,7 @@ return (
     <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation}/>} >
+    <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
     

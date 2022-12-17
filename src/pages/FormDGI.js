@@ -43,11 +43,8 @@ const resetFileInput = () => {
 const submitManifest = (e)=>
 {
     e.preventDefault();
-    
-      
     const uploadData = new FormData();
     uploadData.append('fichier', fichier);
-    console.log(value)
 
    fetch('https://modelisationfiscaleapi.herokuapp.com/api/impotDGI/', {
             method:'POST',
@@ -82,7 +79,6 @@ const inputChanged = (event)=>
         const cred = tauxCroissance.infoTauxCroissance;
         cred[event.target.name] = event.target.value;
         setTauxCroissance({infoTauxCroissance:cred})
-        setValue("tresor")
     }
 
     

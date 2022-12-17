@@ -41,8 +41,9 @@ const resetFileInput = () => {
   };
 const submitManifest = (e)=>
 {
+    e.preventDefault()
    const uploadData = new FormData();
-  uploadData.append('fichier', fichier);
+   uploadData.append('fichier', fichier);
     fetch('https://modelisationfiscaleapi.herokuapp.com/api/infoImpoExpo/', {
             method:'POST',
             body: uploadData 
@@ -53,8 +54,8 @@ const submitManifest = (e)=>
                 props.dataDonneeInfoExpoImpo(res)
                 props.dataDonneeTauxImportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_exportation) / 100)
                 props.dataDonneeTauxExportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_importation) / 100)
-                console.log(res)
-                        
+                
+                navigate('/impo_expo_dgda_info')
             }
           )
           .catch( (error) =>
@@ -125,7 +126,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/impo_expo_dgda_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={e=>submitManifest(e)}>
         chargement fichier
         </Button>

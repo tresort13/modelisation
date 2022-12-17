@@ -43,10 +43,7 @@ const resetFileInput = () => {
 const submitManifest = (e)=>
 {
     e.preventDefault();
-    useEffect(() => {
-        setValue("tresor")
-        window.localStorage.setItem("value", JSON.stringify(value))
-      }, [value])
+    
       
     const uploadData = new FormData();
     uploadData.append('fichier', fichier);
@@ -62,6 +59,7 @@ const submitManifest = (e)=>
               
                 props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
                 props.dataDonneeImpotDgi(res)
+                setValue(res[0].recettes_dgi)
                 navigate('/impot_dgi_info')
             }
             
@@ -70,13 +68,18 @@ const submitManifest = (e)=>
             {
                 setMessage("echec de chargement")
             } )
-            console.log(temp)
+
             
     resetFileInput()
     setTauxCroissance({infoTauxCroissance :{ taux_croissance :""}})
 
    
 }
+
+useEffect(() => {
+    console.log(value)
+    window.localStorage.setItem("value", JSON.stringify(value))
+  }, [value])
 
 const inputChanged = (event)=>
     {

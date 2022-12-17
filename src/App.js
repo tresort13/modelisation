@@ -207,18 +207,19 @@ useEffect(() => {
   window.localStorage.setItem("productionInfo", JSON.stringify(productionInfo))
 }, [productionInfo])
 
-const [impotDGIInfo,setImpotDGIInfo] = useState(()=>
+const [impotDgiInfo,setImpotDgiInfo] = useState(()=>
 {
-  const localData = localStorage.getItem('impotDGIInfo');
+  const localData = localStorage.getItem('impotDgiInfo');
   return localData ? JSON.parse(localData) :[];
 });
 
 useEffect(() => {
-  window.localStorage.setItem("impotDGIInfo", JSON.stringify(impotDGIInfo))
-}, [impotDGIInfo])
+  window.localStorage.setItem("impotDgiInfo", JSON.stringify(impotDgiInfo))
+}, [impotDgiInfo])
 
 
-const [impotTauxCroissance,setImpotTauxCroissance] = useState(()=>
+
+const [impotPourcentageCroissance,setImpotPourcentageCroissance] = useState(()=>
   {
     const localData = localStorage.getItem('impotTauxCroissance');
     return localData ? JSON.parse(localData) :0;
@@ -322,16 +323,16 @@ const dataDonneeProduction = (data)=>
   setProductionInfo(data)
 }
 
-const dataDonneeImpotDGI = (data)=>
+const dataDonneeImpotDgi = (data)=>
 {
  
-  setImpotDGIInfo()
+  setImpotDgiInfo(data)
  
 }
 
-const dataDonneeImpotTauxCroissance = (data)=>
+const dataDonneeImpotPourcentageCroissance = (data)=>
 {
-  setImpotTauxCroissance(data)
+  setImpotPourcentageCroissance(data)
 }
 
 const dataDonneeInfoExpoImpo = (data)=>
@@ -435,7 +436,7 @@ return (
     <Route path="/form_production" element={<FormProduction username = {username} dataDonneeProduction={dataDonneeProduction}/>} >
     </Route>
 
-    <Route path="/form_dgi" element={<FormDGI username = {username} setImpotDGIInfo={setImpotDGIInfo} setImpotTauxCroissance={setImpotTauxCroissance} dataDonneeImpotDGI={dataDonneeImpotDGI} dataDonneeImpotTauxCroissance={dataDonneeImpotTauxCroissance}/>} >
+    <Route path="/form_dgi" element={<FormDGI username = {username} dataDonneeImpotDgi={dataDonneeImpotDgi}  dataDonneeImpotPourcentageCroissance={dataDonneeImpotPourcentageCroissance}/>} >
     </Route>
 
     <Route path="/form_dgda_import_export" element={<FormImpoExpoDGDA username = {username} dataDonneeInfoExpoImpo={dataDonneeInfoExpoImpo} dataDonneeTauxExportation={dataDonneeTauxExportation} dataDonneeTauxImportation={dataDonneeTauxImportation} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >
@@ -514,7 +515,7 @@ return (
     <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo}/>} >
     </Route>
 
-    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >
+    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
     <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDGIInfo={impotDGIInfo} impotTauxCroissance={impotTauxCroissance}/>} >

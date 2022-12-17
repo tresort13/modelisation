@@ -51,8 +51,8 @@ const submitManifest = (e)=>
           .then( res => res.json())
           .then(
             res => {   
-                props.setImpotDGIInfo(res)
-                props.setImpotTauxCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
+                props.dataDonneeImpotDgi(res)
+                props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
                 console.log(res)
                         
             }
@@ -63,6 +63,7 @@ const submitManifest = (e)=>
             } )
             
     resetFileInput()
+    setTauxCroissance({infoTauxCroissance :{ taux_croissance :""}})
 }
 
 const inputChanged = (event)=>

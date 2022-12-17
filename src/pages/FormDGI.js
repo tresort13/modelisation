@@ -34,7 +34,7 @@ const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
 
 const [message,setMessage] = useState("Impôts sur CA et autres pour l'année courante");
 const [couleur,setCouleur] = useState("text-warning");
-const navigate = useNavigate();
+
 
 const resetFileInput = () => {
     // 👇️ reset input value

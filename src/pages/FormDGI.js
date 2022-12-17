@@ -26,7 +26,7 @@ function FormDGI(props)
       });    
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
-const [temp,setTemp] = useState([])
+const [temp,setTemp] = useState([{}])
 const[tauxCroissance,setTauxCroissance] = useState({infoTauxCroissance :{
     taux_croissance :""
 }});
@@ -54,7 +54,7 @@ const submitManifest = (e)=>
             res => {   
               
                 props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
-                setTemp(res)
+                setTemp([...res])
                 console.log(res)
                         
             }
@@ -67,6 +67,7 @@ const submitManifest = (e)=>
             
     resetFileInput()
     setTauxCroissance({infoTauxCroissance :{ taux_croissance :""}})
+    console.log(temp)
 }
 
 const inputChanged = (event)=>
@@ -76,7 +77,7 @@ const inputChanged = (event)=>
         setTauxCroissance({infoTauxCroissance:cred})
     }
 
-    console.log(temp)
+    
 return (
 <>
 <Header username={props.username}/>

@@ -30,7 +30,7 @@ const[tauxExpoImpo,setTauxExpoImpo] = useState({infoTauxExpoImpo :{
     taux_exportation :"",
     taux_importation :""
 }});
-const pib_annee_fiscale_2022= Number(Number((props.impotDGIInfo[2].annee_fiscale_2021) * (1 + Number(props.impotTauxCroissance)))).toFixed()
+//const pib_annee_fiscale_2022= Number(Number((props.impotDGIInfo[2].annee_fiscale_2021) * (1 + Number(props.impotTauxCroissance)))).toFixed()
 const [message,setMessage] = useState("Importations/Exportations");
 const [couleur,setCouleur] = useState("text-warning");
 const navigate = useNavigate();
@@ -94,7 +94,7 @@ return (
 <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={pib_annee_fiscale_2022} name="PIB"   type="text"  disabled/>
+        <Form.Control  name="PIB"   type="text"  disabled/>
          </Form.Group>
         </Col>
     </Row>

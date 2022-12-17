@@ -123,7 +123,7 @@ return (
         <Col xs ={4}>
         
         <Link to="/impot_dgi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={()=>submitManifest()}>
+        <Button variant="warning" type="submit" onClick={(e)=>submitManifest(e)}>
         chargement fichier
         </Button>
         </Link>

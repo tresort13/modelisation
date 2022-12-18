@@ -67,6 +67,8 @@ import FormImpoExpoDGDA from "./pages/FormImpoExpoDGDA";
 import ImpoExpoDGDAInfo from "./pages/ImpoExpoDGDAInfo";
 import FormRecettesDGDA from "./pages/FormRecettesDGDA";
 import RecettesDGDAInfo from "./pages/RecettesDGDAInfo";
+import FormDGRAD from "./pages/FormDGRAD";
+import RecettesDGRADInfo from "./pages/RecettesDGRADInfo";
 
 
 const useState = React.useState
@@ -274,6 +276,16 @@ useEffect(() => {
   window.localStorage.setItem("recettesDGDA", JSON.stringify(recettesDGDA))
 }, [recettesDGDA])
 
+const [recettesDGRAD,setRecettesDGRAD] = useState(()=>
+{
+  const localData = localStorage.getItem('recettesDGRAD');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("recettesDGRAD", JSON.stringify(recettesDGRAD))
+}, [recettesDGRAD])
+
 
 const dataPopulation = (data)=>
 {
@@ -364,6 +376,11 @@ const dataDonneeTauxImportation = (data)=>
 const dataDonneeRecettesDgda = (data)=>
 {
   setRecettesDGDA(data)
+}
+
+const dataDonneeRecettesDgrad = (data)=>
+{
+  setRecettesDGRAD(data)
 }
 
 
@@ -460,6 +477,9 @@ return (
 
     <Route path="/form_recettes_dgda" element={<FormRecettesDGDA username = {username} dataDonneeRecettesDgda={dataDonneeRecettesDgda}/>} >
     </Route>
+
+    <Route path="/form_recettes_dgrad" element={<FormDGRAD username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
+    </Route>
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >
     </Route>
@@ -541,6 +561,9 @@ return (
     </Route>
 
     <Route path="/recettes_dgda_info" element={<RecettesDGDAInfo username = {username} recettesDGDA={recettesDGDA} infoExpoImpo={infoExpoImpo} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} tauxExportation={tauxExportation} tauxImportation={tauxImportation}/>} >
+    </Route>
+
+    <Route path="/recettes_dgrad_info" element={<RecettesDGRADInfo username = {username} recettesDGRAD={recettesDGRAD}  impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} />} >
     </Route>
 
     

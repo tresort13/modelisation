@@ -27,7 +27,7 @@ const isMobileOrTablet = useMediaQuery({
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState()
 const navigate = useNavigate()
-const [message,setMessage] = useState("Impôts sur CA et autres pour l'année courante");
+const [message,setMessage] = useState("Recettes DGDA");
 const [couleur,setCouleur] = useState("text-warning");
 
 

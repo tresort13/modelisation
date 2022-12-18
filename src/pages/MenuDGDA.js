@@ -33,7 +33,7 @@ function MenuDGDA(props)
             </Col>
 
             <Col mdmd={6} className="my-auto text-center">
-            <Link to="/form_dgda_provision_recettes" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/form_recettes_dgda" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Provisions des Recettes</b></i>
            </Button>

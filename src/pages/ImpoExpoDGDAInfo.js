@@ -35,9 +35,6 @@ console.log(props.tauxImportation)
 console.log(props.infoExpoImpo)
 
 
-
-
-
 const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed()
 
 const exportation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  Number(props.tauxExportation)).toFixed()
@@ -46,12 +43,9 @@ const importation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  
 expoImpo = [...props.infoExpoImpo]
 console.log(expoImpo)
 
-
 expoImpo[0].annee_fiscale_2022 = exportation_annee_fiscale_2022
 expoImpo[1].annee_fiscale_2022 = importation_annee_fiscale_2022
 
-
-  
     return (
         <>
             <Header username={props.username}/>

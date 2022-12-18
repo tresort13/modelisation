@@ -66,7 +66,7 @@ const total_fiscale_2020 = impotDGDA[0].annee_fiscale_2020 + impotDGDA[1].annee_
 
 const total_fiscale_2021 = impotDGDA[0].annee_fiscale_2021 + impotDGDA[1].annee_fiscale_2021
 
-const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022) + Number(impotDGDA[1].annee_fiscale_2022)
+const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022).toFixed(2) + Number(impotDGDA[1].annee_fiscale_2022).toFixed(2)
   
     return (
         <>
@@ -114,7 +114,7 @@ const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022) + Number(impo
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2019).toFixed())}</b></i></td>
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2020).toFixed())}</b></i></td>
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2021).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2022).toFixed())}</b></i></td>
+         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2022).toFixed(2))}</b></i></td>
        </tr>
          
       </tbody>

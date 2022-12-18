@@ -35,16 +35,16 @@ console.log(props.tauxImportation)
 console.log(props.infoExpoImpo)
 
 
-const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed()
+const pib_annee_fiscale_2022= Number(Number(Number(props.impotDgiInfo[2].annee_fiscale_2021).toFixed(2) * (1 + Number(props.impotPourcentageCroissance).toFixed(2)))).toFixed(2)
 
-const exportation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  Number(props.tauxExportation)).toFixed()
-const importation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022) *  Number(props.tauxImportation)).toFixed()
+const exportation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022).toFixed(2) *  Number(props.tauxExportation).toFixed(2)).toFixed(2)
+const importation_annee_fiscale_2022 = Number(Number(pib_annee_fiscale_2022).toFixed(2) *  Number(props.tauxImportation).toFixed(2)).toFixed(2)
 
 expoImpo = [...props.infoExpoImpo]
 console.log(expoImpo)
 
-expoImpo[0].annee_fiscale_2022 = exportation_annee_fiscale_2022
-expoImpo[1].annee_fiscale_2022 = importation_annee_fiscale_2022
+expoImpo[0].annee_fiscale_2022 = Number(exportation_annee_fiscale_2022).toFixed(2)
+expoImpo[1].annee_fiscale_2022 = Number(importation_annee_fiscale_2022).toFixed(2)
 
     return (
         <>
@@ -78,11 +78,11 @@ expoImpo[1].annee_fiscale_2022 = importation_annee_fiscale_2022
         {
           return  <tr style={{border:"2px solid white"}}>
              <td><i ><b>{value.expo_impo_dgda}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed()) }</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed())}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed())}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2021).toFixed())}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2022).toFixed())}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed(2)) }</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed(2))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed(2))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2021).toFixed(2))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2022).toFixed(2))}</b></i></td>
             </tr>     
         }) 
         }

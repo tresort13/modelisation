@@ -44,7 +44,6 @@ impotDGRAD = [...props.recettesDGRAD]
 impotDGRAD[1].annee_fiscale_2022 = Number(autre_recettes_annee_fiscale_2022).toFixed(2)
 
 //impotDGI[0].annee_fiscale_2022=ca_annee_fiscale_2022_final
-const total_fiscale_2018 = impotDGRAD[0].annee_fiscale_2018 + impotDGRAD[1].annee_fiscale_2018 
 
 const total_fiscale_2019 = impotDGRAD[0].annee_fiscale_2019 + impotDGRAD[1].annee_fiscale_2019 
 
@@ -74,7 +73,6 @@ const total_fiscale_2022 = Number(impotDGRAD[0].annee_fiscale_2022) + Number(imp
       <thead>
         <tr className='text-primary' style={{border:"2px solid white"}}>
           <th>Recettes DGRAD</th>
-          <th>Année Fiscale 2018</th>
           <th>Année Fiscale 2019</th>
           <th>Année Fiscale 2020</th>
           <th>Année Fiscale 2021</th>
@@ -86,7 +84,6 @@ const total_fiscale_2022 = Number(impotDGRAD[0].annee_fiscale_2022) + Number(imp
         {
           return  <tr style={{border:"2px solid white"}}>
              <td><i ><b>{value.recettes_dgrad}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed(2)) }</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed(2))}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed(2))}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2021).toFixed(2))}</b></i></td>
@@ -96,7 +93,6 @@ const total_fiscale_2022 = Number(impotDGRAD[0].annee_fiscale_2022) + Number(imp
         }
        <tr style={{border:"2px solid white"}}>
          <td><i><b>TOTAL</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2018).toFixed())}</b></i></td>
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2019).toFixed())}</b></i></td>
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2020).toFixed())}</b></i></td>
          <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2021).toFixed())}</b></i></td>

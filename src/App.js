@@ -290,7 +290,7 @@ useEffect(() => {
 const [recettesPubliques,setRecettesPubliques] = useState(()=>
 {
   const localData = localStorage.getItem('recettesPubliques');
-  return localData ? JSON.parse(localData) :{info:[{recettes_publiques:'DGI',annee_fiscale_2022:0},{recettes_publiques:'DGDA',annee_fiscale_2022:0},{recettes_publiques:'DGRAD',annee_fiscale_2022:0}]};
+  return localData ? JSON.parse(localData) :{info:{publique:[{recettes_publiques:'DGI',annee_fiscale_2022:0},{recettes_publiques:'DGDA',annee_fiscale_2022:0},{recettes_publiques:'DGRAD',annee_fiscale_2022:0}]}};
 });
 
 useEffect(() => {
@@ -396,17 +396,17 @@ const dataDonneeRecettesDgrad = (data)=>
 
 const dataDonneeRecettesPubliquesDGI = (data)=>
 {
-  setRecettesPubliques(recettesPubliques.info[0].annee_fiscale_2022=data)
+  setRecettesPubliques(recettesPubliques.info.publique[0].annee_fiscale_2022=data)
 }
 
 const dataDonneeRecettesPubliquesDGDA = (data)=>
 {
-  setRecettesPubliques(recettesPubliques.info[1].annee_fiscale_2022=data)
+  setRecettesPubliques(recettesPubliques.info.publique[1].annee_fiscale_2022=data)
 }
 
 const dataDonneeRecettesPubliquesDGRAD = (data)=>
 {
-  setRecettesPubliques(recettesPubliques.info[2].annee_fiscale_2022=data)
+  setRecettesPubliques(recettesPubliques.info.publique[2].annee_fiscale_2022=data)
 }
 
 

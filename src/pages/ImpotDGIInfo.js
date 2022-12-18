@@ -37,7 +37,7 @@ const ca_annee_fiscale_2022_temp1 = Number( Number(props.impotDgiInfo[0].annee_f
 const ca_annee_fiscale_2022_temp2 = Number(Number(props.impotDgiInfo[0].annee_fiscale_2020) / Number(props.impotDgiInfo[2].annee_fiscale_2019)).toFixed(2)
 const ca_annee_fiscale_2022_temp3 = Number(Number(props.impotDgiInfo[0].annee_fiscale_2019) / Number(props.impotDgiInfo[2].annee_fiscale_2018)).toFixed(2)
 const ca_annee_fiscale_2022_average = Number((Number(ca_annee_fiscale_2022_temp1) + Number(ca_annee_fiscale_2022_temp2) + Number(ca_annee_fiscale_2022_temp3)) / 3).toFixed(2)
-const ca_annee_fiscale_2022_final = Number(Number(props.impotDgiInfo[2].annee_fiscale_2021).toFixed(2) * Number(ca_annee_fiscale_2022_average).toFixed(2)).toFixed(2)
+const ca_annee_fiscale_2022_final = Number(Number(props.impotDgiInfo[2].annee_fiscale_2021) * Number(ca_annee_fiscale_2022_average)).toFixed(2)
 
 const autre_impots_annee_fiscale_2022_temp1 = Number( Number(props.impotDgiInfo[1].annee_fiscale_2021) / Number(props.impotDgiInfo[2].annee_fiscale_2021)).toFixed(2)
 const autre_impots_annee_fiscale_2022_temp2 = Number(Number(props.impotDgiInfo[1].annee_fiscale_2020) / Number(props.impotDgiInfo[2].annee_fiscale_2020)).toFixed(2)

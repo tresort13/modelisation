@@ -45,9 +45,9 @@ const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale
 
 const recettes_expo_annee_fiscale_2022 = Number((Number(pib_annee_fiscale_2022) *  Number(props.tauxExportation).toFixed(2)) * Number(recette_expo_fiscale_2022_average).toFixed(2)).toFixed(2)
 
-const recette_impo_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGDA[0].annee_fiscale_2021) / Number(props.infoExpoImpo[0].annee_fiscale_2021)).toFixed(2)
-const recette_impo_annee_fiscale_2022_temp2 = Number(Number(props.recettesDGDA[0].annee_fiscale_2020) / Number(props.infoExpoImpo[0].annee_fiscale_2020)).toFixed(2)
-const recette_impo_annee_fiscale_2022_temp3 = Number(Number(props.recettesDGDA[0].annee_fiscale_2019) / Number(props.infoExpoImpo[0].annee_fiscale_2019)).toFixed(2)
+const recette_impo_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGDA[1].annee_fiscale_2021) / Number(props.infoExpoImpo[1].annee_fiscale_2021)).toFixed(2)
+const recette_impo_annee_fiscale_2022_temp2 = Number(Number(props.recettesDGDA[1].annee_fiscale_2020) / Number(props.infoExpoImpo[1].annee_fiscale_2020)).toFixed(2)
+const recette_impo_annee_fiscale_2022_temp3 = Number(Number(props.recettesDGDA[1].annee_fiscale_2019) / Number(props.infoExpoImpo[1].annee_fiscale_2019)).toFixed(2)
 const recette_impo_fiscale_2022_average = Number((Number(recette_impo_annee_fiscale_2022_temp1) + Number(recette_impo_annee_fiscale_2022_temp2) + Number(recette_impo_annee_fiscale_2022_temp3)) / 3).toFixed(2)
 console.log(recette_impo_fiscale_2022_average)
 const recettes_impo_annee_fiscale_2022 = Number((Number(pib_annee_fiscale_2022) *  Number(props.tauxImportation).toFixed(2)) * Number(recette_impo_fiscale_2022_average).toFixed(2)).toFixed(2)

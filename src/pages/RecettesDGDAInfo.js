@@ -41,7 +41,7 @@ const recette_expo_annee_fiscale_2022_temp3 = Number(Number(props.recettesDGDA[0
 
 const recette_expo_fiscale_2022_average = Number((Number(recette_expo_annee_fiscale_2022_temp1) + Number(recette_expo_annee_fiscale_2022_temp2) + Number(recette_expo_annee_fiscale_2022_temp3)) / 3).toFixed(2)
 
-const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed()
+const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed(2)
 
 const recettes_expo_annee_fiscale_2022 = Number((Number(pib_annee_fiscale_2022) *  Number(props.tauxExportation).toFixed(2)) * Number(recette_expo_fiscale_2022_average).toFixed(2)).toFixed(2)
 
@@ -49,13 +49,13 @@ const recette_impo_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGDA[
 const recette_impo_annee_fiscale_2022_temp2 = Number(Number(props.recettesDGDA[1].annee_fiscale_2020) / Number(props.infoExpoImpo[1].annee_fiscale_2020)).toFixed(2)
 const recette_impo_annee_fiscale_2022_temp3 = Number(Number(props.recettesDGDA[1].annee_fiscale_2019) / Number(props.infoExpoImpo[1].annee_fiscale_2019)).toFixed(2)
 const recette_impo_fiscale_2022_average = Number((Number(recette_impo_annee_fiscale_2022_temp1) + Number(recette_impo_annee_fiscale_2022_temp2) + Number(recette_impo_annee_fiscale_2022_temp3)) / 3).toFixed(2)
-console.log(recette_impo_fiscale_2022_average)
+
 const recettes_impo_annee_fiscale_2022 = Number((Number(pib_annee_fiscale_2022) *  Number(props.tauxImportation).toFixed(2)) * Number(recette_impo_fiscale_2022_average).toFixed(2)).toFixed(2)
 
 
 impotDGDA = [...props.recettesDGDA]
-impotDGDA[0].annee_fiscale_2022 = recettes_expo_annee_fiscale_2022
-impotDGDA[1].annee_fiscale_2022 = recettes_impo_annee_fiscale_2022
+impotDGDA[0].annee_fiscale_2022 = Number(recettes_expo_annee_fiscale_2022).toFixed(2)
+impotDGDA[1].annee_fiscale_2022 = Number(recettes_impo_annee_fiscale_2022).toFixed(2)
 
 //impotDGI[0].annee_fiscale_2022=ca_annee_fiscale_2022_final
 const total_fiscale_2018 = impotDGDA[0].annee_fiscale_2018 + impotDGDA[1].annee_fiscale_2018 
@@ -100,11 +100,11 @@ const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022) + Number(impo
         {
           return  <tr style={{border:"2px solid white"}}>
              <td><i ><b>{value.recettes_dgda}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed()) }</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed())}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed())}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2021).toFixed())}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2022).toFixed())}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed(2)) }</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed(2))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed(2))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2021).toFixed(2))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2022).toFixed(2))}</b></i></td>
             </tr>     
         }) 
         }

@@ -43,7 +43,7 @@ function MenuRecettes(props)
 
         <Row className="text-center justify-content-center mt-3 mb-5">
             <Col md={6} className="my-auto text-center">
-            <Link to="/menu_dgrad" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/form_recettes_dgrad" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>D G R A D</b></i>
             </Button>

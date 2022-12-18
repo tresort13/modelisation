@@ -66,7 +66,7 @@ const total_fiscale_2020 = impotDGDA[0].annee_fiscale_2020 + impotDGDA[1].annee_
 
 const total_fiscale_2021 = impotDGDA[0].annee_fiscale_2021 + impotDGDA[1].annee_fiscale_2021
 
-const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022).toFixed(2) + Number(impotDGDA[1].annee_fiscale_2022).toFixed(2)
+const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022) + Number(impotDGDA[1].annee_fiscale_2022)
   
     return (
         <>
@@ -81,13 +81,13 @@ const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022).toFixed(2) + 
 <Row className='justify-content-center '>
         <Col xs = {12} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Table années fiscales DGI</i></b></u></h6>
+        <h6 ><u><b><i className='text-primary'>Table Recettes DGDA</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">
       <thead>
         <tr className='text-primary' style={{border:"2px solid white"}}>
-          <th>Recettes DGI</th>
+          <th>Recettes DGDA</th>
           <th>Année Fiscale 2018</th>
           <th>Année Fiscale 2019</th>
           <th>Année Fiscale 2020</th>

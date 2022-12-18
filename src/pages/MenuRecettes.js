@@ -21,7 +21,7 @@ function MenuRecettes(props)
       });
 
 const navigate = useNavigate()
-function dataRecettesPubliques()
+function dataRecettesPubliques(e)
 {
   e.preventDefault()
   props.dataDonneeRecettesPubliques()

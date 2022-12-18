@@ -69,7 +69,7 @@ const total_fiscale_2022 = Number(impotDGI[0].annee_fiscale_2022) + Number(impot
 
 
 
-props.dataDonneeRecettesPubliques(total_fiscale_2022)
+props.dataDonneeRecettesPubliquesDGI(total_fiscale_2022)
   
     return (
         <>

@@ -54,7 +54,7 @@ const total_fiscale_2021 = impotDGRAD[0].annee_fiscale_2021 + impotDGRAD[1].anne
 const total_fiscale_2022 = Number(impotDGRAD[0].annee_fiscale_2022) + Number(impotDGRAD[1].annee_fiscale_2022)
 
 
-props.dataDonneeRecettesPubliques(total_fiscale_2022)
+props.dataDonneeRecettesPubliquesDGRAD(total_fiscale_2022)
   
     return (
         <>

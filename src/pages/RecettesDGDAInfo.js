@@ -30,7 +30,6 @@ function RecettesDGDAInfo(props)
         }
 console.log(props.recettesDGDA)
 let impotDGDA = [{}]
-let dataDGDA =[{recettes_publiques : 'DGDA'}]
 
 const recette_expo_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGDA[0].annee_fiscale_2021) / Number(props.infoExpoImpo[0].annee_fiscale_2021)).toFixed(2)
 
@@ -67,9 +66,9 @@ const total_fiscale_2021 = impotDGDA[0].annee_fiscale_2021 + impotDGDA[1].annee_
 
 const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022) + Number(impotDGDA[1].annee_fiscale_2022)
 
-dataDGDA[0].annee_fiscale_2022 = total_fiscale_2022
 
-props.dataDonneeRecettesPubliques(dataDGDA)
+
+props.dataDonneeRecettesPubliques(total_fiscale_2022)
 
   
     return (

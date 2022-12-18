@@ -30,8 +30,6 @@ function RecettesDGRADInfo(props)
 console.log(props.recettesDGRAD)
 let impotDGRAD = [{}]
 
-let dataDGRAD =[{recettes_publiques : 'DGRAD'}]
-
 const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed(2)
 
 const autre_recette_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGRAD[1].annee_fiscale_2021) / Number(props.impotDgiInfo[2].annee_fiscale_2021)).toFixed(2)
@@ -55,9 +53,8 @@ const total_fiscale_2021 = impotDGRAD[0].annee_fiscale_2021 + impotDGRAD[1].anne
 
 const total_fiscale_2022 = Number(impotDGRAD[0].annee_fiscale_2022) + Number(impotDGRAD[1].annee_fiscale_2022)
 
-dataDGRAD[0].annee_fiscale_2022 = total_fiscale_2022
 
-props.dataDonneeRecettesPubliques(dataDGRAD)
+props.dataDonneeRecettesPubliques(total_fiscale_2022)
   
     return (
         <>

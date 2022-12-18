@@ -31,7 +31,7 @@ function RecettesPubliquesInfo(props)
 
    console.log(props.recettesPubliques)
 
-   const total_recettes_publiques = props.recettes_publiques.reduce((total,value)=>
+   const total_recettes_publiques = props.recettesPubliques.reduce((total,value)=>
    {
       total = total + Number(value.annee_fiscale_2022)
       return total

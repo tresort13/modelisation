@@ -396,7 +396,7 @@ const dataDonneeRecettesDgrad = (data)=>
 
 const dataDonneeRecettesPubliques = (data)=>
 {
-  setRecettesPubliques([...data])
+  setRecettesPubliques((prev)=>([...prev,...data]))
 }
 
 

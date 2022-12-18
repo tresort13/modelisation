@@ -12,6 +12,8 @@ import Header from './Header';
 import Footer from './Footer';
 import './Header.css';
 import { useMediaQuery } from 'react-responsive';
+import Modal from 'react-bootstrap/Modal';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const useState = React.useState
 
@@ -35,7 +37,8 @@ const[tauxExpoImpo,setTauxExpoImpo] = useState({infoTauxExpoImpo :{
 const [message,setMessage] = useState("Importations/Exportations");
 const [couleur,setCouleur] = useState("text-warning");
 const navigate = useNavigate();
-
+const [modalShow, setModalShow] = React.useState(false);
+const [modalShow2, setModalShow2] = React.useState(false);
 const resetFileInput = () => {
     // 👇️ reset input value
     inputRef.current.value = null;
@@ -43,6 +46,7 @@ const resetFileInput = () => {
 const submitManifest = (e)=>
 {
     e.preventDefault()
+    setModalShow2(true)
    const uploadData = new FormData();
    uploadData.append('fichier', fichier);
     fetch('https://modelisationfiscaleapi.herokuapp.com/api/infoImpoExpo/', {
@@ -61,7 +65,8 @@ const submitManifest = (e)=>
           )
           .catch( (error) =>
             {
-                setMessage("echec de chargement")
+                setModalShow2(false)
+              setModalShow(true)
             } )
             
     resetFileInput()
@@ -138,11 +143,59 @@ return (
 
 </Form>
 </Container>}
-
-
+<MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+<MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
 </>
     )
 }
+
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Echec Execution
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Message : </h4>
+          <p className='text-danger'><b>Désolé le chargement des données a echoué</b>   
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant='warning' onClick={props.onHide}>ok</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+  
+  function MyVerticallyCenteredModal2(props) {
+    return (
+      <Modal
+        {...props}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Veuillez Patienter...
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <ClipLoader color={"#ff8c00"} loading={true} size={150} /> 
+        </Modal.Body>
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+  
 
 export default FormImpoExpoDGDA;

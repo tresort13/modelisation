@@ -69,6 +69,7 @@ import FormRecettesDGDA from "./pages/FormRecettesDGDA";
 import RecettesDGDAInfo from "./pages/RecettesDGDAInfo";
 import FormDGRAD from "./pages/FormDGRAD";
 import RecettesDGRADInfo from "./pages/RecettesDGRADInfo";
+import RecettesPubliquesInfo from "./pages/RecettesPubliquesInfo";
 
 
 const useState = React.useState
@@ -286,6 +287,16 @@ useEffect(() => {
   window.localStorage.setItem("recettesDGRAD", JSON.stringify(recettesDGRAD))
 }, [recettesDGRAD])
 
+const [recettesPubliques,setRecettesPubliques] = useState(()=>
+{
+  const localData = localStorage.getItem('recettesPubliques');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("recettesPubliques", JSON.stringify(recettesPubliques))
+}, [recettesPubliques])
+
 
 const dataPopulation = (data)=>
 {
@@ -381,6 +392,11 @@ const dataDonneeRecettesDgda = (data)=>
 const dataDonneeRecettesDgrad = (data)=>
 {
   setRecettesDGRAD(data)
+}
+
+const dataDonneeRecettesPubliques = (data)=>
+{
+  setRecettesDGRAD([...data])
 }
 
 
@@ -554,16 +570,19 @@ return (
     <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo}/>} >
     </Route>
 
-    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} dataDonneeRecettesPubliques={dataDonneeRecettesPubliques}/>} >
     </Route>
 
     <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/recettes_dgda_info" element={<RecettesDGDAInfo username = {username} recettesDGDA={recettesDGDA} infoExpoImpo={infoExpoImpo} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} tauxExportation={tauxExportation} tauxImportation={tauxImportation}/>} >
+    <Route path="/recettes_dgda_info" element={<RecettesDGDAInfo username = {username} recettesDGDA={recettesDGDA} infoExpoImpo={infoExpoImpo} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} tauxExportation={tauxExportation} tauxImportation={tauxImportation} dataDonneeRecettesPubliques={dataDonneeRecettesPubliques}/>} >
     </Route>
 
-    <Route path="/recettes_dgrad_info" element={<RecettesDGRADInfo username = {username} recettesDGRAD={recettesDGRAD}  impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} />} >
+    <Route path="/recettes_dgrad_info" element={<RecettesDGRADInfo username = {username} recettesDGRAD={recettesDGRAD}  impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} dataDonneeRecettesPubliques={dataDonneeRecettesPubliques}/>} >
+    </Route>
+
+    <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques}/>} >
     </Route>
 
     

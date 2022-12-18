@@ -22,7 +22,7 @@ function MenuDGDA(props)
     return (
     <>
      <Header username={props.username}/>
-       {isDesktop && <Container className="mt-2 mb-5" >
+       {isDesktop && <Container className="mt-2 mb-5" style={{marginTop:100}}>
        <Row className="text-center justify-content-center">
             <Col md={6} className="my-auto text-center">
             <Link to="/form_dgda_import_export" style={{color:'white',textDecorationLine:'none'}}>

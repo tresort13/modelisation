@@ -51,7 +51,7 @@ function MenuRecettes(props)
             </Col>
 
             <Col md={6} className="my-auto text-center">
-            <Link to="/menu_recettes_publiques" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/recettes_publiques_info" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Recettes publiques</b></i>
             </Button>

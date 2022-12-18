@@ -287,10 +287,41 @@ useEffect(() => {
   window.localStorage.setItem("recettesDGRAD", JSON.stringify(recettesDGRAD))
 }, [recettesDGRAD])
 
+const [recettesPubliquesDGI,setRecettesPubliquesDGI] = useState(()=>
+{
+  const localData = localStorage.getItem('recettesPubliquesDGI');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("recettesPubliquesDGI", JSON.stringify(recettesPubliquesDGI))
+}, [recettesPubliquesDGI])
+
+const [recettesPubliquesDGDA,setRecettesPubliquesDGDA] = useState(()=>
+{
+  const localData = localStorage.getItem('recettesPubliquesDGDA');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("recettesPubliquesDGDA", JSON.stringify(recettesPubliquesDGDA))
+}, [recettesPubliquesDGDA])
+
+const [recettesPubliquesDGRAD,setRecettesPubliquesDGRAD] = useState(()=>
+{
+  const localData = localStorage.getItem('recettesPubliquesDGRAD');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("recettesPubliquesDGRAD", JSON.stringify(recettesPubliquesDGRAD))
+}, [recettesPubliquesDGRAD])
+
+
 const [recettesPubliques,setRecettesPubliques] = useState(()=>
 {
   const localData = localStorage.getItem('recettesPubliques');
-  return localData ? JSON.parse(localData) :{info:{publique:[{recettes_publiques:'DGI',annee_fiscale_2022:0},{recettes_publiques:'DGDA',annee_fiscale_2022:0},{recettes_publiques:'DGRAD',annee_fiscale_2022:0}]}};
+  return localData ? JSON.parse(localData) :[];
 });
 
 useEffect(() => {
@@ -394,20 +425,13 @@ const dataDonneeRecettesDgrad = (data)=>
   setRecettesDGRAD(data)
 }
 
-const dataDonneeRecettesPubliquesDGI = (data)=>
+const dataDonneeRecettesPubliques = ()=>
 {
-  setRecettesPubliques(recettesPubliques.info.publique[0].annee_fiscale_2022=data)
+  setRecettesPubliques([...recettesPubliquesDGI,...recettesPubliquesDGDA,...recettesPubliquesDGRAD])
 }
 
-const dataDonneeRecettesPubliquesDGDA = (data)=>
-{
-  setRecettesPubliques(recettesPubliques.info.publique[1].annee_fiscale_2022=data)
-}
 
-const dataDonneeRecettesPubliquesDGRAD = (data)=>
-{
-  setRecettesPubliques(recettesPubliques.info.publique[2].annee_fiscale_2022=data)
-}
+
 
 
 
@@ -434,7 +458,7 @@ return (
     <Route path="/homepage2" element={<Homepage2 username = {username} />} >
     </Route>
 
-    <Route path="/menu_recettes" element={<MenuRecettes username = {username} />} >
+    <Route path="/menu_recettes" element={<MenuRecettes username = {username} dataDonneeRecettesPubliques={dataDonneeRecettesPubliques}/>} >
     </Route>
 
     <Route path="/menu_dgda" element={<MenuDGDA username = {username} />} >
@@ -582,16 +606,16 @@ return (
     <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo}/>} >
     </Route>
 
-    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} dataDonneeRecettesPubliquesDGI={dataDonneeRecettesPubliquesDGI}/>} >
+    <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} setRecettesPubliquesDGI={setRecettesPubliquesDGI}/>} >
     </Route>
 
     <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/recettes_dgda_info" element={<RecettesDGDAInfo username = {username} recettesDGDA={recettesDGDA} infoExpoImpo={infoExpoImpo} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} tauxExportation={tauxExportation} tauxImportation={tauxImportation} dataDonneeRecettesPubliquesDGDA={dataDonneeRecettesPubliquesDGDA}/>} >
+    <Route path="/recettes_dgda_info" element={<RecettesDGDAInfo username = {username} recettesDGDA={recettesDGDA} infoExpoImpo={infoExpoImpo} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} tauxExportation={tauxExportation} tauxImportation={tauxImportation} setRecettesPubliquesDGDA={setRecettesPubliquesDGDA}/>} >
     </Route>
 
-    <Route path="/recettes_dgrad_info" element={<RecettesDGRADInfo username = {username} recettesDGRAD={recettesDGRAD}  impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} dataDonneeRecettesPubliquesDGRAD={dataDonneeRecettesPubliquesDGRAD}/>} >
+    <Route path="/recettes_dgrad_info" element={<RecettesDGRADInfo username = {username} recettesDGRAD={recettesDGRAD}  impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} setRecettesPubliquesDGRAD={setRecettesPubliquesDGRAD}/>} >
     </Route>
 
     <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques}/>} >

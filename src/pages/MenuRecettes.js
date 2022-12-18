@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -19,6 +19,15 @@ function MenuRecettes(props)
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
       });
+
+const navigate = useNavigate()
+function dataRecettesPubliques()
+{
+  e.preventDefault()
+  props.dataDonneeRecettesPubliques()
+  navigate('/recettes_publiques_info')
+}
+    
     return (
     <>
      <Header username={props.username}/>
@@ -51,8 +60,8 @@ function MenuRecettes(props)
             </Col>
 
             <Col md={6} className="my-auto text-center">
-            <Link to="/recettes_publiques_info" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
+            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+            <Button onClick={(e)=>dataRecettesPubliques(e)} variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Recettes publiques</b></i>
             </Button>
              </Link>     

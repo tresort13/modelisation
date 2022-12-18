@@ -30,7 +30,7 @@ function ImpotDGIInfo(props)
         }
 console.log(props.impotDgiInfo)
 let impotDGI = [{}]
-
+let dataDGI =[{recettes_publiques : 'DGI'}]
 
 const ca_annee_fiscale_2022_temp1 = Number( Number(props.impotDgiInfo[0].annee_fiscale_2021) / Number(props.impotDgiInfo[2].annee_fiscale_2020)).toFixed(2)
 const ca_annee_fiscale_2022_temp2 = Number(Number(props.impotDgiInfo[0].annee_fiscale_2020) / Number(props.impotDgiInfo[2].annee_fiscale_2019)).toFixed(2)
@@ -67,9 +67,9 @@ const total_fiscale_2021 = impotDGI[0].annee_fiscale_2021 + impotDGI[1].annee_fi
 
 const total_fiscale_2022 = Number(impotDGI[0].annee_fiscale_2022) + Number(impotDGI[1].annee_fiscale_2022)
 
+dataDGI[0].annee_fiscale_2022 = total_fiscale_2022
 
-
-props.dataDonneeRecettesPubliquesDGI(total_fiscale_2022)
+props.setRecettesPubliquesDGI(dataDGI)
   
     return (
         <>

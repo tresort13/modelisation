@@ -82,10 +82,10 @@ const total_fiscale_2022 = Number(impotDGRAD[0].annee_fiscale_2022) + Number(imp
         </tr>
       </thead>
       <tbody>
-        {impotDGDA.map((value)=>
+        {impotDGRAD.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}}>
-             <td><i ><b>{value.recettes_dgda}</b></i></td>
+             <td><i ><b>{value.recettes_dgrad}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed(2)) }</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed(2))}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed(2))}</b></i></td>

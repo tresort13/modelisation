@@ -53,8 +53,8 @@ const submitManifest = (e)=>
           .then(
             res => {   
                 props.dataDonneeInfoExpoImpo(res)
-                props.dataDonneeTauxImportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_exportation) / 100)
-                props.dataDonneeTauxExportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_importation) / 100)
+                props.dataDonneeTauxImportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_importation) / 100)
+                props.dataDonneeTauxExportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_exportation) / 100)
                 
                 navigate('/impo_expo_dgda_info')
             }
@@ -110,7 +110,7 @@ return (
 
         <Col xs = {3}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control name="taux_importation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Impo (PIB)'    required/>
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_importation} name="taux_importation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Impo (PIB)'    required/>
          </Form.Group>
         </Col>
     </Row>

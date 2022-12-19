@@ -27,7 +27,7 @@ function MenuDGDA(props)
             <Col md={6} className="my-auto text-center">
             <Link to="/form_dgda_import_export" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Importation/Exportation</b></i>
+            <i className="text-secondary"><b>Importation/Exportation DGDA</b></i>
             </Button>
             </Link>    
             </Col>
@@ -35,7 +35,7 @@ function MenuDGDA(props)
             <Col mdmd={6} className="my-auto text-center">
             <Link to="/form_recettes_dgda" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Provisions des Recettes</b></i>
+            <i className="text-secondary"><b>Provisions des Recettes DGDA</b></i>
            </Button>
             </Link>            
             </Col>

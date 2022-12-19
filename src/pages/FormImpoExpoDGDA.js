@@ -26,7 +26,7 @@ function FormImpoExpoDGDA(props)
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
       });   
-      const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed() 
+      const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed(2) 
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
 const[tauxExpoImpo,setTauxExpoImpo] = useState({infoTauxExpoImpo :{

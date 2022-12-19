@@ -81,7 +81,7 @@ const inputChanged = (event)=>
 return (
 <>
 <Header username={props.username}/>
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:50,width:750}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
         <p className={couleur}><i><b>{message}</b></i></p>

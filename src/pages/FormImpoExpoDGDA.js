@@ -89,7 +89,7 @@ return (
     </Row>
 
     <Row className='justify-content-center pb-2' >
-        <Col xs={6}>
+        <Col xs={8}>
             <Link to="">
             <Image src={require('./est_back.jpeg')}  className='rounded-pill ' style={{width:200}}></Image>
             </Link>
@@ -99,7 +99,7 @@ return (
     
 <Form>
 <Row className='justify-content-center'>
-        <Col xs = {6}>
+        <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={pib_annee_fiscale_2022 + " (PIB Année Courante)"} name="PIB"   type="text"  disabled/>
          </Form.Group>
@@ -107,21 +107,21 @@ return (
     </Row>
 
     <Row className='justify-content-center'>
-        <Col xs = {3}>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Expo (PIB)' autoFocus   required/>
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Exportations/PIB' autoFocus   required/>
          </Form.Group>
         </Col>
 
-        <Col xs = {3}>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_importation} name="taux_importation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Impo (PIB)'    required/>
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_importation} name="taux_importation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Importations/PIB'    required/>
          </Form.Group>
         </Col>
     </Row>
 
     <Row className='justify-content-center'>
-        <Col xs = {6}>
+        <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control ref={inputRef}   name="fichier" type="file" placeholder="Veuillez charger le fichier" onChange={(e)=>setFichier(e.target.files[0])} />
          </Form.Group>

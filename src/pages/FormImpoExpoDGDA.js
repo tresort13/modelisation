@@ -109,7 +109,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Exportations/PIB' autoFocus   required/>
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='% Exportations/PIB' autoFocus   required/>
          </Form.Group>
         </Col>
 

@@ -67,7 +67,7 @@ function dataRecettesPubliques(e)
             <Col md={6} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
             <Button onClick={(e)=>dataRecettesPubliques(e)} variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Recettes publiques</b></i>
+            <i className="text-secondary"><b>Total Recettes publiques Année Courante</b></i>
             </Button>
              </Link>     
             </Col>

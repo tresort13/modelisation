@@ -36,11 +36,11 @@ function dataRecettesPubliques(e)
     return (
     <>
      <Header username={props.username}/>
-       {isDesktop && <Container className="mt-2 mb-5" >
+       {isDesktop && <Container className=" mb-5" style={{marginTop:50}}>
        <Row className="text-center justify-content-center">
             <Col md={6} className="my-auto text-center">
             <Link to="/form_dgi" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:200,height:200}} className='btn-lg rounded-pill zoom'>
+            <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>D G I</b></i>
             </Button>
             </Link>    
@@ -48,7 +48,7 @@ function dataRecettesPubliques(e)
 
             <Col mdmd={6} className="my-auto text-center">
             <Link to="/menu_dgda" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:200,height:200}} className='btn-lg rounded-pill zoom'>
+            <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>D G D A</b></i>
            </Button>
             </Link>            
@@ -58,7 +58,7 @@ function dataRecettesPubliques(e)
         <Row className="text-center justify-content-center mt-3 mb-5">
             <Col md={6} className="my-auto text-center">
             <Link to="/form_recettes_dgrad" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:200,height:200}} className='btn-lg rounded-pill zoom'>
+            <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>D G R A D</b></i>
             </Button>
              </Link>     
@@ -66,8 +66,8 @@ function dataRecettesPubliques(e)
 
             <Col md={6} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-            <Button onClick={(e)=>dataRecettesPubliques(e)} variant="warning" style={{width:200,height:200}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Total Recettes publiques Année Courante</b></i>
+            <Button onClick={(e)=>dataRecettesPubliques(e)} variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
+            <i className="text-secondary"><b>Total Recettes publiques &amp; pression fiscale Année Courante</b></i>
             </Button>
              </Link>     
             </Col>

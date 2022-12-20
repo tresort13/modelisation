@@ -82,23 +82,6 @@ function RecettesPubliquesInfo(props)
         </div>
         </Col>
     </Row>
-
-
-
-  
-    <Row className='justify-content-center pb-3 pt-3'>
-        <Col xs ={4} >
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="primary" type="submit" onClick={message} >
-        Imprimer les informations
-        </Button>
-        </Link>
-
-        </Col>
-    </Row>
-  
-
-
 </div>
 
 
@@ -141,20 +124,6 @@ function RecettesPubliquesInfo(props)
         </Col>
     </Row>
 
-
-
-  
-    <Row className='justify-content-center pb-3 pt-3'>
-        <Col xs ={4} >
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="primary" type="submit" onClick={message} >
-        Imprimer les informations
-        </Button>
-        </Link>
-
-        </Col>
-    </Row>
-  
 
 
 </div>

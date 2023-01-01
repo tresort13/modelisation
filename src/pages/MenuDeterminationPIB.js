@@ -33,7 +33,7 @@ function MenuDeterminationPIB(props)
             </Col>
 
             <Col mdmd={4} className="my-auto text-center">
-            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/menu_approche_revenu" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Révenus</b></i>
            </Button>

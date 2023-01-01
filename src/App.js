@@ -70,6 +70,7 @@ import RecettesDGDAInfo from "./pages/RecettesDGDAInfo";
 import FormDGRAD from "./pages/FormDGRAD";
 import RecettesDGRADInfo from "./pages/RecettesDGRADInfo";
 import RecettesPubliquesInfo from "./pages/RecettesPubliquesInfo";
+import MenuApprocheRevenu from "./pages/MenuApprocheRevenu";
 
 
 const useState = React.useState
@@ -462,6 +463,9 @@ return (
     </Route>
 
     <Route path="/menu_dgda" element={<MenuDGDA username = {username} />} >
+    </Route>
+
+    <Route path="/menu_approche_revenu" element={<MenuApprocheRevenu username = {username} />} >
     </Route>
 
     <Route path="/form_population_province" element={<FormPopulationProvince username = {username} dataPopulation={dataPopulation}/>} >

@@ -75,6 +75,9 @@ import FormRevenuSalaire from "./pages/FormRevenuSalaire";
 import FormExedantBrut from "./pages/FormExedantBrut";
 import FormSubventionProduction from "./pages/FormSubventionProduction";
 import FormSubventionConsommation from "./pages/FormSubventionConsommation";
+import TotalImpotInfo from "./pages/TotalImpotInfo";
+import TotalSubventionInfo from "./pages/TotalSubventionInfo";
+import MenuRevenu from "./pages/MenuRevenu";
 
 
 const useState = React.useState
@@ -472,6 +475,9 @@ return (
     <Route path="/menu_approche_revenu" element={<MenuApprocheRevenu username = {username} />} >
     </Route>
 
+    <Route path="/menu_revenu" element={<MenuRevenu username = {username} />} >
+    </Route>
+
     <Route path="/form_population_province" element={<FormPopulationProvince username = {username} dataPopulation={dataPopulation}/>} >
     </Route>
 
@@ -642,7 +648,7 @@ return (
     <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/revenu_salaire_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/revenu_salaire_info" element={<Revenu username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
     <Route path="/exedant_brut_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
@@ -651,10 +657,16 @@ return (
     <Route path="/autre_impot_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
+    <Route path="/total_impot_info" element={<TotalImpotInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    </Route>
+
     <Route path="/subvention_production_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
     
     <Route path="/subvention_consommation_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    </Route>
+
+    <Route path="/total_subvention_info" element={<TotalSubventionInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
     <Route path="/revenu_province_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >

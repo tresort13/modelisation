@@ -17,7 +17,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 const useState = React.useState
 
-function FormRevenuApproche(props)
+function FormRevenuSalaire(props)
 {
 
 const isDesktop = useMediaQuery({
@@ -31,7 +31,7 @@ const [fichier,setFichier] = useState()
 const navigate = useNavigate()
 const [modalShow, setModalShow] = React.useState(false);
 const [modalShow2, setModalShow2] = React.useState(false);
-const [message,setMessage] = useState("Approche Révenu");
+const [message,setMessage] = useState("Révenu Salaire");
 const [couleur,setCouleur] = useState("text-warning");
 
 
@@ -169,4 +169,4 @@ function MyVerticallyCenteredModal(props) {
   }
   
 
-export default FormRevenuApproche;
+export default FormRevenuSalaire;

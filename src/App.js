@@ -78,6 +78,12 @@ import FormSubventionConsommation from "./pages/FormSubventionConsommation";
 import TotalImpotInfo from "./pages/TotalImpotInfo";
 import TotalSubventionInfo from "./pages/TotalSubventionInfo";
 import MenuRevenu from "./pages/MenuRevenu";
+import SubventionProductionInfo from "./pages/SubventionProductionInfo";
+import SubventionConsommationInfo from "./pages/SubventionConsommationInfo";
+import AutreImpotInfo from "./pages/AutreImpotInfo";
+import ExedantBrutInfo from "./pages/ExedantBrutInfo";
+import RevenuSalaireInfo from "./pages/RevenuSalaireInfo";
+import RevenuProvinceInfo from "./pages/RevenuProvinceInfo";
 
 
 const useState = React.useState
@@ -648,28 +654,28 @@ return (
     <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/revenu_salaire_info" element={<Revenu username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/exedant_brut_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/exedant_brut_info" element={<ExedantBrutInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/autre_impot_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/autre_impot_info" element={<AutreImpotInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
     <Route path="/total_impot_info" element={<TotalImpotInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/subvention_production_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/subvention_production_info" element={<SubventionProductionInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
     
-    <Route path="/subvention_consommation_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/subvention_consommation_info" element={<SubventionConsommationInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
     <Route path="/total_subvention_info" element={<TotalSubventionInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/revenu_province_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/revenu_province_info" element={<RevenuProvinceInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
     
 

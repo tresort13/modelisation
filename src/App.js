@@ -75,6 +75,7 @@ import FormRevenuSalaire from "./pages/FormRevenuSalaire";
 import FormExedantBrut from "./pages/FormExedantBrut";
 import FormSubventionProduction from "./pages/FormSubventionProduction";
 import FormSubventionConsommation from "./pages/FormSubventionConsommation";
+import FormAutreImpot from "./pages/FormAutreImpot";
 import TotalImpotInfo from "./pages/TotalImpotInfo";
 import TotalSubventionInfo from "./pages/TotalSubventionInfo";
 import MenuRevenu from "./pages/MenuRevenu";
@@ -557,6 +558,9 @@ return (
     </Route>
 
     <Route path="/form_exedant_brut" element={<FormExedantBrut username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
+    </Route>
+
+    <Route path="/form_autre_impot" element={<FormAutreImpot username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
     </Route>
 
     <Route path="/form_subvention_production" element={<FormSubventionProduction username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >

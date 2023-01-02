@@ -41,7 +41,7 @@ function MenuRevenu(props)
     <Col xs = {"auto"}>
         <Link to="/form_revenu_salaire" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <i variant="secondary"><b>Révenus Salaires</b></i>
+        <i ><b className="text-secondary">Révenus Salaires</b></i>
         </Button>
         </Link>
         </Col>
@@ -50,7 +50,7 @@ function MenuRevenu(props)
         <Col xs = {"auto"}>
         <Link to="/form_exedant_brute_exploitation" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <i variant="secondary"><b>Exédant Brute d'Exploitation</b></i>
+        <i ><b className="text-secondary">Exédant Brute d'Exploitation</b></i>
         </Button>
         </Link>
         </Col>
@@ -62,7 +62,7 @@ function MenuRevenu(props)
         <Col xs ={"auto"}>
         <Link to="/form_autres_impots" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <i variant="form_autre_impot"><b>Autres Impôts</b></i>
+        <i ><b className="text-secondary">Autres Impôts</b></i>
         </Button>
         </Link>
         </Col>

@@ -48,7 +48,7 @@ function MenuRevenu(props)
     </Row>
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
-        <Link to="/form_exedant_brute_exploitation" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/form_exedant_brut" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <i ><b className="text-secondary">Exédant Brute d'Exploitation</b></i>
         </Button>
@@ -60,7 +60,7 @@ function MenuRevenu(props)
 
     <Row className='justify-content-center pb-3 '>
         <Col xs ={"auto"}>
-        <Link to="/form_autres_impots" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/form_autre_impot" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <i ><b className="text-secondary">Autres Impôts</b></i>
         </Button>

@@ -39,7 +39,7 @@ function dataRecettesPubliques(e)
        {isDesktop && <Container className=" mb-5" style={{marginTop:50}}>
        <Row className="text-center justify-content-center">
             <Col md={4} className="my-auto text-center">
-            <Link to="/form_dgi" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/menu_approche_revenu" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Approche Révenu</b></i>
             </Button>
@@ -47,7 +47,7 @@ function dataRecettesPubliques(e)
             </Col>
 
             <Col mdmd={4} className="my-auto text-center">
-            <Link to="/menu_dgda" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/total_impot_info" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Total Impôts</b></i>
            </Button>
@@ -55,7 +55,7 @@ function dataRecettesPubliques(e)
             </Col>
 
             <Col mdmd={4} className="my-auto text-center">
-            <Link to="/menu_dgda" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/subvention_production_info" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Subventions Production</b></i>
            </Button>
@@ -65,7 +65,7 @@ function dataRecettesPubliques(e)
 
         <Row className="text-center justify-content-center mt-3 mb-5">
             <Col md={4} className="my-auto text-center">
-            <Link to="/form_recettes_dgrad" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/subvention_consommation_info" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Subventions Consommations</b></i>
             </Button>
@@ -73,7 +73,7 @@ function dataRecettesPubliques(e)
             </Col>
 
             <Col md={4} className="my-auto text-center">
-            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/total_subvention_info" style={{color:'white',textDecorationLine:'none'}}>
             <Button onClick={(e)=>dataRecettesPubliques(e)} variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Total Subventions</b></i>
             </Button>
@@ -81,7 +81,7 @@ function dataRecettesPubliques(e)
             </Col>
 
             <Col md={4} className="my-auto text-center">
-            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/revenu_province_info" style={{color:'white',textDecorationLine:'none'}}>
             <Button onClick={(e)=>dataRecettesPubliques(e)} variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Révenu Provincial</b></i>
             </Button>

@@ -94,9 +94,9 @@ console.log(props.autresImpots)
              <td><b>{value.nom_province}</b></td>
              <td><b>Autres Impôts</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.autre_impot_urbain).toFixed())}</b></td>
-             <td><b>{new Intl.NumberFormat().format(Number(value.autre_impot_urbain).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.autre_impot_urbain_total).toFixed())}</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.autre_impot_rural).toFixed())}</b></td>
-             <td><b>{new Intl.NumberFormat().format(Number(value.autre_impot_rural).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.autre_impot_rural_total).toFixed())}</b></td>
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.autre_impot_urbain) + Number(value.autre_impot_rural)).toFixed())}</b></td>
             </tr>     
         }) 

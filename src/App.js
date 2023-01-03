@@ -713,7 +713,7 @@ return (
     <Route path="/autre_impot_info" element={<AutreImpotInfo username = {username} autresImpots={autresImpots} />} >
     </Route>
 
-    <Route path="/total_impot_info" element={<TotalImpotInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/total_impot_info" element={<TotalImpotInfo username = {username} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots}/>} >
     </Route>
 
     <Route path="/subvention_production_info" element={<SubventionProductionInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >

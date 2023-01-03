@@ -374,6 +374,17 @@ useEffect(() => {
   window.localStorage.setItem("autresImpots", JSON.stringify(autresImpots))
 }, [autresImpots])
 
+const [subventionProduction,setSubventionProduction] = useState(()=>
+{
+  const localData = localStorage.getItem('subventionProduction');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("subventionProduction", JSON.stringify(subventionProduction))
+}, [subventionProduction])
+
+
 
 const dataPopulation = (data)=>
 {
@@ -490,6 +501,13 @@ const dataDonneeAutresImpots = (data)=>
 {
   setAutresImpots(data)
 }
+
+const dataDonneeSubventionProduction = (data)=>
+{
+  setSubventionProduction(data)
+}
+
+
 
 
 
@@ -609,7 +627,7 @@ return (
     <Route path="/form_autre_impot" element={<FormAutreImpot username = {username} dataDonneeAutresImpots={dataDonneeAutresImpots}/>} >
     </Route>
 
-    <Route path="/form_subvention_production" element={<FormSubventionProduction username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
+    <Route path="/form_subvention_production" element={<FormSubventionProduction username = {username} dataDonneeSubventionProduction={dataDonneeSubventionProduction}/>} >
     </Route>
 
     <Route path="/form_subvention_consommation" element={<FormSubventionConsommation username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
@@ -716,7 +734,7 @@ return (
     <Route path="/total_impot_info" element={<TotalImpotInfo username = {username} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots}/>} >
     </Route>
 
-    <Route path="/subvention_production_info" element={<SubventionProductionInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/subvention_production_info" element={<SubventionProductionInfo username = {username} subventionProduction={subventionProduction} />} >
     </Route>
     
     <Route path="/subvention_consommation_info" element={<SubventionConsommationInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >

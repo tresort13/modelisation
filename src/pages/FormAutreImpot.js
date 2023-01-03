@@ -46,15 +46,15 @@ const submitManifest = (e)=>
     const uploadData = new FormData();
     uploadData.append('fichier', fichier);
 
-   fetch('https://modelisationfiscaleapi.herokuapp.com/api/recettesDGRAD/', {
+   fetch('https://modelisationfiscaleapi.herokuapp.com/api/autresImpots/', {
             method:'POST',
             body: uploadData 
           })
           .then( res => res.json())
           .then(
             res => {   
-                props.dataDonneeRecettesDgrad(res)
-                navigate('/recettes_dgrad_info')
+                props.dataDonneeAutresImpots(res)
+                navigate('/autre_impot_info')
             }
             
           )

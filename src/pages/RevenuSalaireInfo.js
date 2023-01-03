@@ -122,7 +122,7 @@ const total_salaires_urbain_agricultures = props.revenusSalaires.reduce((total,v
           <th>Total Révenus Salaires/Milieu Urbain</th>
           <th colSpan={4}>Données Révenus: Salaires/Milieu Rural</th>
           <th>Total Révenus Salaires/Milieu Urbain</th>
-          <th colSpan={4}>Révenu: Salaires par Secteur</th>
+          <th colSpan={3}>Révenu: Salaires par Secteur</th>
           <th>Total Impôts sur Salaires/Province</th>
         </tr>
       </thead>

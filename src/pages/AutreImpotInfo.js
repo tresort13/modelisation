@@ -88,7 +88,7 @@ console.log(props.autresImpots)
           <td></td>
 
         </tr>
-        {props.revenusSalaires.map((value)=>
+        {props.autresImpots.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}}>
              <td><b>{value.nom_province}</b></td>

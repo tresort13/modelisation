@@ -31,7 +31,7 @@ const [fichier,setFichier] = useState()
 const navigate = useNavigate()
 const [modalShow, setModalShow] = React.useState(false);
 const [modalShow2, setModalShow2] = React.useState(false);
-const [message,setMessage] = useState("Excédent Brut d'Exploitation");
+const [message,setMessage] = useState("Exédant Brute Exploitation Salaire");
 const [couleur,setCouleur] = useState("text-warning");
 
 
@@ -46,15 +46,15 @@ const submitManifest = (e)=>
     const uploadData = new FormData();
     uploadData.append('fichier', fichier);
 
-   fetch('https://modelisationfiscaleapi.herokuapp.com/api/recettesDGRAD/', {
+   fetch('https://modelisationfiscaleapi.herokuapp.com/api/exedantBruteExploitation/', {
             method:'POST',
             body: uploadData 
           })
           .then( res => res.json())
           .then(
             res => {   
-                props.dataDonneeRecettesDgrad(res)
-                navigate('/recettes_dgrad_info')
+                props.dataDonneeexedantBrute(res)
+                navigate('/exedant_brut_info')
             }
             
           )

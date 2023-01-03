@@ -354,6 +354,16 @@ useEffect(() => {
   window.localStorage.setItem("revenusSalaires", JSON.stringify(revenusSalaires))
 }, [revenusSalaires])
 
+const [exedantBrut,setExedantBrut] = useState(()=>
+{
+  const localData = localStorage.getItem('exedantBrut');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("exedantBrut", JSON.stringify(exedantBrut))
+}, [exedantBrut])
+
 
 const dataPopulation = (data)=>
 {
@@ -459,6 +469,11 @@ const dataDonneeRecettesPubliques = ()=>
 const dataDonneeRevenusSalaire = (data)=>
 {
   setRevenusSalaires(data)
+}
+
+const dataDonneeexedantBrute = (data)=>
+{
+  setExedantBrut(data)
 }
 
 
@@ -573,7 +588,7 @@ return (
     <Route path="/form_revenu_salaire" element={<FormRevenuSalaire username = {username} dataDonneeRevenusSalaire={dataDonneeRevenusSalaire}/>} >
     </Route>
 
-    <Route path="/form_exedant_brut" element={<FormExedantBrut username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
+    <Route path="/form_exedant_brut" element={<FormExedantBrut username = {username} dataDonneeexedantBrute={dataDonneeexedantBrute}/>} >
     </Route>
 
     <Route path="/form_autre_impot" element={<FormAutreImpot username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
@@ -677,7 +692,7 @@ return (
     <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} revenusSalaires={revenusSalaires}/>} >
     </Route>
 
-    <Route path="/exedant_brut_info" element={<ExedantBrutInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/exedant_brut_info" element={<ExedantBrutInfo username = {username} exedantBrut={exedantBrut}/>} >
     </Route>
 
     <Route path="/autre_impot_info" element={<AutreImpotInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >

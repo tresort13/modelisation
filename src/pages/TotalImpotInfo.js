@@ -187,7 +187,7 @@ props.revenusSalaires.map(value=>
         <td><b>{new Intl.NumberFormat().format(Number(value.impot_service).toFixed())}</b></td>
         <td><b>{new Intl.NumberFormat().format(Number(value2.autre_impot_urbain).toFixed())}</b></td>
 
-        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number((Number(value.impot_agriculture) + Number(value.impot_industrie_extractive) + Number(value.impot_industrie_manufacture)) + (Number(value.impot_service) + Number(value2.autre_impot_urbain))).toFixed())}</b></td>
+        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.impot_agriculture) + Number(value.impot_industrie_extractive) + Number(value.impot_industrie_manufacture) + Number(value.impot_service) + Number(value2.autre_impot_urbain)).toFixed())}</b></td>
     
         <td><b>{new Intl.NumberFormat().format(Number(value.impot_agriculture_rural).toFixed())}</b></td>
         <td><b>{new Intl.NumberFormat().format(Number(value.impot_industrie_extractive_rural).toFixed())}</b></td>
@@ -195,8 +195,9 @@ props.revenusSalaires.map(value=>
         <td><b>{new Intl.NumberFormat().format(Number(value.impot_service_rural).toFixed())}</b></td>
         <td><b>{new Intl.NumberFormat().format(Number(value2.autre_impot_rural).toFixed())}</b></td>
        
-        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number((Number(value.impot_agriculture_rural) + Number(value.impot_industrie_extractive_rural) + Number(value.impot_industrie_manufacture_rural)) + (Number(value.impot_service_rural) + Number(value2.autre_impot_urbain_rural))).toFixed())}</b></td>
+        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.impot_agriculture_rural) + Number(value.impot_industrie_extractive_rural) + Number(value.impot_industrie_manufacture_rural) + Number(value.impot_service_rural) + Number(value2.autre_impot_urbain_rural)).toFixed())}</b></td>
        
+        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.impot_agriculture) + Number(value.impot_industrie_extractive) + Number(value.impot_industrie_manufacture) + Number(value.impot_service) + Number(value2.autre_impot_urbain) + Number(value.impot_agriculture_rural) + Number(value.impot_industrie_extractive_rural) + Number(value.impot_industrie_manufacture_rural) + Number(value.impot_service_rural) + Number(value2.autre_impot_urbain_rural)).toFixed())}</b></td>
        </tr>     
       })
       })

@@ -44,21 +44,21 @@ props.revenusSalaires.map(value=>
      
     console.log(donneeRevenuSalaireExedantBrut)
 
-    const total_impot_agriculture_urbain = props.donneeRevenuSalaireExedantBrut.reduce((total,value)=>
+    const total_impot_agriculture_urbain = donneeRevenuSalaireExedantBrut.reduce((total,value)=>
         {
 
           total = total + Number(value.impot_agriculture)
           return total
         },0)
         
-        const total_impot_industrie_extractive_urbain = props.donneeRevenuSalaireExedantBrut.reduce((total,value)=>
+        const total_impot_industrie_extractive_urbain = donneeRevenuSalaireExedantBrut.reduce((total,value)=>
         {
 
           total = total + Number(value.impot_industrie_extractive)
           return total
         },0)
         
-        const total_impot_industrie_manufacture_urbain = props.donneeRevenuSalaireExedantBrut.reduce((total,value)=>
+        const total_impot_industrie_manufacture_urbain = donneeRevenuSalaireExedantBrut.reduce((total,value)=>
         {
 
           total = total + Number(value.impot_industrie_manufacture)
@@ -67,7 +67,7 @@ props.revenusSalaires.map(value=>
 
        
 
-        const total_impot_service_salaire_urbain = props.donneeRevenuSalaireExedantBrut.reduce((total,value)=>
+        const total_impot_service_salaire_urbain = donneeRevenuSalaireExedantBrut.reduce((total,value)=>
         {
 
           total = total + Number(value.impot_service)
@@ -76,21 +76,21 @@ props.revenusSalaires.map(value=>
 
 
 
-        const total_impot_agriculture_rural = props.donneeRevenuSalaireExedantBrut.reduce((total,value)=>
+        const total_impot_agriculture_rural = donneeRevenuSalaireExedantBrut.reduce((total,value)=>
         {
 
           total = total + Number(value.impot_agriculture_rural)
           return total
         },0)
         
-        const total_impot_industrie_extractive_rural = props.donneeRevenuSalaireExedantBrut.reduce((total,value)=>
+        const total_impot_industrie_extractive_rural = donneeRevenuSalaireExedantBrut.reduce((total,value)=>
         {
 
           total = total + Number(value.impot_industrie_extractive_rural)
           return total
         },0)
         
-        const total_impot_industrie_manufacture_rural = props.donneeRevenuSalaireExedantBrut.reduce((total,value)=>
+        const total_impot_industrie_manufacture_rural = donneeRevenuSalaireExedantBrut.reduce((total,value)=>
         {
 
           total = total + Number(value.impot_industrie_manufacture_rural)
@@ -99,7 +99,7 @@ props.revenusSalaires.map(value=>
 
        
 
-        const total_impot_service_salaire_rural = props.donneeRevenuSalaireExedantBrut.reduce((total,value)=>
+        const total_impot_service_salaire_rural = donneeRevenuSalaireExedantBrut.reduce((total,value)=>
         {
 
           total = total + Number(value.impot_service_rural)
@@ -173,7 +173,7 @@ props.revenusSalaires.map(value=>
           <td></td>
 
         </tr>
-        {props.donneeRevenuSalaireExedantBrut.map((value)=>
+        {donneeRevenuSalaireExedantBrut.map((value)=>
     {
       return  props.autresImpots.map((value2)=>
       {

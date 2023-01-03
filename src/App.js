@@ -344,6 +344,17 @@ useEffect(() => {
 }, [recettesPubliques])
 
 
+const [revenusSalaires,setRevenusSalaires] = useState(()=>
+{
+  const localData = localStorage.getItem('revenusSalaires');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("revenusSalaires", JSON.stringify(revenusSalaires))
+}, [revenusSalaires])
+
+
 const dataPopulation = (data)=>
 {
   setPopulationInfo(data)
@@ -443,6 +454,11 @@ const dataDonneeRecettesDgrad = (data)=>
 const dataDonneeRecettesPubliques = ()=>
 {
   setRecettesPubliques([...recettesPubliquesDGI,...recettesPubliquesDGDA,...recettesPubliquesDGRAD])
+}
+
+const dataDonneeRevenusSalaire = (data)=>
+{
+  setRevenusSalaires(data)
 }
 
 
@@ -554,7 +570,7 @@ return (
     <Route path="/form_recettes_dgrad" element={<FormDGRAD username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
     </Route>
 
-    <Route path="/form_revenu_salaire" element={<FormRevenuSalaire username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
+    <Route path="/form_revenu_salaire" element={<FormRevenuSalaire username = {username} dataDonneeRevenusSalaire={dataDonneeRevenusSalaire}/>} >
     </Route>
 
     <Route path="/form_exedant_brut" element={<FormExedantBrut username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
@@ -655,10 +671,10 @@ return (
     <Route path="/recettes_dgrad_info" element={<RecettesDGRADInfo username = {username} recettesDGRAD={recettesDGRAD}  impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} setRecettesPubliquesDGRAD={setRecettesPubliquesDGRAD}/>} >
     </Route>
 
-    <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} revenusSalaires={revenusSalaires}/>} >
     </Route>
 
-    <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} revenusSalaires={revenusSalaires}/>} >
     </Route>
 
     <Route path="/exedant_brut_info" element={<ExedantBrutInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >

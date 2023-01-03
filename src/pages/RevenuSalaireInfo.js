@@ -28,50 +28,75 @@ function RevenuSalaireInfo(props)
         {
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
-console.log(props.recettesDGDA)
-let impotDGDA = [{}]
-let dataDGDA =[{recettes_publiques : 'DGDA'}]
+console.log(props.revenusSalaires)
+const total_salaires_urbain_agricultures = props.revenusSalaires.reduce((total,value)=>
+        {
 
-const recette_expo_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGDA[0].annee_fiscale_2021) / Number(props.infoExpoImpo[0].annee_fiscale_2021)).toFixed(2)
+          total = total + Number(value.salaires_urbain_agricultures)
+          return total
+        },0)
+        
+        const total_salaire_urbain_insdustries_extractives = props.revenusSalaires.reduce((total,value)=>
+        {
 
-const recette_expo_annee_fiscale_2022_temp2 = Number(Number(props.recettesDGDA[0].annee_fiscale_2020) / Number(props.infoExpoImpo[0].annee_fiscale_2020)).toFixed(2)
+          total = total + Number(value.salaire_urbain_insdustries_extractives)
+          return total
+        },0)
+        
+        const total_salaires_urbain_industries_manufactures = props.revenusSalaires.reduce((total,value)=>
+        {
 
-const recette_expo_annee_fiscale_2022_temp3 = Number(Number(props.recettesDGDA[0].annee_fiscale_2019) / Number(props.infoExpoImpo[0].annee_fiscale_2019)).toFixed(2)
+          total = total + Number(value.salaires_urbain_industries_manufactures)
+          return total
+        },0)
 
-const recette_expo_fiscale_2022_average = Number((Number(recette_expo_annee_fiscale_2022_temp1) + Number(recette_expo_annee_fiscale_2022_temp2) + Number(recette_expo_annee_fiscale_2022_temp3)) / 3).toFixed(2)
+        const total_salaires_urbain_services = props.revenusSalaires.reduce((total,value)=>
+        {
 
-const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed(2)
+          total = total + Number(value.salaires_urbain_services)
+          return total
+        },0)
 
-const recettes_expo_annee_fiscale_2022 = Number((Number(pib_annee_fiscale_2022) *  Number(props.tauxExportation).toFixed(2)) * Number(recette_expo_fiscale_2022_average).toFixed(2)).toFixed(2)
+        const total_salaires_rural_agricultures = props.revenusSalaires.reduce((total,value)=>
+        {
 
-const recette_impo_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGDA[1].annee_fiscale_2021) / Number(props.infoExpoImpo[1].annee_fiscale_2021)).toFixed(2)
-const recette_impo_annee_fiscale_2022_temp2 = Number(Number(props.recettesDGDA[1].annee_fiscale_2020) / Number(props.infoExpoImpo[1].annee_fiscale_2020)).toFixed(2)
-const recette_impo_annee_fiscale_2022_temp3 = Number(Number(props.recettesDGDA[1].annee_fiscale_2019) / Number(props.infoExpoImpo[1].annee_fiscale_2019)).toFixed(2)
-const recette_impo_fiscale_2022_average = Number((Number(recette_impo_annee_fiscale_2022_temp1) + Number(recette_impo_annee_fiscale_2022_temp2) + Number(recette_impo_annee_fiscale_2022_temp3)) / 3).toFixed(2)
+          total = total + Number(value.salaires_rural_agricultures)
+          return total
+        },0)
 
-const recettes_impo_annee_fiscale_2022 = Number((Number(pib_annee_fiscale_2022) *  Number(props.tauxImportation).toFixed(2)) * Number(recette_impo_fiscale_2022_average).toFixed(2)).toFixed(2)
+        const total_salaire_rural_insdustries_extractives = props.revenusSalaires.reduce((total,value)=>
+        {
+
+          total = total + Number(value.salaire_rural_insdustries_extractives)
+          return total
+        },0)
+
+        const total_salaires_rural_industries_manufactures = props.revenusSalaires.reduce((total,value)=>
+        {
+
+          total = total + Number(value.salaires_rural_industries_manufactures)
+          return total
+        },0)
+
+        const total_salaires_rural_services = props.revenusSalaires.reduce((total,value)=>
+        {
+
+          total = total + Number(value.salaires_rural_services)
+          return total
+        },0)
 
 
-impotDGDA = [...props.recettesDGDA]
-impotDGDA[0].annee_fiscale_2022 = Number(recettes_expo_annee_fiscale_2022).toFixed(2)
-impotDGDA[1].annee_fiscale_2022 = Number(recettes_impo_annee_fiscale_2022).toFixed(2)
+        const total_milieu_urbain = Number(total_salaires_urbain_agricultures) + Number(total_salaire_urbain_insdustries_extractives) + Number(total_salaires_urbain_industries_manufactures) + Number(total_salaires_urbain_services)
 
-//impotDGI[0].annee_fiscale_2022=ca_annee_fiscale_2022_final
-const total_fiscale_2018 = impotDGDA[0].annee_fiscale_2018 + impotDGDA[1].annee_fiscale_2018 
+        const total_milieu_rural = Number(total_salaires_rural_agricultures) + Number(total_salaire_rural_insdustries_extractives) + Number(total_salaires_rural_industries_manufactures) + Number(total_salaires_rural_services)
 
-const total_fiscale_2019 = impotDGDA[0].annee_fiscale_2019 + impotDGDA[1].annee_fiscale_2019 
+        const total_secteur_primaire = Number(total_salaires_urbain_agricultures) + Number(total_salaire_urbain_insdustries_extractives) + Number(total_salaires_rural_agricultures) + Number(total_salaire_rural_insdustries_extractives)
 
-const total_fiscale_2020 = impotDGDA[0].annee_fiscale_2020 + impotDGDA[1].annee_fiscale_2020 
+        const total_secteur_secondaire =  Number(total_salaires_urbain_industries_manufactures) + Number(total_salaires_rural_industries_manufactures)
 
-const total_fiscale_2021 = impotDGDA[0].annee_fiscale_2021 + impotDGDA[1].annee_fiscale_2021
-
-const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022) + Number(impotDGDA[1].annee_fiscale_2022)
-
-dataDGDA[0].annee_fiscale_2022 = total_fiscale_2022
-
-props.setRecettesPubliquesDGDA(dataDGDA)
-
+        const total_secteur_tertiaire = Number(total_salaires_urbain_services) + Number(total_salaires_rural_services) 
   
+        const total_impot_salaire = Number(total_secteur_primaire) + Number(total_secteur_secondaire) + Number(total_secteur_tertiaire) 
     return (
         <>
             <Header username={props.username}/>
@@ -85,42 +110,90 @@ props.setRecettesPubliquesDGDA(dataDGDA)
 <Row className='justify-content-center '>
         <Col xs = {12} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Table Recettes DGDA</i></b></u></h6>
+        <h6 ><u><b><i className='text-primary'>Table Révenus Salaires</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">
       <thead>
-        <tr className='text-primary' style={{border:"2px solid white"}}>
-          <th>Recettes DGDA</th>
-          <th>Année Fiscale 2018</th>
-          <th>Année Fiscale 2019</th>
-          <th>Année Fiscale 2020</th>
-          <th>Année Fiscale 2021</th>
-          <th>Année Fiscale 2022</th>
+      <tr className='text-primary' style={{border:"2px solid white"}}>
+           <th>Province</th>
+          <th>Nature : Révenus Salaires</th>
+          <th colSpan={4}>Données Révenus: Salaires/Milieu Urbain</th>
+          <th>Total Révenus Salaires/Milieu Urbain</th>
+          <th colSpan={4}>Données Révenus: Salaires/Milieu Rural</th>
+          <th>Total Révenus Salaires/Milieu Urbain</th>
+          <th colSpan={4}>Révenu: Salaires par Secteur</th>
+          <th>Total Impôts sur Salaires/Province</th>
         </tr>
       </thead>
       <tbody>
-        {impotDGDA.map((value)=>
+        <tr style={{border:"2px solid white"}}>
+          <td></td>
+          <td></td>
+          <td><b className='text-primary'>Salaires/Agriculture</b></td>
+          <td><b className='text-primary'>Salaires/Industrie Extratives</b></td>
+          <td><b className='text-primary'>Salaires/Industrie Manufacturières</b></td>
+          <td><b className='text-primary'>Salaires Services</b></td>
+          <td></td>
+          <td><b className='text-primary'>Salaires/Agriculture</b></td>
+          <td><b className='text-primary'>Salaires/Industrie Extratives</b></td>
+          <td><b className='text-primary'>Salaires/Industrie Manufacturières</b></td>
+          <td><b className='text-primary'>Salaires Services</b></td>
+          <td></td>
+          <td><b className='text-primary'>Primaire</b></td>
+          <td><b className='text-primary'>Secondaire</b></td>
+          <td><b className='text-primary'>Tertiare</b></td>
+          <td></td>
+
+        </tr>
+        {props.revenusSalaires.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}}>
-             <td><i ><b>{value.recettes_dgda}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed(2)) }</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed(2))}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed(2))}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2021).toFixed(2))}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2022).toFixed(2))}</b></i></td>
+             <td><b>{value.nom_province}</b></td>
+             <td><b>Salaires sur Révenus</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.salaires_urbain_agricultures).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.salaire_urbain_insdustries_extractives).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.salaires_urbain_industries_manufactures).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.salaires_urbain_services).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_agricultures) + Number(value.salaire_urbain_insdustries_extractives) + Number(value.salaires_urbain_industries_manufactures) + Number(value.salaires_urbain_services)).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.salaires_rural_agricultures).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.salaire_rural_insdustries_extractives).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.salaires_rural_industries_manufactures).toFixed())}</b></td>
+             <td><b>{new Intl.NumberFormat().format(Number(value.salaires_rural_services).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_rural_agricultures)+ Number(value.salaire_rural_insdustries_extractives)+ Number(value.salaires_rural_industries_manufactures)+ Number(value.salaires_rural_services)).toFixed())}</b></td>
+           
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_agricultures)+ Number(value.salaire_urbain_insdustries_extractives) + Number(value.salaires_rural_agricultures)+ Number(value.salaire_rural_insdustries_extractives)).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_industries_manufactures)+ Number(value.salaires_rural_agricultures) ).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_rural_services)+ Number(value.salaires_rural_services) ).toFixed())}</b></td>
+             
+
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_agricultures)+ Number(value.salaire_urbain_insdustries_extractives) + Number(value.salaires_rural_agricultures)+ Number(value.salaire_rural_insdustries_extractives) + Number(value.salaires_urbain_industries_manufactures)+ Number(value.salaires_rural_agricultures) + Number(value.salaires_rural_services)+ Number(value.salaires_rural_services)).toFixed())}</b></td>
+
             </tr>     
         }) 
         }
-       <tr style={{border:"2px solid white"}}>
-         <td><i><b>TOTAL</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2018).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2019).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2020).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2021).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2022).toFixed(2))}</b></i></td>
-       </tr>
-         
+
+<tr style={{border:"2px solid white"}}>
+          <td><b>Total</b></td>
+          <td><b></b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_urbain_agricultures).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaire_urbain_insdustries_extractives).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_urbain_industries_manufactures).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_urbain_services).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_milieu_urbain).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_rural_agricultures).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaire_rural_insdustries_extractives).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_rural_industries_manufactures).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_urbain_services).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_milieu_rural).toFixed())}</b></td>
+
+
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_primaire).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_secondaire).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_secteur_tertiaire).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_impot_salaire).toFixed())}</b></td>
+        </tr> 
+        
       </tbody>
     </Table>
         </div>

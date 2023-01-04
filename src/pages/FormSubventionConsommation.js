@@ -17,7 +17,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 const useState = React.useState
 
-function FormSubventionConsommation(props)
+function FormSubventionProduction(props)
 {
 
 const isDesktop = useMediaQuery({
@@ -46,15 +46,15 @@ const submitManifest = (e)=>
     const uploadData = new FormData();
     uploadData.append('fichier', fichier);
 
-   fetch('https://modelisationfiscaleapi.herokuapp.com/api/recettesDGRAD/', {
+   fetch('https://modelisationfiscaleapi.herokuapp.com/api/subventionConsommation/', {
             method:'POST',
             body: uploadData 
           })
           .then( res => res.json())
           .then(
             res => {   
-                props.dataDonneeRecettesDgrad(res)
-                navigate('/recettes_dgrad_info')
+                props.dataDonneeSubventionConsommation(res)
+                navigate('/subvention_consommation_info')
             }
             
           )
@@ -169,4 +169,4 @@ function MyVerticallyCenteredModal(props) {
   }
   
 
-export default FormSubventionConsommation;
+export default FormSubventionProduction;

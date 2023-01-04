@@ -384,6 +384,16 @@ useEffect(() => {
   window.localStorage.setItem("subventionProduction", JSON.stringify(subventionProduction))
 }, [subventionProduction])
 
+const [subventionConsommation,setSubventionConsommation] = useState(()=>
+{
+  const localData = localStorage.getItem('subventionConsommation');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("subventionConsommation", JSON.stringify(subventionConsommation))
+}, [subventionConsommation])
+
 
 
 const dataPopulation = (data)=>
@@ -507,6 +517,10 @@ const dataDonneeSubventionProduction = (data)=>
   setSubventionProduction(data)
 }
 
+const dataDonneeSubventionConsommation = (data)=>
+{
+  setSubventionConsommation(data)
+}
 
 
 
@@ -630,7 +644,7 @@ return (
     <Route path="/form_subvention_production" element={<FormSubventionProduction username = {username} dataDonneeSubventionProduction={dataDonneeSubventionProduction}/>} >
     </Route>
 
-    <Route path="/form_subvention_consommation" element={<FormSubventionConsommation username = {username} dataDonneeRecettesDgrad={dataDonneeRecettesDgrad}/>} >
+    <Route path="/form_subvention_consommation" element={<FormSubventionConsommation username = {username} dataDonneeSubventionConsommation={dataDonneeSubventionConsommation}/>} >
     </Route>
 
     
@@ -737,7 +751,7 @@ return (
     <Route path="/subvention_production_info" element={<SubventionProductionInfo username = {username} subventionProduction={subventionProduction} />} >
     </Route>
     
-    <Route path="/subvention_consommation_info" element={<SubventionConsommationInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
+    <Route path="/subvention_consommation_info" element={<SubventionConsommationInfo username = {username} subventionConsommation={subventionConsommation} />} >
     </Route>
 
     <Route path="/total_subvention_info" element={<TotalSubventionInfo username = {username} recettesPubliques={recettesPubliques} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >

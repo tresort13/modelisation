@@ -29,7 +29,7 @@ function TotalSubventionInfo(props)
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
 console.log(props.subventionProduction)
-console.log(props.subventionProduction)
+console.log(props.subventionConsommation)
 const total_salaires_urbain_agricultures = props.subventionProduction.reduce((total,value)=>
         {
 
@@ -159,7 +159,7 @@ const total_salaires_urbain_agricultures = props.subventionProduction.reduce((to
         {props.subventionProduction.map((value)=>
         {
           return  props.subventionConsommation.map((value2)=>{
-            if(value.nom_province==value2.nom_province)
+            if((value.nom_province==value2.nom_province))
             <tr style={{border:"2px solid white"}}>
              <td><b>{value.nom_province}</b></td>
              <td><b>Total Subventions</b></td>

@@ -78,16 +78,7 @@ console.log(props.subventionConsommation)
         </tr>
       </thead>
       <tbody>
-        <tr style={{border:"2px solid white"}}>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-
-        </tr>
+       
         {props.subventionConsommation.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}}>

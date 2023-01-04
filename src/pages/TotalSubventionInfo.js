@@ -29,6 +29,7 @@ function TotalSubventionInfo(props)
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
 console.log(props.subventionProduction)
+console.log(props.subventionProduction)
 const total_salaires_urbain_agricultures = props.subventionProduction.reduce((total,value)=>
         {
 
@@ -105,7 +106,7 @@ const total_salaires_urbain_agricultures = props.subventionProduction.reduce((to
         const total_milieu_urbain = Number(total_salaires_urbain_agricultures) + Number(total_salaire_urbain_insdustries_extractives) + Number(total_salaires_urbain_industries_manufactures) + Number(total_salaires_urbain_services) + Number(total_subventionConsommation_urbain)
 
         const total_milieu_rural = Number(total_salaires_rural_agricultures) + Number(total_salaire_rural_insdustries_extractives) + Number(total_salaires_rural_industries_manufactures) + Number(total_salaires_rural_services) + Number(total_subventionConsommation_rural)
-        
+
         const total_impot_salaire = Number(total_milieu_urbain) + Number(total_milieu_rural)
 
     return (
@@ -128,13 +129,12 @@ const total_salaires_urbain_agricultures = props.subventionProduction.reduce((to
       <thead>
       <tr className='text-primary' style={{border:"2px solid white"}}>
            <th>Province</th>
-          <th>Nature : Subventions</th>
-          <th colSpan={4}>Données Subventions à la Production/Milieu Urbain</th>
+          <th>Nature : Total Subventions</th>
+          <th colSpan={5}>Total Subventions/Milieu Urbain</th>
           <th>Total Subventions/Milieu Urbain</th>
-          <th colSpan={4}>Données Subventions à la Production/Milieu Rural</th>
-          <th>Total Subventions à la Production/Milieu Rural</th>
-          <th colSpan={3}>Total Subventions à la Production par Secteur</th>
-          <th>Total Subventions Production/Province</th>
+          <th colSpan={5}>Total Subventions/Milieu Rural</th>
+          <th>Total Subventions/Milieu Rural</th>
+          <th>Total Subventions/Province</th>
         </tr>
       </thead>
       <tbody>
@@ -145,15 +145,14 @@ const total_salaires_urbain_agricultures = props.subventionProduction.reduce((to
           <td><b className='text-primary'>EBE/Industries Extractives</b></td>
           <td><b className='text-primary'>EBE/Industries Manufacturières</b></td>
           <td><b className='text-primary'>Salaires/Services</b></td>
+          <td><b className='text-primary'>Subvention à la consommation</b></td>
           <td></td>
           <td><b className='text-primary'>EBE Agriculture</b></td>
           <td><b className='text-primary'>EBE/Industries Extractives</b></td>
           <td><b className='text-primary'>EBE/Industries Manufacturières</b></td>
           <td><b className='text-primary'>Salaires/Services</b></td>
+          <td><b className='text-primary'>Subvention à la consommation</b></td>
           <td></td>
-          <td><b className='text-primary'>Primaire</b></td>
-          <td><b className='text-primary'>Secondaire</b></td>
-          <td><b className='text-primary'>Tertiare</b></td>
           <td></td>
 
         </tr>

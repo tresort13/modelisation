@@ -8,10 +8,13 @@ import Image from 'react-bootstrap/Image';
 import  './Login.css';
 import './PageInfo.css';
 import {Link} from  'react-router-dom';
+import { useEffect,useState } from 'react';
 import Header from './Header';
 import { useMediaQuery } from 'react-responsive';
 import Footer from './Footer';
 import Table from 'react-bootstrap/Table';
+
+
 
 
 
@@ -28,99 +31,116 @@ function RevenuProvinceInfo(props)
         {
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
-console.log(props.recettesDGDA)
-let impotDGDA = [{}]
-let dataDGDA =[{recettes_publiques : 'DGDA'}]
+const donneeRevenuSalaireExedantBrut = []
+const donneeTotalImpots = []
+const donneeTotalSubvention = []
+const donneeTotalProvince = []
 
-const recette_expo_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGDA[0].annee_fiscale_2021) / Number(props.infoExpoImpo[0].annee_fiscale_2021)).toFixed(2)
+props.revenusSalaires.map(value=>
+  {
+      return props.exedantBrut.map(value2=>
+          {
+              if(value.nom_province == value2.nom_province)
+              return donneeRevenuSalaireExedantBrut.push({"nom_province":value.nom_province,"impot_agriculture":Number(value.salaires_urbain_agricultures) + Number(value2.salaires_urbain_agricultures) ,"impot_industrie_extractive":Number(value.salaire_urbain_insdustries_extractives) + Number(value2.salaire_urbain_insdustries_extractives),"impot_industrie_manufacture":Number(value.salaires_urbain_industries_manufactures) + Number(value2.salaires_urbain_industries_manufactures),"impot_service":Number(value.salaires_urbain_services) + Number(value2.salaires_urbain_services),  "impot_agriculture_rural":Number(value.salaires_rural_agricultures) + Number(value2.salaires_rural_agricultures) ,"impot_industrie_extractive_rural":Number(value.salaire_rural_insdustries_extractives) + Number(value2.salaire_rural_insdustries_extractives),"impot_industrie_manufacture_rural":Number(value.salaires_rural_industries_manufactures) + Number(value2.salaires_rural_industries_manufactures),"impot_service_rural":Number(value.salaires_rural_services) + Number(value2.salaires_rural_services)})
+          })
+  })
+     
+donneeRevenuSalaireExedantBrut.map(value=>
+      {
+          return props.autresImpots.map(value2=>
+              {
+                  if(value.nom_province == value2.nom_province)
+                  return donneeTotalImpots.push({"nom_province":value.nom_province,"total_impot_milieu_urbain":Number(value.impot_agriculture) + Number(value.impot_industrie_extractive) + Number(value.impot_industrie_manufacture) + Number(value.impot_service) + Number(value2.autre_impot_urbain),"total_impot_milieu_rural":Number(value.impot_agriculture_rural) + Number(value.impot_industrie_extractive_rural) + Number(value.impot_industrie_manufacture_rural) + Number(value.impot_service_rural) + Number(value2.autre_impot_rural)})
+              })
+      })
 
-const recette_expo_annee_fiscale_2022_temp2 = Number(Number(props.recettesDGDA[0].annee_fiscale_2020) / Number(props.infoExpoImpo[0].annee_fiscale_2020)).toFixed(2)
+      props.subventionProduction.map(value=>
+        {
+            return props.subventionConsommation.map(value2=>
+                {
+                    if(value.nom_province == value2.nom_province)
+                    return donneeTotalSubvention.push({"nom_province":value.nom_province,"total_subvention_milieu_urbain":Number(value.salaires_urbain_agricultures) + Number(value.salaire_urbain_insdustries_extractives) + Number(value.salaires_urbain_industries_manufactures) + Number(value.salaires_urbain_services) + Number(value2.autre_impot_urbain),"total_subvention_milieu_rural":Number(value.salaires_rural_agricultures) + Number(value.salaire_rural_insdustries_extractives) + Number(value.salaires_rural_industries_manufactures) + Number(value.salaires_rural_services) + Number(value2.autre_impot_rural)})
+                })
+        })
 
-const recette_expo_annee_fiscale_2022_temp3 = Number(Number(props.recettesDGDA[0].annee_fiscale_2019) / Number(props.infoExpoImpo[0].annee_fiscale_2019)).toFixed(2)
+        donneeTotalImpots.map(value=>
+          {
+              return props.donneeTotalSubvention.map(value2=>
+                  {
+                      if(value.nom_province == value2.nom_province)
+                      return donneeTotalProvince.push({"nom_province":value.nom_province,"total_provinve_milieu_urbain":Number(value.total_impot_milieu_urbain) - Number(value2.total_subvention_milieu_urbain) ,"total_province_milieu_rural":Number(value.total_impot_milieu_rural) - Number(value2.total_subvention_milieu_rural) })
+                  })
+          })
 
-const recette_expo_fiscale_2022_average = Number((Number(recette_expo_annee_fiscale_2022_temp1) + Number(recette_expo_annee_fiscale_2022_temp2) + Number(recette_expo_annee_fiscale_2022_temp3)) / 3).toFixed(2)
+      const totalGeneral_province_milieu_urbain = donneeTotalProvince.reduce((total,value)=>
+      {
 
-const pib_annee_fiscale_2022= Number(Number((props.impotDgiInfo[2].annee_fiscale_2021) * (1 + Number(props.impotPourcentageCroissance)))).toFixed(2)
+        total = total + Number(value.total_provinve_milieu_urbain)
+        return total
+      },0)
 
-const recettes_expo_annee_fiscale_2022 = Number((Number(pib_annee_fiscale_2022) *  Number(props.tauxExportation).toFixed(2)) * Number(recette_expo_fiscale_2022_average).toFixed(2)).toFixed(2)
+      const totalGeneral_province_milieu_rural = donneeTotalProvince.reduce((total,value)=>
+      {
 
-const recette_impo_annee_fiscale_2022_temp1 = Number( Number(props.recettesDGDA[1].annee_fiscale_2021) / Number(props.infoExpoImpo[1].annee_fiscale_2021)).toFixed(2)
-const recette_impo_annee_fiscale_2022_temp2 = Number(Number(props.recettesDGDA[1].annee_fiscale_2020) / Number(props.infoExpoImpo[1].annee_fiscale_2020)).toFixed(2)
-const recette_impo_annee_fiscale_2022_temp3 = Number(Number(props.recettesDGDA[1].annee_fiscale_2019) / Number(props.infoExpoImpo[1].annee_fiscale_2019)).toFixed(2)
-const recette_impo_fiscale_2022_average = Number((Number(recette_impo_annee_fiscale_2022_temp1) + Number(recette_impo_annee_fiscale_2022_temp2) + Number(recette_impo_annee_fiscale_2022_temp3)) / 3).toFixed(2)
+        total = total + Number(value.total_provinve_milieu_rural)
+        return total
+      },0)
 
-const recettes_impo_annee_fiscale_2022 = Number((Number(pib_annee_fiscale_2022) *  Number(props.tauxImportation).toFixed(2)) * Number(recette_impo_fiscale_2022_average).toFixed(2)).toFixed(2)
-
-
-impotDGDA = [...props.recettesDGDA]
-impotDGDA[0].annee_fiscale_2022 = Number(recettes_expo_annee_fiscale_2022).toFixed(2)
-impotDGDA[1].annee_fiscale_2022 = Number(recettes_impo_annee_fiscale_2022).toFixed(2)
-
-//impotDGI[0].annee_fiscale_2022=ca_annee_fiscale_2022_final
-const total_fiscale_2018 = impotDGDA[0].annee_fiscale_2018 + impotDGDA[1].annee_fiscale_2018 
-
-const total_fiscale_2019 = impotDGDA[0].annee_fiscale_2019 + impotDGDA[1].annee_fiscale_2019 
-
-const total_fiscale_2020 = impotDGDA[0].annee_fiscale_2020 + impotDGDA[1].annee_fiscale_2020 
-
-const total_fiscale_2021 = impotDGDA[0].annee_fiscale_2021 + impotDGDA[1].annee_fiscale_2021
-
-const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022) + Number(impotDGDA[1].annee_fiscale_2022)
-
-dataDGDA[0].annee_fiscale_2022 = total_fiscale_2022
-
-props.setRecettesPubliquesDGDA(dataDGDA)
-
+      const total_province = Number(totalGeneral_province_milieu_urbain) + Number(totalGeneral_province_milieu_rural)
+   
+      console.log(donneeRevenuSalaireExedantBrut)
+      console.log(donneeTotalImpots)
+      console.log(donneeTotalSubvention)
+      console.log(donneeTotalProvince)
   
     return (
         <>
             <Header username={props.username}/>
             <div>
-{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20}} >
-
+{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20,width:2600}} >
 
 
     
 <div>
 <Row className='justify-content-center '>
-        <Col xs = {12} className='text-center borders pt-2'>
+        <Col xs = {"auto"} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Table Recettes DGDA</i></b></u></h6>
+        <h6 ><u><b><i className='text-primary'>Table de la démande intérieure</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">
       <thead>
-        <tr className='text-primary' style={{border:"2px solid white"}}>
-          <th>Recettes DGDA</th>
-          <th>Année Fiscale 2018</th>
-          <th>Année Fiscale 2019</th>
-          <th>Année Fiscale 2020</th>
-          <th>Année Fiscale 2021</th>
-          <th>Année Fiscale 2022</th>
+      <tr className='text-primary' style={{border:"2px solid white"}}>
+           <th>Province</th>
+          <th>Nature : Revenu Provincial</th>
+          <th>Revenu Provincial/Milieu Urbain</th>
+          <th>Revenu Provincial/Milieu Rural</th>
+          <th>Total Revenu Provincial</th>
         </tr>
       </thead>
       <tbody>
-        {impotDGDA.map((value)=>
-        {
-          return  <tr style={{border:"2px solid white"}}>
-             <td><i ><b>{value.recettes_dgda}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2018).toFixed(2)) }</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2019).toFixed(2))}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2020).toFixed(2))}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2021).toFixed(2))}</b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(value.annee_fiscale_2022).toFixed(2))}</b></i></td>
-            </tr>     
-        }) 
-        }
-       <tr style={{border:"2px solid white"}}>
-         <td><i><b>TOTAL</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2018).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2019).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2020).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2021).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_fiscale_2022).toFixed(2))}</b></i></td>
-       </tr>
-         
+     {donneeTotalProvince.map((value)=>
+    {
+      return <tr style={{border:"2px solid white"}}>
+        <td><i ><b>{value.nom_province}</b></i></td>
+        <td><i><b>Revenu Provincial</b></i></td>
+        <td><b>{new Intl.NumberFormat().format(Number(value.total_provinve_milieu_urbain).toFixed())}</b></td>
+        <td><b>{new Intl.NumberFormat().format(Number(value.total_provinve_milieu_rural).toFixed())}</b></td>
+        
+        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.total_provinve_milieu_urbain) + Number(value.total_provinve_milieu_rural)).toFixed())}</b></td>
+       </tr>     
+      })
+    }
+
+<tr style={{border:"2px solid white"}}>
+          <td><b>Total</b></td>
+          <td><b></b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(totalGeneral_province_milieu_urbain).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(totalGeneral_province_milieu_rural).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_province).toFixed())}</b></td>
+          
+        </tr> 
+        
       </tbody>
     </Table>
         </div>

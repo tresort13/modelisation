@@ -160,7 +160,7 @@ const total_salaires_urbain_agricultures = props.subventionProduction.reduce((to
         {
           return  props.subventionConsommation.map((value2)=>{
             if((value.nom_province==value2.nom_province))
-            <tr style={{border:"2px solid white"}}>
+            return <tr style={{border:"2px solid white"}}>
              <td><b>{value.nom_province}</b></td>
              <td><b>Total Subventions</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.salaires_urbain_agricultures).toFixed())}</b></td>

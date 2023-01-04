@@ -146,7 +146,7 @@ const total_salaires_urbain_agricultures = props.subventionProduction.reduce((to
           <td></td>
 
         </tr>
-        {props.revenusSalaires.map((value)=>
+        {props.subventionProduction.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}}>
              <td><b>{value.nom_province}</b></td>

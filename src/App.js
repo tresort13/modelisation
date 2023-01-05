@@ -85,6 +85,7 @@ import AutreImpotInfo from "./pages/AutreImpotInfo";
 import ExedantBrutInfo from "./pages/ExedantBrutInfo";
 import RevenuSalaireInfo from "./pages/RevenuSalaireInfo";
 import RevenuProvinceInfo from "./pages/RevenuProvinceInfo";
+import FormCalibrageHypothese from "./pages/FormCalibrageHypothese";
 
 
 const useState = React.useState
@@ -647,6 +648,10 @@ return (
     <Route path="/form_subvention_consommation" element={<FormSubventionConsommation username = {username} dataDonneeSubventionConsommation={dataDonneeSubventionConsommation}/>} >
     </Route>
 
+    <Route path="/form_recettes_calibrage_hypothese" element={<FormCalibrageHypothese username = {username} />} >
+    </Route>
+
+    
     
     <Route path="/population_active_menu" element={<PopulationActiveMenu username = {username} />} >
     </Route>

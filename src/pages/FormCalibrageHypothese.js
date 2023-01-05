@@ -93,7 +93,6 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Label><i className='text-warning'><b className='text-danger'>*</b>Pourcentage Impôts sur les biens et services</i></Form.Label>
         <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Impôts sur les biens et services (%)' autoFocus   required/>
          </Form.Group>
         </Col>
@@ -102,8 +101,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Label><i className='text-warning'><b className='text-danger'>*</b>Pourcentage Autres impôts indirects</i></Form.Label>
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Autres impôts indirects (%)' autoFocus   required/>
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Autres impôts indirects (%)'   required/>
          </Form.Group>
         </Col>
     </Row>
@@ -111,8 +109,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Label><i className='text-warning'><b className='text-danger'>*</b>Pourcentage Dons budgétaires</i></Form.Label>
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons budgétaires (%)' autoFocus   required/>
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons budgétaires (%)'  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -120,8 +117,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Label><i className='text-warning'><b className='text-danger'>*</b>Pourcentage Dons projets</i></Form.Label>
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons projets (%)' autoFocus   required/>
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons projets (%)'  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -133,7 +129,7 @@ return (
         
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={e=>submitManifest(e)}>
-        chargement fichier
+        Executer
         </Button>
         </Link>
 

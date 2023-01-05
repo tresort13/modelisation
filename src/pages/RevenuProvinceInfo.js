@@ -86,7 +86,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
         return total
       },0)
 
-      const total_province = parent(totalGeneral_province_milieu_urbain) + parseInt(totalGeneral_province_milieu_rural)
+      const total_province = parseInt(totalGeneral_province_milieu_urbain) + parseInt(totalGeneral_province_milieu_rural)
    
       console.log(donneeRevenuSalaireExedantBrut)
       console.log(donneeTotalImpots)

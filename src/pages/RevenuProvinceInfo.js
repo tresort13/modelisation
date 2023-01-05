@@ -68,25 +68,25 @@ donneeRevenuSalaireExedantBrut.map(value=>
               return donneeTotalSubvention.map(value2=>
                   {
                       if(value.nom_province == value2.nom_province)
-                      return donneeTotalProvince.push({"nom_province":value.nom_province,"total_provinve_milieu_urbain":Number(Number(value.total_impot_milieu_urbain) - Number(value2.total_subvention_milieu_urbain)).toFixed() ,"total_province_milieu_rural": Number(Number(value.total_impot_milieu_rural) - Number(value2.total_subvention_milieu_rural)).toFixed() })
+                      return donneeTotalProvince.push({"nom_province":value.nom_province,"total_provinve_milieu_urbain":Number(Number(value.total_impot_milieu_urbain) - Number(value2.total_subvention_milieu_urbain)).toFixed() ,"total_province_milieu_rural":Number(Number(value.total_impot_milieu_rural) - Number(value2.total_subvention_milieu_rural)).toFixed() })
                   })
           })
 
       const totalGeneral_province_milieu_urbain = donneeTotalProvince.reduce((total,value)=>
       {
 
-        total = total + value.total_provinve_milieu_urbain
+        total = total + Number(value.total_provinve_milieu_urbain)
         return total
       },0)
 
       const totalGeneral_province_milieu_rural = donneeTotalProvince.reduce((total,value)=>
       {
 
-        total = total + value.total_provinve_milieu_rural
+        total = total + Number(value.total_provinve_milieu_rural)
         return total
       },0)
 
-      const total_province = totalGeneral_province_milieu_urbain + totalGeneral_province_milieu_rural
+      const total_province = Number(totalGeneral_province_milieu_urbain) + Number(totalGeneral_province_milieu_rural)
    
       console.log(donneeRevenuSalaireExedantBrut)
       console.log(donneeTotalImpots)
@@ -94,7 +94,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
       console.log(donneeTotalProvince)
 
       console.log(totalGeneral_province_milieu_rural)
-      console.log(total_province)
+      
   
     return (
         <>
@@ -127,10 +127,10 @@ donneeRevenuSalaireExedantBrut.map(value=>
       return <tr style={{border:"2px solid white"}}>
         <td><i ><b>{value.nom_province}</b></i></td>
         <td><i><b>Revenu Provincial</b></i></td>
-        <td><b>{new Intl.NumberFormat().format(value.total_provinve_milieu_urbain)}</b></td>
-        <td><b>{new Intl.NumberFormat().format(value.total_provinve_milieu_rural)}</b></td>
+        <td><b>{new Intl.NumberFormat().format(Number(value.total_provinve_milieu_urbain).toFixed())}</b></td>
+        <td><b>{new Intl.NumberFormat().format(Number(value.total_provinve_milieu_rural).toFixed())}</b></td>
         
-        <td className='text-primary'><b>{new Intl.NumberFormat().format(value.total_provinve_milieu_urbain + value.total_provinve_milieu_rural)}</b></td>
+        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.total_provinve_milieu_urbain) + Number(value.total_provinve_milieu_rural)).toFixed())}</b></td>
        </tr>     
       })
     }

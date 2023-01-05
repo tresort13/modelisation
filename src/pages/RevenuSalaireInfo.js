@@ -98,7 +98,7 @@ const total_salaires_urbain_agricultures = props.revenusSalaires.reduce((total,v
   
         const total_impot_salaire = Number(total_secteur_primaire) + Number(total_secteur_secondaire) + Number(total_secteur_tertiaire) 
 
-        dataDonneeImpotRevenuPersonnePhysique(Number(total_impot_salaire) * 0,015)
+        dataDonneeImpotRevenuPersonnePhysique(Number(total_impot_salaire) * 0.015)
     return (
         <>
             <Header username={props.username}/>

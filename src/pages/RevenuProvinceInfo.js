@@ -82,11 +82,11 @@ donneeRevenuSalaireExedantBrut.map(value=>
       const totalGeneral_province_milieu_rural = donneeTotalProvince.reduce((total,value)=>
       {
 
-        total = total + Number(value.total_provinve_milieu_rural)
+        total = total + parseInt(value.total_provinve_milieu_rural)
         return total
       },0)
 
-      const total_province = Number(totalGeneral_province_milieu_urbain) + Number(totalGeneral_province_milieu_rural)
+      const total_province = parent(totalGeneral_province_milieu_urbain) + parseInt(totalGeneral_province_milieu_rural)
    
       console.log(donneeRevenuSalaireExedantBrut)
       console.log(donneeTotalImpots)
@@ -127,10 +127,10 @@ donneeRevenuSalaireExedantBrut.map(value=>
       return <tr style={{border:"2px solid white"}}>
         <td><i ><b>{value.nom_province}</b></i></td>
         <td><i><b>Revenu Provincial</b></i></td>
-        <td><b>{new Intl.NumberFormat().format(Number(value.total_provinve_milieu_urbain).toFixed())}</b></td>
-        <td><b>{new Intl.NumberFormat().format(Number(value.total_provinve_milieu_rural).toFixed())}</b></td>
+        <td><b>{new Intl.NumberFormat().format(parseInt(value.total_provinve_milieu_urbain))}</b></td>
+        <td><b>{new Intl.NumberFormat().format(parseInt(value.total_provinve_milieu_rural))}</b></td>
         
-        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.total_provinve_milieu_urbain) + Number(value.total_provinve_milieu_rural)).toFixed())}</b></td>
+        <td className='text-primary'><b>{new Intl.NumberFormat().format(parseInt(parseInt(value.total_provinve_milieu_urbain) + parseInt(value.total_provinve_milieu_rural)))}</b></td>
        </tr>     
       })
     }
@@ -138,9 +138,9 @@ donneeRevenuSalaireExedantBrut.map(value=>
 <tr style={{border:"2px solid white"}}>
           <td><b>Total</b></td>
           <td><b></b></td>
-          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(totalGeneral_province_milieu_urbain).toFixed())}</b></td>
-          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(totalGeneral_province_milieu_rural).toFixed())}</b></td>
-          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_province).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(parseInt(totalGeneral_province_milieu_urbain))}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(parseInt(totalGeneral_province_milieu_rural))}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(parseInt(total_province))}</b></td>
           
         </tr> 
         

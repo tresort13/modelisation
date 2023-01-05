@@ -68,7 +68,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
               return donneeTotalSubvention.map(value2=>
                   {
                       if(value.nom_province == value2.nom_province)
-                      return donneeTotalProvince.push({"nom_province":value.nom_province,"total_province_milieu_urbain":Number(Number(value.total_impot_milieu_urbain) - Number(value2.total_subvention_milieu_urbain)).toFixed() ,"total_province_milieu_rural":Number(Number(value.total_impot_milieu_rural) - Number(value2.total_subvention_milieu_rural)).toFixed() })
+                      return donneeTotalProvince.push({"nom_province":value.nom_province,"total_province_milieu_urbain":Number(value.total_impot_milieu_urbain) - Number(value2.total_subvention_milieu_urbain) ,"total_province_milieu_rural":Number(value.total_impot_milieu_rural) - Number(value2.total_subvention_milieu_rural)})
                   })
           })
 

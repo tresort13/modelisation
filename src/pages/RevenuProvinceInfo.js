@@ -130,7 +130,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
         <td><b>{new Intl.NumberFormat().format(Number(value.total_province_milieu_urbain).toFixed())}</b></td>
         <td><b>{new Intl.NumberFormat().format(Number(value.total_province_milieu_rural).toFixed())}</b></td>
         
-        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.total_provinve_milieu_urbain) + Number(value.total_provinve_milieu_rural)).toFixed())}</b></td>
+        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.total_province_milieu_urbain) + Number(value.total_province_milieu_rural)).toFixed())}</b></td>
        </tr>     
       })
     }

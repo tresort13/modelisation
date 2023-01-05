@@ -82,7 +82,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
       const totalGeneral_province_milieu_rural = donneeTotalProvince.reduce((total,value)=>
       {
 
-        total = total + parseInt(value.total_provinve_milieu_rural)
+        total = total + Number(value.total_provinve_milieu_rural)
         return total
       },0)
 
@@ -128,7 +128,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
         <td><i ><b>{value.nom_province}</b></i></td>
         <td><i><b>Revenu Provincial</b></i></td>
         <td><b>{new Intl.NumberFormat().format(parseInt(value.total_provinve_milieu_urbain))}</b></td>
-        <td><b>{new Intl.NumberFormat().format(parseInt(value.total_provinve_milieu_rural))}</b></td>
+        <td><b>{value.total_provinve_milieu_rural}</b></td>
         
         <td className='text-primary'><b>{new Intl.NumberFormat().format(parseInt(parseInt(value.total_provinve_milieu_urbain) + parseInt(value.total_provinve_milieu_rural)))}</b></td>
        </tr>     

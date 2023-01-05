@@ -102,17 +102,15 @@ function ProductionInfo(props)
         const total_milieu_rural = Number(total_milieu_rurale_agriculture) + Number(total_milieu_rurale_mines) + Number(total_milieu_rurale_industrie) + Number(total_milieu_rurale_service)
   
         const total_secteur = Number(total_secteur_agriculture) + Number(total_secteur_mines) + Number(total_secteur_industrie) + Number(total_secteur_service)
-  
-  
-  
-  
 
-  
-
-  
-  
-
-  
+        
+        //donnee calibarage
+        
+        props.dataDonneePetrolMineTaxe(Number(total_secteur_industrie) * 0,002)
+        props.dataDonneeTVABrut(Number(total_secteur) * 0,024)
+        props.dataDonneeAutreImpotDirect(Number(Number(total_secteur_agriculture) + Number(total_secteur_industrie)+ Number(total_secteur_service)) * 0,024)
+        props.dataDonneeImpotRevenuPetrole(Number(total_secteur_industrie) * 0,002)
+        props.dataDonneeImpotRevenuNonPetrole(Number(Number(total_secteur_agriculture) + Number(total_secteur_industrie)+ Number(total_secteur_service)) * 0,03)
   
     return (
         <>

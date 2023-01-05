@@ -29,9 +29,12 @@ function FormCalibrageHypothese(props)
       
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
-const[tauxExpoImpo,setTauxExpoImpo] = useState({infoTauxExpoImpo :{
-    taux_exportation :"",
-    taux_importation :""
+const[CalibrageInputFields,setCalibrageInputFields] = useState({infoCalibrage :{
+    impot_bien_service :"",
+    autre_impot_indirect :"",
+    dons_budgetaire:"",
+    dons_projet:"",
+    coefficient_approche_production:""
 }});
 //const pib_annee_fiscale_2022= Number(Number((props.impotDGIInfo[2].annee_fiscale_2021) * (1 + Number(props.impotTauxCroissance)))).toFixed()
 const [message,setMessage] = useState("Methode Calibrage des Hypotheses");
@@ -56,11 +59,13 @@ const submitManifest = (e)=>
           .then( res => res.json())
           .then(
             res => {   
-               // props.dataDonneeInfoExpoImpo(res)
-              //  props.dataDonneeTauxImportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_importation) / 100)
-                //props.dataDonneeTauxExportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_exportation) / 100)
+              props.dataDonneeImpotsBienService( 3500800 * (Number(CalibrageInputFields.infoCalibrage.impot_bien_service) / 100))
+              props.dataDonneeAutreImpotIndirect( 2581344 * (Number(CalibrageInputFields.infoCalibrage.autre_impot_indirect) / 100))
+              props.dataDonneeDonsBudgetaire(4250000 * (Number(CalibrageInputFields.infoCalibrage.dons_budgetaire) / 100))
+              props.dataDonneeDonsProjets(3450000 * (Number(CalibrageInputFields.infoCalibrage.dons_projet) / 100))
+              props.dataDonneeCoefficientApprocheProduction(Number(CalibrageInputFields.infoCalibrage.coefficient_approche_production))
                 
-               // navigate('/impo_expo_dgda_info')
+               navigate('/methode_calibrage_info')
             }
           )
           .catch( (error) =>
@@ -74,9 +79,9 @@ const submitManifest = (e)=>
 
 const inputChanged = (event)=>
     {
-        const cred = tauxExpoImpo.infoTauxExpoImpo;
+        const cred = CalibrageInputFields.infoCalibrage;
         cred[event.target.name] = event.target.value;
-        setTauxExpoImpo({infoTauxExpoImpo:cred})
+        setTauxExpoImpo({infoCalibrage:cred})
     }
 return (
 <>
@@ -93,7 +98,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Impôts sur les biens et services (%)' autoFocus   required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_bien_service} name="impot_bien_service"  onChange={e=>inputChanged(e)} type="text" placeholder='Impôts sur les biens et services (%)' autoFocus   required/>
          </Form.Group>
         </Col>
     </Row>
@@ -101,7 +106,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Autres impôts indirects (%)'   required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect} name="autre_impot_indirect"  onChange={e=>inputChanged(e)} type="text" placeholder='Autres impôts indirects (%)'   required/>
          </Form.Group>
         </Col>
     </Row>
@@ -109,7 +114,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons budgétaires (%)'  required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire} name="dons_budgetaire"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons budgétaires (%)'  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -117,7 +122,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons projets (%)'  required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet} name="dons_projet"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons projets (%)'  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -125,7 +130,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {8}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='coefficient Approche production'  required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.coefficient_approche_production} name="coefficient_approche_production"  onChange={e=>inputChanged(e)} type="text" placeholder='coefficient Approche production (Decimal)'  required/>
          </Form.Group>
         </Col>
     </Row>

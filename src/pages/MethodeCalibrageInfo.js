@@ -18,7 +18,7 @@ import Table from 'react-bootstrap/Table';
 
 
 
-function methodeCalibrageInfo(props)
+function MethodeCalibrageInfo(props)
 {
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -31,71 +31,14 @@ function methodeCalibrageInfo(props)
         {
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
-const donneeRevenuSalaireExedantBrut = []
-const donneeTotalImpots = []
-const donneeTotalSubvention = []
-const donneeTotalProvince = []
+        console.log(props.donneeMethodeCalibrage)
+        console.log(props.impotBienService)
+        console.log(props.autreImpotIndirect)
+        console.log(donsBudgtaire)
+        console.log(props.donsProjet)
+        console.log(props.coefficientProduction)
 
-props.revenusSalaires.map(value=>
-  {
-      return props.exedantBrut.map(value2=>
-          {
-              if(value.nom_province == value2.nom_province)
-              return donneeRevenuSalaireExedantBrut.push({"nom_province":value.nom_province,"impot_agriculture":Number(value.salaires_urbain_agricultures) + Number(value2.salaires_urbain_agricultures) ,"impot_industrie_extractive":Number(value.salaire_urbain_insdustries_extractives) + Number(value2.salaire_urbain_insdustries_extractives),"impot_industrie_manufacture":Number(value.salaires_urbain_industries_manufactures) + Number(value2.salaires_urbain_industries_manufactures),"impot_service":Number(value.salaires_urbain_services) + Number(value2.salaires_urbain_services),  "impot_agriculture_rural":Number(value.salaires_rural_agricultures) + Number(value2.salaires_rural_agricultures) ,"impot_industrie_extractive_rural":Number(value.salaire_rural_insdustries_extractives) + Number(value2.salaire_rural_insdustries_extractives),"impot_industrie_manufacture_rural":Number(value.salaires_rural_industries_manufactures) + Number(value2.salaires_rural_industries_manufactures),"impot_service_rural":Number(value.salaires_rural_services) + Number(value2.salaires_rural_services)})
-          })
-  })
-     
-donneeRevenuSalaireExedantBrut.map(value=>
-      {
-          return props.autresImpots.map(value2=>
-              {
-                  if(value.nom_province == value2.nom_province)
-                  return donneeTotalImpots.push({"nom_province":value.nom_province,"total_impot_milieu_urbain":Number(value.impot_agriculture) + Number(value.impot_industrie_extractive) + Number(value.impot_industrie_manufacture) + Number(value.impot_service) + Number(value2.autre_impot_urbain),"total_impot_milieu_rural":Number(value.impot_agriculture_rural) + Number(value.impot_industrie_extractive_rural) + Number(value.impot_industrie_manufacture_rural) + Number(value.impot_service_rural) + Number(value2.autre_impot_rural)})
-              })
-      })
-
-      props.subventionProduction.map(value=>
-        {
-            return props.subventionConsommation.map(value2=>
-                {
-                    if(value.nom_province == value2.nom_province)
-                    return donneeTotalSubvention.push({"nom_province":value.nom_province,"total_subvention_milieu_urbain":Number(value.salaires_urbain_agricultures) + Number(value.salaire_urbain_insdustries_extractives) + Number(value.salaires_urbain_industries_manufactures) + Number(value.salaires_urbain_services) + Number(value2.autre_impot_urbain),"total_subvention_milieu_rural":Number(value.salaires_rural_agricultures) + Number(value.salaire_rural_insdustries_extractives) + Number(value.salaires_rural_industries_manufactures) + Number(value.salaires_rural_services) + Number(value2.autre_impot_rural)})
-                })
-        })
-
-        donneeTotalImpots.map(value=>
-          {
-              return donneeTotalSubvention.map(value2=>
-                  {
-                      if(value.nom_province == value2.nom_province)
-                      return donneeTotalProvince.push({"nom_province":value.nom_province,"total_province_milieu_urbain":Number(value.total_impot_milieu_urbain) - Number(value2.total_subvention_milieu_urbain) ,"total_province_milieu_rural":Number(value.total_impot_milieu_rural) - Number(value2.total_subvention_milieu_rural)})
-                  })
-          })
-
-      const totalGeneral_province_milieu_urbain = donneeTotalProvince.reduce((total,value)=>
-      {
-
-        total = total + Number(value.total_province_milieu_urbain)
-        return total
-      },0)
-
-      const totalGeneral_province_milieu_rural = donneeTotalProvince.reduce((total,value)=>
-      {
-
-        total = total + Number(value.total_province_milieu_rural)
-        return total
-      },0)
-
-      const total_province = Number(totalGeneral_province_milieu_urbain) + Number(totalGeneral_province_milieu_rural)
-   
-      console.log(donneeRevenuSalaireExedantBrut)
-      console.log(donneeTotalImpots)
-      console.log(donneeTotalSubvention)
-      console.log(donneeTotalProvince)
-
-      console.log(totalGeneral_province_milieu_rural)
-      
-  
+        
     return (
         <>
             <Header username={props.username}/>
@@ -183,4 +126,4 @@ donneeRevenuSalaireExedantBrut.map(value=>
     )
 }
 
-export default methodeCalibrageInfo;
+export default MethodeCalibrageInfo;

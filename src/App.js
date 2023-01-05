@@ -87,6 +87,7 @@ import RevenuSalaireInfo from "./pages/RevenuSalaireInfo";
 import RevenuProvinceInfo from "./pages/RevenuProvinceInfo";
 import FormCalibrageHypothese from "./pages/FormCalibrageHypothese";
 import MenuRecettesPubliques from "./pages/MenuRecettesPubliques";
+import MethodeCalibrageInfo from "./pages/MethodeCalibrageInfo";
 
 
 const useState = React.useState
@@ -397,6 +398,67 @@ useEffect(() => {
 }, [subventionConsommation])
 
 
+const [donneeMethodeCalibrage ,setDonneeMethodeCalibrage] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeMethodeCalibrage');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeMethodeCalibrage", JSON.stringify(donneeMethodeCalibrage))
+}, [donneeMethodeCalibrage])
+
+const [impotBienService ,setImpotsBienServices] = useState(()=>
+{
+  const localData = localStorage.getItem('impotBienService');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("impotBienService", JSON.stringify(impotBienService))
+}, [impotBienService])
+
+const [autreImpotIndirect,setAutreImpotInderect] = useState(()=>
+{
+  const localData = localStorage.getItem('autreImpotIndirect');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("autreImpotIndirect", JSON.stringify(autreImpotIndirect))
+}, [autreImpotIndirect])
+
+const [donsBudgtaire,setDonsBudgetaire] = useState(()=>
+{
+  const localData = localStorage.getItem('donsBudgtaire');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donsBudgtaire", JSON.stringify(donsBudgtaire))
+}, [donsBudgtaire])
+
+const [donsProjet,setDonsProjet] = useState(()=>
+{
+  const localData = localStorage.getItem('donsProjet');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donsProjet", JSON.stringify(donsProjet))
+}, [donsProjet])
+
+const [coefficientProduction,setCoefficientProduction] = useState(()=>
+{
+  const localData = localStorage.getItem('coefficientProduction');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("coefficientProduction", JSON.stringify(donsProjet))
+}, [coefficientProduction])
+
+
 
 const dataPopulation = (data)=>
 {
@@ -522,6 +584,74 @@ const dataDonneeSubventionProduction = (data)=>
 const dataDonneeSubventionConsommation = (data)=>
 {
   setSubventionConsommation(data)
+}
+//methode calibrage
+
+const dataDonneePetrolMineTaxe = (data)=>
+{
+  
+  setDonneeMethodeCalibrage(donneeMethodeCalibrage.push({"pretrol_mine_taxe" : data}))
+}
+
+const dataDonneeTotalPibApprocheRevenu = (data)=>
+{
+  
+  setDonneeMethodeCalibrage(donneeMethodeCalibrage.push({"pib_approche_revenu" : data}))
+}
+
+const dataDonneeTVABrut = (data)=>
+{
+  
+  setDonneeMethodeCalibrage(donneeMethodeCalibrage.push({"tva_brut" : data}))
+}
+
+const dataDonneeAutreImpotDirect = (data)=>
+{
+  
+  setDonneeMethodeCalibrage(donneeMethodeCalibrage.push({"autres_impots_directs" : data}))
+}
+
+const dataDonneeImpotRevenuPetrole = (data)=>
+{
+  
+  setDonneeMethodeCalibrage(donneeMethodeCalibrage.push({"impot_revenu_petrole" : data}))
+}
+
+const dataDonneeImpotRevenuNonPetrole = (data)=>
+{
+  
+  setDonneeMethodeCalibrage(donneeMethodeCalibrage.push({"impot_revenu_non_petrole" : data}))
+}
+
+const dataDonneeImpotRevenuPersonnePhysique = (data)=>
+{
+  
+  setDonneeMethodeCalibrage(donneeMethodeCalibrage.push({"impot_revenu_personne_physique" : data}))
+}
+
+const dataDonneeImpotsBienService = (data)=>
+{
+  setImpotsBienServices(data)
+}
+
+const dataDonneeAutreImpotIndirect = (data)=>
+{
+  setAutreImpotInderect(data)
+}
+
+const dataDonneeDonsBudgetaire = (data)=>
+{
+  setDonsBudgetaire(data)
+}
+
+const dataDonneeDonsProjets = (data)=>
+{
+  setDonsProjet(data)
+}
+
+const dataDonneeCoefficientApprocheProduction = (data)=>
+{
+  setCoefficientProduction(data)
 }
 
 
@@ -653,7 +783,7 @@ return (
     <Route path="/form_subvention_consommation" element={<FormSubventionConsommation username = {username} dataDonneeSubventionConsommation={dataDonneeSubventionConsommation}/>} >
     </Route>
 
-    <Route path="/form_recettes_calibrage_hypothese" element={<FormCalibrageHypothese username = {username} />} >
+    <Route path="/form_recettes_calibrage_hypothese" element={<FormCalibrageHypothese username = {username} dataDonneeImpotsBienService={dataDonneeImpotsBienService} dataDonneeAutreImpotIndirect={dataDonneeAutreImpotIndirect} dataDonneeDonsBudgetaire={dataDonneeDonsBudgetaire} dataDonneeDonsProjets={dataDonneeDonsProjets}  dataDonneeCoefficientApprocheProduction={dataDonneeCoefficientApprocheProduction}/>} >
     </Route>
 
     
@@ -728,7 +858,7 @@ return (
     <Route path="/demande_interieure_urbaine" element={<DemandeInterieureUrbaineInfo username = {username} />} >
     </Route>
 
-    <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo}/>} >
+    <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo} dataDonneePetrolMineTaxe={dataDonneePetrolMineTaxe} dataDonneeTVABrut={dataDonneeTVABrut} dataDonneeAutreImpotDirect={dataDonneeAutreImpotDirect} dataDonneeImpotRevenuPetrole={dataDonneeImpotRevenuPetrole} dataDonneeImpotRevenuNonPetrole={dataDonneeImpotRevenuNonPetrole} />} >
     </Route>
 
     <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} setRecettesPubliquesDGI={setRecettesPubliquesDGI}/>} >
@@ -746,7 +876,7 @@ return (
     <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} recettesPubliques={recettesPubliques}/>} >
     </Route>
 
-    <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} revenusSalaires={revenusSalaires}/>} >
+    <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} revenusSalaires={revenusSalaires} dataDonneeImpotRevenuPersonnePhysique={dataDonneeImpotRevenuPersonnePhysique}/>} >
     </Route>
 
     <Route path="/exedant_brut_info" element={<ExedantBrutInfo username = {username} exedantBrut={exedantBrut}/>} >
@@ -767,7 +897,10 @@ return (
     <Route path="/total_subvention_info" element={<TotalSubventionInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation}/>} >
     </Route>
 
-    <Route path="/revenu_province_info" element={<RevenuProvinceInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={revenusSalaires} autresImpots={autresImpots}/>} >
+    <Route path="/revenu_province_info" element={<RevenuProvinceInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={revenusSalaires} autresImpots={autresImpots} dataDonneeTotalPibApprocheRevenu={dataDonneeTotalPibApprocheRevenu}/>} >
+    </Route>
+
+    <Route path="/methode_calibrage_info" element={<MethodeCalibrageInfo username = {username} donneeMethodeCalibrage={donneeMethodeCalibrage} impotBienService={impotBienService} autreImpotIndirect={autreImpotIndirect} donsBudgtaire={donsBudgtaire} donsProjet={donsProjet} coefficientProduction={coefficientProduction}/>} >
     </Route>
     
 

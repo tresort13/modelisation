@@ -59,7 +59,7 @@ const submitManifest = (e)=>
           .then(
             res => {   
               
-                props.dataDonneeImpotPourcentageCroissance(parseInt(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
+                props.dataDonneeImpotPourcentageCroissance(Number(tauxCroissance.infoTauxCroissance.taux_croissance) / 100)
                 props.dataDonneeImpotDgi(res)
                 setValue(res[0].recettes_dgi)
                 navigate('/impot_dgi_info')

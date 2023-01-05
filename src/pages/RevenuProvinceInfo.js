@@ -88,12 +88,8 @@ donneeRevenuSalaireExedantBrut.map(value=>
 
       const total_province = Number(totalGeneral_province_milieu_urbain) + Number(totalGeneral_province_milieu_rural)
    
-      console.log(donneeRevenuSalaireExedantBrut)
-      console.log(donneeTotalImpots)
-      console.log(donneeTotalSubvention)
-      console.log(donneeTotalProvince)
-
-      console.log(totalGeneral_province_milieu_rural)
+      
+      props.dataDonneeTotalPibApprocheRevenu(Number(total_province) * 0,024)
       
   
     return (

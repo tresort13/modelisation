@@ -57,8 +57,8 @@ const submitManifest = (e)=>
           .then(
             res => {   
                 props.dataDonneeInfoExpoImpo(res)
-                props.dataDonneeTauxImportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_importation) / 100)
-                props.dataDonneeTauxExportation(parseInt(tauxExpoImpo.infoTauxExpoImpo.taux_exportation) / 100)
+                props.dataDonneeTauxImportation(Number(tauxExpoImpo.infoTauxExpoImpo.taux_importation) / 100)
+                props.dataDonneeTauxExportation(Number(tauxExpoImpo.infoTauxExpoImpo.taux_exportation) / 100)
                 
                 navigate('/impo_expo_dgda_info')
             }

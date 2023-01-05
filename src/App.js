@@ -743,7 +743,7 @@ return (
     <Route path="/recettes_dgrad_info" element={<RecettesDGRADInfo username = {username} recettesDGRAD={recettesDGRAD}  impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} setRecettesPubliquesDGRAD={setRecettesPubliquesDGRAD}/>} >
     </Route>
 
-    <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} revenusSalaires={revenusSalaires}/>} >
+    <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} recettesPubliques={recettesPubliques}/>} >
     </Route>
 
     <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} revenusSalaires={revenusSalaires}/>} >

@@ -122,6 +122,14 @@ return (
         </Col>
     </Row>
 
+    <Row className='justify-content-center'>
+        <Col xs = {8}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={tauxExpoImpo.infoTauxExpoImpo.taux_exportation} name="taux_exportation"  onChange={e=>inputChanged(e)} type="text" placeholder='coefficient Approche production'  required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
   
   
     <Row className='justify-content-center pb-3'>

@@ -34,7 +34,7 @@ function MethodeCalibrageInfo(props)
         console.log(props.donneeMethodeCalibrage)
         console.log(props.impotBienService)
         console.log(props.autreImpotIndirect)
-        console.log(donsBudgtaire)
+        console.log(props.donsBudgtaire)
         console.log(props.donsProjet)
         console.log(props.coefficientProduction)
 
@@ -65,27 +65,7 @@ function MethodeCalibrageInfo(props)
         </tr>
       </thead>
       <tbody>
-     {donneeTotalProvince.map((value)=>
-    {
-      return <tr style={{border:"2px solid white"}}>
-        <td><i ><b>{value.nom_province}</b></i></td>
-        <td><i><b>Revenu Provincial</b></i></td>
-        <td><b>{new Intl.NumberFormat().format(Number(value.total_province_milieu_urbain).toFixed())}</b></td>
-        <td><b>{new Intl.NumberFormat().format(Number(value.total_province_milieu_rural).toFixed())}</b></td>
-        
-        <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.total_province_milieu_urbain) + Number(value.total_province_milieu_rural)).toFixed())}</b></td>
-       </tr>     
-      })
-    }
-
-<tr style={{border:"2px solid white"}}>
-          <td><b>Total</b></td>
-          <td><b></b></td>
-          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(totalGeneral_province_milieu_urbain).toFixed())}</b></td>
-          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(totalGeneral_province_milieu_rural).toFixed())}</b></td>
-          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_province).toFixed())}</b></td>
-          
-        </tr> 
+    
         
       </tbody>
     </Table>

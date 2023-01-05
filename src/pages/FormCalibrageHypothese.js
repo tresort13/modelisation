@@ -81,7 +81,7 @@ const inputChanged = (event)=>
     {
         const cred = CalibrageInputFields.infoCalibrage;
         cred[event.target.name] = event.target.value;
-        setTauxExpoImpo({infoCalibrage:cred})
+        setCalibrageInputFields({infoCalibrage:cred})
     }
 return (
 <>

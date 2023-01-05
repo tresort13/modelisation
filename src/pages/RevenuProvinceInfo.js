@@ -92,6 +92,9 @@ donneeRevenuSalaireExedantBrut.map(value=>
       console.log(donneeTotalImpots)
       console.log(donneeTotalSubvention)
       console.log(donneeTotalProvince)
+
+      console.log(totalGeneral_province_milieu_rural)
+      console.log(total_province)
   
     return (
         <>

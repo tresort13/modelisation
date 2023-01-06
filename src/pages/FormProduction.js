@@ -124,6 +124,32 @@ const resetFileInput = () => {
         )
 }
 
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Echec Execution
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Message : </h4>
+        <p className='text-danger'><b>Désolé le chargement des données a echoué</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>ok</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+
 function MyVerticallyCenteredModal2(props) {
     return (
       <Modal

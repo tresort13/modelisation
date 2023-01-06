@@ -887,13 +887,13 @@ return (
     <Route path="/donnees_depense_publique" element={<DonneesDepensePubliqueInfo username = {username} donneeDepenseCouranteInfo={donneeDepenseCouranteInfo} donneeDepenseCapitalInfo={donneeDepenseCapitalInfo}/>} >
     </Route>
 
-    <Route path="/donnees_exportations_info" element={<DonneeExportationsInfo username = {username} donneeExportationsInfo={donneeExportationsInfo}/>} >
+    <Route path="/donnees_exportations_info" element={<DonneeExportationsInfo username = {username} donneeExportationsInfo={donneeExportationsInfo} setDroitTaxeExportation={setDroitTaxeExportation}/>} >
     </Route>
 
     <Route path="/donnees_importations_info" element={<DonneeImportationsInfo username = {username} donneeImportationsInfo={donneeImportationsInfo} setDroitTaxeImportation={setDroitTaxeImportation}/>} >
     </Route>
 
-    <Route path="/donnees_exportations_nettes_info" element={<DonneeExportationsNettesInfo username = {username} donneeExportationsInfo={donneeExportationsInfo} donneeImportationsInfo={donneeImportationsInfo} setDroitTaxeExportation={setDroitTaxeExportation}/>} >
+    <Route path="/donnees_exportations_nettes_info" element={<DonneeExportationsNettesInfo username = {username} donneeExportationsInfo={donneeExportationsInfo} donneeImportationsInfo={donneeImportationsInfo} />} >
     </Route>
 
     <Route path="/demande_interieure_info" element={<DemandeInterieureInfo username = {username} donneeConsommationInfo={donneeConsommationInfo} donneeInvestissementPriveInfo={donneeInvestissementPriveInfo} donneeDepenseCouranteInfo={donneeDepenseCouranteInfo} donneeDepenseCapitalInfo={donneeDepenseCapitalInfo}/>} >

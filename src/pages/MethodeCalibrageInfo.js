@@ -59,6 +59,10 @@ function MethodeCalibrageInfo(props)
             return value.nom == "impotRevenuPetrolier"
         })
 
+        const impotRevenuNonPetrolier = props.donneeMethodeCalibrage.find((value)=>{
+            return value.nom == "impotRevenuNonPetrolier"
+        })
+
         const impotRevenuPersonnePhysique = props.donneeMethodeCalibrage.find((value)=>{
             return value.nom == "impotRevenuPersonnePhysique"
         })

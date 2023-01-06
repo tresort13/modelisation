@@ -106,11 +106,11 @@ function ProductionInfo(props)
         
         //donnee calibarage
         
-        props.setPetrolMine([{"petrolMine" : Number(total_secteur_industrie) * 0.002}])
-        props.setTvaBrut([{"tvaBrut": Number(total_secteur) * 0.024}])
-        props.setAutreImpotDirect([{"autreImpotDirect": Number(Number(total_secteur_agriculture) + Number(total_secteur_industrie)+ Number(total_secteur_service)) * 0.024}])
-        props.setImpotRevenuPetrolier([{"impotRevenuPetrolier": Number(total_secteur_industrie) * 0.002}])
-        props.setImpotRevenuNonPetrolier([{"impotRevenuNonPetrolier":Number(Number(total_secteur_agriculture) + Number(total_secteur_industrie)+ Number(total_secteur_service)) * 0.03}])
+        props.setPetrolMine([{"nom" : "petrolMine","montant" : Number(total_secteur_industrie) * 0.002}])
+        props.setTvaBrut([{"nom" : "tvaBrut","montant": Number(total_secteur) * 0.024}])
+        props.setAutreImpotDirect([{"nom" : "autreImpotDirect","montant": Number(Number(total_secteur_agriculture) + Number(total_secteur_industrie)+ Number(total_secteur_service)) * 0.024}])
+        props.setImpotRevenuPetrolier([{"nom" : "impotRevenuPetrolier","montant": Number(total_secteur_industrie) * 0.002}])
+        props.setImpotRevenuNonPetrolier([{"nom" : "impotRevenuNonPetrolier","momtant":Number(Number(total_secteur_agriculture) + Number(total_secteur_industrie)+ Number(total_secteur_service)) * 0.03}])
   
     return (
         <>

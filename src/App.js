@@ -467,6 +467,16 @@ useEffect(() => {
   window.localStorage.setItem("impotRevenuPersonnePhysique", JSON.stringify(impotRevenuPersonnePhysique))
 }, [impotRevenuPersonnePhysique])
 
+const [accises,setAccises] = useState(()=>
+{
+  const localData = localStorage.getItem('accises');
+  return localData ? JSON.parse(localData) :[];
+});
+
+useEffect(() => {
+  window.localStorage.setItem("accises", JSON.stringify(accises))
+}, [accises])
+
 const [droitTaxeImportation,setDroitTaxeImportation] = useState(()=>
 {
   const localData = localStorage.getItem('droitTaxeImportation');
@@ -704,7 +714,7 @@ const dataDonneeCoefficientApprocheProduction = (data)=>
 
 const dataDonneeMethodeCalibrage = ()=>
 {
-  setDonneeMethodeCalibrage([...petrolMine,...recetteAdministrative,...tvaBrut,...autreImpotDirect,...impotRevenuPetrolier,...impotRevenuPersonnePhysique,...droitTaxeImportation,...droitTaxeExportation])
+  setDonneeMethodeCalibrage([...petrolMine,...recetteAdministrative,...tvaBrut,...autreImpotDirect,...impotRevenuPetrolier,...impotRevenuPersonnePhysique,...accises,...droitTaxeImportation,...droitTaxeExportation])
 }
 
 
@@ -918,7 +928,7 @@ return (
     <Route path="/impo_expo_dgda_info" element={<ImpoExpoDGDAInfo username = {username} infoExpoImpo={infoExpoImpo} tauxExportation={tauxExportation} tauxImportation={tauxImportation} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance}/>} >
     </Route>
 
-    <Route path="/recettes_dgda_info" element={<RecettesDGDAInfo username = {username} recettesDGDA={recettesDGDA} infoExpoImpo={infoExpoImpo} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} tauxExportation={tauxExportation} tauxImportation={tauxImportation} setRecettesPubliquesDGDA={setRecettesPubliquesDGDA}/>} >
+    <Route path="/recettes_dgda_info" element={<RecettesDGDAInfo username = {username} recettesDGDA={recettesDGDA} infoExpoImpo={infoExpoImpo} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} tauxExportation={tauxExportation} tauxImportation={tauxImportation} setRecettesPubliquesDGDA={setRecettesPubliquesDGDA} setAccises={setAccises}/>} >
     </Route>
 
     <Route path="/recettes_dgrad_info" element={<RecettesDGRADInfo username = {username} recettesDGRAD={recettesDGRAD}  impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} setRecettesPubliquesDGRAD={setRecettesPubliquesDGRAD}/>} >

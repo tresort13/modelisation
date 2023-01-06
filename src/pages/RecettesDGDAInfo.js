@@ -70,6 +70,7 @@ const total_fiscale_2022 = Number(impotDGDA[0].annee_fiscale_2022) + Number(impo
 dataDGDA[0].annee_fiscale_2022 = total_fiscale_2022
 
 props.setRecettesPubliquesDGDA(dataDGDA)
+props.setAccises([{"nom" : "accises","montant":Number(pib_annee_fiscale_2022) * 0.012}])
 
   
     return (

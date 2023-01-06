@@ -50,7 +50,7 @@ const submitManifest = (e)=>
 {
     e.preventDefault()
     setModalShow2(true)
-   
+             props.dataDonneeMethodeCalibrage()
               props.dataDonneeImpotsBienService( 3500800 * (Number(CalibrageInputFields.infoCalibrage.impot_bien_service) / 100))
               props.dataDonneeAutreImpotIndirect( 2581344 * (Number(CalibrageInputFields.infoCalibrage.autre_impot_indirect) / 100))
               props.dataDonneeDonsBudgetaire(4250000 * (Number(CalibrageInputFields.infoCalibrage.dons_budgetaire) / 100))

@@ -102,11 +102,8 @@ function DonneeExportationsInfo(props)
         const total_milieu_rural = Number(total_milieu_rurale_agriculture) + Number(total_milieu_rurale_mines) + Number(total_milieu_rurale_industrie) + Number(total_milieu_rurale_service)
   
         const total_secteur = Number(total_secteur_agriculture) + Number(total_secteur_mines) + Number(total_secteur_industrie) + Number(total_secteur_service)
-  
-  
-  
-  
 
+        props.setDroitTaxeExportation([{'droitTaxeExportation' : Number(total_secteur) * 0.01}])
   
 
   

@@ -29,6 +29,7 @@ function ImpotSalaireInfo(props)
         {
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
+        /*
 const donneeRevenuSalaireExedantBrut = []
 const donneeTotalImpots = []
 const donneeTotalSubvention = []
@@ -88,7 +89,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
    
       props.setRecetteAdministrative([{"nom" : "recetteAdministrative","montant":Number(total_province) * 0.024}])
       
-  
+  */
     return (
         <>
             <Header username={props.username}/>

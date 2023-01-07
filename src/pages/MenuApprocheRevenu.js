@@ -25,12 +25,13 @@ function MenuApprocheRevenu(props)
 
 const navigate = useNavigate()
 const [modalShow2, setModalShow2] = React.useState(false);
-function dataRecettesPubliques(e)
+
+function execute(e)
 {
   e.preventDefault()
   setModalShow2(true)
-  props.dataDonneeRecettesPubliques()
-  navigate('/recettes_publiques_info')
+  
+  navigate('/revenu_province_info')
 }
     
     return (
@@ -81,8 +82,8 @@ function dataRecettesPubliques(e)
             </Col>
 
             <Col md={4} className="my-auto text-center">
-            <Link to="/revenu_province_info" style={{color:'white',textDecorationLine:'none'}}>
-            <Button  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
+            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+            <Button  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom' onClick={(e)=>execute(e)}>
             <i className="text-secondary"><b>Révenu Provincial</b></i>
             </Button>
              </Link>     

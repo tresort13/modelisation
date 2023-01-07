@@ -35,6 +35,8 @@ const donneeTotalImpots = []
 const donneeTotalSubvention = []
 const donneeTotalProvince = []
 
+
+
 props.revenusSalaires.map(value=>
   {
       return props.exedantBrut.map(value2=>
@@ -87,7 +89,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
 
       const total_province = Number(totalGeneral_province_milieu_urbain) + Number(totalGeneral_province_milieu_rural)
    
-      props.setRecetteAdministrative([{"nom" : "recetteAdministrative","montant":Number(total_province) * 0.024}])
+      //props.setRecetteAdministrative([{"nom" : "recetteAdministrative","montant":Number(total_province) * 0.024}])
       
   
     return (

@@ -71,7 +71,7 @@ function MenuApprocheRevenu(props)
             </Col>
 
             <Col md={4} className="my-auto text-center">
-            <Link to="/total_subvention_info" style={{color:'white',textDecorationLine:'none'}}>
+            <Link to="/impot_salaire_info" style={{color:'white',textDecorationLine:'none'}}>
             <Button  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Révenu Provincial</b></i>
             </Button>

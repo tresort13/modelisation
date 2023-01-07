@@ -4,11 +4,9 @@ import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import  './Login.css';
 import './PageInfo.css';
 import {Link} from  'react-router-dom';
-import { useEffect,useState } from 'react';
 import Header from './Header';
 import { useMediaQuery } from 'react-responsive';
 import Footer from './Footer';
@@ -18,7 +16,7 @@ import Table from 'react-bootstrap/Table';
 
 
 
-function RevenuProvinceInfo(props)
+function ImpotSalaireInfo(props)
 {
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -178,4 +176,4 @@ donneeRevenuSalaireExedantBrut.map(value=>
     )
 }
 
-export default RevenuProvinceInfo;
+export default ImpotSalaireInfo;

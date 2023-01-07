@@ -84,10 +84,10 @@ import SubventionConsommationInfo from "./pages/SubventionConsommationInfo";
 import AutreImpotInfo from "./pages/AutreImpotInfo";
 import ExedantBrutInfo from "./pages/ExedantBrutInfo";
 import RevenuSalaireInfo from "./pages/RevenuSalaireInfo";
-import RevenuProvinceInfo from "./pages/RevenuProvinceInfo";
 import FormCalibrageHypothese from "./pages/FormCalibrageHypothese";
 import MenuRecettesPubliques from "./pages/MenuRecettesPubliques";
 import MethodeCalibrageInfo from "./pages/MethodeCalibrageInfo";
+import ImpotSalaireInfo from "./pages/ImpotSalaireInfo";
 
 
 const useState = React.useState
@@ -958,7 +958,7 @@ return (
     <Route path="/total_subvention_info" element={<TotalSubventionInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation}/>} >
     </Route>
 
-    <Route path="/revenu_province_info" element={<RevenuProvinceInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots} setRecetteAdministrative={setRecetteAdministrative}/>} >
+    <Route path="/impot_salaire_info" element={<ImpotSalaireInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots} setRecetteAdministrative={setRecetteAdministrative}/>} >
     </Route>
 
     <Route path="/methode_calibrage_info" element={<MethodeCalibrageInfo username = {username} donneeMethodeCalibrage={donneeMethodeCalibrage} impotBienService={impotBienService} autreImpotIndirect={autreImpotIndirect} donsBudgtaire={donsBudgtaire} donsProjet={donsProjet} coefficientProduction={coefficientProduction} />} >

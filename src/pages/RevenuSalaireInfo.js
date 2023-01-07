@@ -152,7 +152,7 @@ const total_salaires_urbain_agricultures = props.revenusSalaires.reduce((total,v
         {
           return  <tr style={{border:"2px solid white"}}>
              <td><b>{value.nom_province}</b></td>
-             <td><b>Salaires sur Révenus</b></td>
+             <td><b>Impôts sur Salaires</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.salaires_urbain_agricultures).toFixed())}</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.salaire_urbain_insdustries_extractives).toFixed())}</b></td>
              <td><b>{new Intl.NumberFormat().format(Number(value.salaires_urbain_industries_manufactures).toFixed())}</b></td>
@@ -165,11 +165,11 @@ const total_salaires_urbain_agricultures = props.revenusSalaires.reduce((total,v
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_rural_agricultures)+ Number(value.salaire_rural_insdustries_extractives)+ Number(value.salaires_rural_industries_manufactures)+ Number(value.salaires_rural_services)).toFixed())}</b></td>
            
              <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_agricultures)+ Number(value.salaire_urbain_insdustries_extractives) + Number(value.salaires_rural_agricultures)+ Number(value.salaire_rural_insdustries_extractives)).toFixed())}</b></td>
-             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_industries_manufactures)+ Number(value.salaires_rural_agricultures) ).toFixed())}</b></td>
-             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_rural_services)+ Number(value.salaires_rural_services) ).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_industries_manufactures)+ Number(value.salaires_rural_industries_manufactures) ).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_services)+ Number(value.salaires_rural_services) ).toFixed())}</b></td>
              
 
-             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_agricultures)+ Number(value.salaire_urbain_insdustries_extractives) + Number(value.salaires_rural_agricultures)+ Number(value.salaire_rural_insdustries_extractives) + Number(value.salaires_urbain_industries_manufactures)+ Number(value.salaires_rural_agricultures) + Number(value.salaires_rural_services)+ Number(value.salaires_rural_services)).toFixed())}</b></td>
+             <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(Number(value.salaires_urbain_agricultures)+ Number(value.salaire_urbain_insdustries_extractives) + Number(value.salaires_rural_agricultures)+ Number(value.salaire_rural_insdustries_extractives) + Number(value.salaires_urbain_industries_manufactures)+ Number(value.salaires_rural_industries_manufactures) + Number(value.salaires_urbain_services)+ Number(value.salaires_rural_services)).toFixed())}</b></td>
 
             </tr>     
         }) 

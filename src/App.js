@@ -958,7 +958,7 @@ return (
     <Route path="/total_subvention_info" element={<TotalSubventionInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation}/>} >
     </Route>
 
-    <Route path="/revenu_province_info" element={<RevenuProvinceInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={revenusSalaires} autresImpots={autresImpots} setRecetteAdministrative={setRecetteAdministrative}/>} >
+    <Route path="/revenu_province_info" element={<RevenuProvinceInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots} setRecetteAdministrative={setRecetteAdministrative}/>} >
     </Route>
 
     <Route path="/methode_calibrage_info" element={<MethodeCalibrageInfo username = {username} donneeMethodeCalibrage={donneeMethodeCalibrage} impotBienService={impotBienService} autreImpotIndirect={autreImpotIndirect} donsBudgtaire={donsBudgtaire} donsProjet={donsProjet} coefficientProduction={coefficientProduction} />} >

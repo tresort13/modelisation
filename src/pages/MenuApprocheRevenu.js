@@ -12,6 +12,7 @@ import Button from "react-bootstrap/Button";
 import Modal from 'react-bootstrap/Modal';
 import ClipLoader from "react-spinners/ClipLoader";
 
+
 function MenuApprocheRevenu(props)
 {
 
@@ -22,16 +23,8 @@ function MenuApprocheRevenu(props)
         query: "(max-width: 1224px)"
       });
 
-const navigate = useNavigate()
 const [modalShow2, setModalShow2] = React.useState(false);
 
-function execute(e)
-{
-  e.preventDefault()
-  setModalShow2(true)
-  
-  navigate('/revenu_province_info')
-}
     
     return (
     <>
@@ -81,8 +74,8 @@ function execute(e)
             </Col>
 
             <Col md={4} className="my-auto text-center">
-            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-            <Button onClick={(e)=>execute(e)}  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom' >
+            <Link to="/revenu_province_info" style={{color:'white',textDecorationLine:'none'}}>
+            <Button  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Révenu Provincial</b></i>
             </Button>
              </Link>     
@@ -99,27 +92,7 @@ function execute(e)
     )
 }
 
-function MyVerticallyCenteredModal2(props) {
-  return (
-    <Modal
-      {...props}
-      size="sm"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Veuillez Patienter...
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-      <ClipLoader color={"#ff8c00"} loading={true} size={150} /> 
-      </Modal.Body>
-      <Modal.Footer>
-      </Modal.Footer>
-    </Modal>
-  );
-}
+
 
 
 export default MenuApprocheRevenu;

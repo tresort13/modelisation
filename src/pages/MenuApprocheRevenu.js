@@ -12,7 +12,6 @@ import Button from "react-bootstrap/Button";
 import Modal from 'react-bootstrap/Modal';
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 function MenuApprocheRevenu(props)
 {
 
@@ -83,7 +82,7 @@ function execute(e)
 
             <Col md={4} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-            <Button  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom' onClick={(e)=>execute(e)}>
+            <Button onClick={(e)=>execute(e)}  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom' >
             <i className="text-secondary"><b>Révenu Provincial</b></i>
             </Button>
              </Link>     

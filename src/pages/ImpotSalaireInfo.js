@@ -34,7 +34,7 @@ const donneeRevenuSalaireExedantBrut = []
 const donneeTotalImpots = []
 const donneeTotalSubvention = []
 const donneeTotalProvince = []
-/*
+
 props.revenusSalaires.map(value=>
   {
       return props.exedantBrut.map(value2=>
@@ -89,7 +89,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
    
       props.setRecetteAdministrative([{"nom" : "recetteAdministrative","montant":Number(total_province) * 0.024}])
       
-  */
+  
     return (
         <>
             <Header username={props.username}/>
@@ -132,7 +132,9 @@ donneeRevenuSalaireExedantBrut.map(value=>
 <tr style={{border:"2px solid white"}}>
           <td><b>Total</b></td>
           <td><b></b></td>
-          
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(totalGeneral_province_milieu_urbain).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(totalGeneral_province_milieu_rural).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_province).toFixed())}</b></td>
           
         </tr> 
         

@@ -9,9 +9,6 @@ import { useMediaQuery } from 'react-responsive';
 import Header from "./Header";
 import Footer from "./Footer";
 import Button from "react-bootstrap/Button";
-import Modal from 'react-bootstrap/Modal';
-import ClipLoader from "react-spinners/ClipLoader";
-
 
 function MenuApprocheRevenu(props)
 {
@@ -85,7 +82,6 @@ const [modalShow2, setModalShow2] = React.useState(false);
 
         </Row>
        </Container>}
-       <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
        <Footer />
        </>
         

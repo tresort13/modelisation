@@ -89,7 +89,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
 
       const total_province = Number(totalGeneral_province_milieu_urbain) + Number(totalGeneral_province_milieu_rural)
    
-      props.setRecetteAdministrative([{nom : "recetteAdministrative",montant:Number(total_province) * 0.024}])
+      props.setRecetteAdministrative([{nom : "recetteAdministrative",montant:2000 * 0.024}])
       
   
     return (

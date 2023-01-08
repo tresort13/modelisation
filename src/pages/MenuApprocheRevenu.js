@@ -57,7 +57,7 @@ function MenuApprocheRevenu(props)
             </Col>
         </Row>
 
-           <Row>
+           <Row className="text-center justify-content-center mt-4">
             <Col mdmd={4} className="my-auto text-center">
             <Link to="/total_impot_info" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
@@ -73,9 +73,7 @@ function MenuApprocheRevenu(props)
            </Button>
             </Link>            
             </Col>
-      </Row>
 
-        <Row className="text-center justify-content-center mt-3 mb-5">
             <Col md={4} className="my-auto text-center">
             <Link to="/form_subvention_consommation" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
@@ -83,6 +81,10 @@ function MenuApprocheRevenu(props)
             </Button>
              </Link>     
             </Col>
+      </Row>
+
+        <Row className="text-center justify-content-center mt-4">
+            
 
             <Col md={4} className="my-auto text-center">
             <Link to="/total_subvention_info" style={{color:'white',textDecorationLine:'none'}}>

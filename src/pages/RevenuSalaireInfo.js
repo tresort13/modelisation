@@ -112,7 +112,7 @@ const total_salaires_urbain_agricultures = props.revenusSalaires.reduce((total,v
 <Row className='justify-content-center '>
         <Col xs = {12} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Table Révenus Salaires</i></b></u></h6>
+        <h6 ><u><b><i className='text-primary'>Table Revenus sur Salaires</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">
@@ -186,7 +186,7 @@ const total_salaires_urbain_agricultures = props.revenusSalaires.reduce((total,v
           <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_rural_agricultures).toFixed())}</b></td>
           <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaire_rural_insdustries_extractives).toFixed())}</b></td>
           <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_rural_industries_manufactures).toFixed())}</b></td>
-          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_urbain_services).toFixed())}</b></td>
+          <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_salaires_rural_services).toFixed())}</b></td>
           <td className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_milieu_rural).toFixed())}</b></td>
 
 

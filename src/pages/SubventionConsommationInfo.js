@@ -62,7 +62,7 @@ console.log(props.subventionConsommation)
 <Row className='justify-content-center '>
         <Col xs = {12} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Table Autres Impôts</i></b></u></h6>
+        <h6 ><u><b><i className='text-primary'>Table Subventions Consommation</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">

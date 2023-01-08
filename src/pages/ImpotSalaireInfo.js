@@ -55,8 +55,6 @@ donneeRevenuSalaireExedantBrut.map(value=>
               })
       })
 
-      
-
       props.subventionProduction.map(value=>
         {
             return props.subventionConsommation.map(value2=>
@@ -91,7 +89,7 @@ donneeRevenuSalaireExedantBrut.map(value=>
 
       const total_province = Number(totalGeneral_province_milieu_urbain) + Number(totalGeneral_province_milieu_rural)
    
-      props.setTvaBrut([{nom : "tvaBrut",montant: Number(total_province) * 0.024}])
+      props.setRecetteAdministrative([{nom : "recetteAdministrative",montant:Number(total_province) * 0.024}])
       
   
     return (

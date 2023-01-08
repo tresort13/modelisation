@@ -139,7 +139,7 @@ props.revenusSalaires.map(value=>
 <Row className='justify-content-center '>
         <Col xs = {"auto"} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Table de la démande intérieure</i></b></u></h6>
+        <h6 ><u><b><i className='text-primary'>Table Total Impôts</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">

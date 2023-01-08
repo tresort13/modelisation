@@ -20,7 +20,12 @@ function MenuApprocheRevenu(props)
         query: "(max-width: 1224px)"
       });
 
-
+      function validate(e)
+      {
+        e.preventDefault()
+        console.log("connection reussi")
+        navigate('/impot_salaire_info')
+      }
 
     
     return (
@@ -29,16 +34,32 @@ function MenuApprocheRevenu(props)
        {isDesktop && <Container className=" mb-5" style={{marginTop:50}}>
        <Row className="text-center justify-content-center">
             <Col md={4} className="my-auto text-center">
-            <Link to="/menu_revenu" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Approche Révenu</b></i>
+            <Link to="/form_revenu_salaire" style={{color:'white',textDecorationLine:'none'}}>
+            <Button variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
+            <i className="text-secondary"><b>Impôts sur Salaires</b></i>
             </Button>
             </Link>    
             </Col>
+            <Col md={4} className="my-auto text-center">
+            <Link to="/form_exedant_brut" style={{color:'white',textDecorationLine:'none'}}>
+            <Button variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
+            <i className="text-secondary"><b>Impôts sur Bénéfice Brut d’Exploitation</b></i>
+            </Button>
+            </Link>    
+            </Col>
+            <Col md={4} className="my-auto text-center">
+            <Link to="/form_autre_impot" style={{color:'white',textDecorationLine:'none'}}>
+            <Button variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
+            <i className="text-secondary"><b>Autres Impôts</b></i>
+            </Button>
+            </Link>    
+            </Col>
+        </Row>
 
+           <Row>
             <Col mdmd={4} className="my-auto text-center">
             <Link to="/total_impot_info" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
+            <Button variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Total Impôts</b></i>
            </Button>
             </Link>            
@@ -46,7 +67,7 @@ function MenuApprocheRevenu(props)
 
             <Col mdmd={4} className="my-auto text-center">
             <Link to="/form_subvention_production" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
+            <Button variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Subventions Production</b></i>
            </Button>
             </Link>            
@@ -56,7 +77,7 @@ function MenuApprocheRevenu(props)
         <Row className="text-center justify-content-center mt-3 mb-5">
             <Col md={4} className="my-auto text-center">
             <Link to="/form_subvention_consommation" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
+            <Button variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Subventions Consommations</b></i>
             </Button>
              </Link>     
@@ -64,15 +85,15 @@ function MenuApprocheRevenu(props)
 
             <Col md={4} className="my-auto text-center">
             <Link to="/total_subvention_info" style={{color:'white',textDecorationLine:'none'}}>
-            <Button  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
+            <Button  variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Total Subventions</b></i>
             </Button>
              </Link>     
             </Col>
 
             <Col md={4} className="my-auto text-center">
-            <Link to="/impot_salaire_info" style={{color:'white',textDecorationLine:'none'}}>
-            <Button  variant="warning" style={{width:250,height:250}} className='btn-lg rounded-pill zoom'>
+            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+            <Button onClick={(e)=>validate(e)}  variant="warning" style={{width:250,height:80}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Révenu Provincial</b></i>
             </Button>
              </Link>     

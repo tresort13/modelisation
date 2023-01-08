@@ -714,7 +714,7 @@ const dataDonneeCoefficientApprocheProduction = (data)=>
 
 const dataDonneeRecettesAdministrative = (data)=>
 {
-   setRecetteAdministrative([{nom :"",montant:""}])
+  setRecetteAdministrative([{nom : "recetteAdministrative",montant:data}])
 }
 
 const dataDonneeMethodeCalibrage = ()=>
@@ -963,7 +963,7 @@ return (
     <Route path="/total_subvention_info" element={<TotalSubventionInfo username = {username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation}/>} >
     </Route>
 
-    <Route path="/impot_salaire_info" element={<ImpotSalaireInfo username={username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots} setRecetteAdministrative={setRecetteAdministrative} />} >
+    <Route path="/impot_salaire_info" element={<ImpotSalaireInfo username={username} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots}  />} >
     </Route>
 
     <Route path="/methode_calibrage_info" element={<MethodeCalibrageInfo username = {username} donneeMethodeCalibrage={donneeMethodeCalibrage} impotBienService={impotBienService} autreImpotIndirect={autreImpotIndirect} donsBudgtaire={donsBudgtaire} donsProjet={donsProjet} coefficientProduction={coefficientProduction} />} >

@@ -83,7 +83,7 @@ function MenuApprocheRevenu(props)
             </Col>
       </Row>
 
-        <Row className="text-center justify-content-center mt-4">
+        <Row className="mt-4">
             
 
             <Col md={4} className="my-auto text-center">

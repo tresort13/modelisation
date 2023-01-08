@@ -714,7 +714,7 @@ const dataDonneeCoefficientApprocheProduction = (data)=>
 
 const dataDonneeMethodeCalibrage = ()=>
 {
-  setDonneeMethodeCalibrage([...petrolMine,...recetteAdministrative,...tvaBrut,...autreImpotDirect,...impotRevenuPetrolier,...impotRevenuPersonnePhysique,...accises,...droitTaxeImportation,...droitTaxeExportation])
+  setDonneeMethodeCalibrage([...petrolMine,...recetteAdministrative,...tvaBrut,...autreImpotDirect,...impotRevenuPetrolier,...impotRevenuNonPetrolier,...impotRevenuPersonnePhysique,...accises,...droitTaxeImportation,...droitTaxeExportation])
 }
 
 

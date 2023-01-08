@@ -94,6 +94,8 @@ function MethodeCalibrageInfo(props)
         const douaneEtAccise = Number(resource_douaniere) + Number(accises.montant)
         const recetteFiscale = Number(douaneEtAccise) + Number(impotDirect_et_impotIndirect)
         const recetteInterne = Number(recetteFiscale) + Number(recette_non_fiscale)
+
+        console.log(impot_direct)
         
     return (
         <>

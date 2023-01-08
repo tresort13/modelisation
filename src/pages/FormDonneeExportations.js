@@ -56,7 +56,7 @@ const resetFileInput = () => {
             .then( res => res.json())
             .then(
               res => {   
-                props.dataDonneeImportations(res)
+                props.dataDonneeExportations(res)
                   navigate('/donnees_exportations_info')
               }
               

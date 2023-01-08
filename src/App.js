@@ -78,7 +78,6 @@ import FormSubventionConsommation from "./pages/FormSubventionConsommation";
 import FormAutreImpot from "./pages/FormAutreImpot";
 import TotalImpotInfo from "./pages/TotalImpotInfo";
 import TotalSubventionInfo from "./pages/TotalSubventionInfo";
-import MenuRevenu from "./pages/MenuRevenu";
 import SubventionProductionInfo from "./pages/SubventionProductionInfo";
 import SubventionConsommationInfo from "./pages/SubventionConsommationInfo";
 import AutreImpotInfo from "./pages/AutreImpotInfo";

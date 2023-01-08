@@ -19,6 +19,7 @@ function MenuApprocheRevenu(props)
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
       });
+      const navigate = useNavigate()
 
       function validate(e)
       {

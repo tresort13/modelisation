@@ -139,27 +139,27 @@ function MethodeCalibrageInfo(props)
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>   Impôts directs et indirects (DGI) </b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed(impotDirect_et_impotIndirect))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(impotDirect_et_impotIndirect).toFixed())}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>      Recettes douanières </b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed(resource_douaniere))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(resource_douaniere).toFixed())}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>      Douanes et accises (DGDA) </b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed(douaneEtAccise))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(douaneEtAccise).toFixed())}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>      Recettes fiscales </b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed(recetteFiscale))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(recetteFiscale).toFixed())}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>      Recettes internes : fiscales et non-fiscales </b></i></td>
-             <td><i><b>{new Intl.NumberFormat().format(Number(recetteInterne).toFixed(recetteFiscale))}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(recetteInterne).toFixed())}</b></i></td>
         </tr> 
 
 

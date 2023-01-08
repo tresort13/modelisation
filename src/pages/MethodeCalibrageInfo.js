@@ -88,7 +88,7 @@ function MethodeCalibrageInfo(props)
         const dons = Number(props.donsBudgtaire) + Number(props.donsProjet)
         const recette_non_fiscale = Number(petrolMine.montant) + Number(recetteAdministrative.montant)
         const impot_indirect = Number(props.impotBienService) + Number(props.autreImpotIndirect) + Number(tvaBrut.montant)
-        const impot_direct = impotRevenuPersonnePhysique.montant + autreImpotDirect.montant + impotRevenuPetrolier.montant + impotRevenuNonPetrolier.montant
+        const impot_direct = Number(impotRevenuPersonnePhysique.montant) + Number(autreImpotDirect.montant)
         const impotDirect_et_impotIndirect = Number(impot_direct) + Number(impot_indirect)
         const resource_douaniere = Number(droitTaxeImportation.montant) + Number(droitTaxeExportation.montant)
         const douaneEtAccise = Number(resource_douaniere) + Number(accises.montant)

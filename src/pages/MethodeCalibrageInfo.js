@@ -32,11 +32,6 @@ function MethodeCalibrageInfo(props)
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
         console.log(props.donneeMethodeCalibrage)
-        console.log(props.impotBienService)
-        console.log(props.autreImpotIndirect)
-        console.log(props.donsBudgtaire)
-        console.log(props.donsProjet)
-        console.log(props.coefficientProduction)
 
         
         const petrolMine = props.donneeMethodeCalibrage.find((value)=>{
@@ -79,6 +74,17 @@ function MethodeCalibrageInfo(props)
             return value.nom == "droitTaxeExportation"
         })
 
+        console.log(petrolMine)
+        console.log(recetteAdministrative)
+        console.log(tvaBrut)
+        console.log(autreImpotDirect)
+        console.log(impotRevenuPetrolier)
+        console.log(impotRevenuNonPetrolier)
+        console.log(impotRevenuPersonnePhysique)
+        console.log(accises)
+        console.log(droitTaxeImportation)
+        console.log(droitTaxeExportation)
+
         const dons = Number(props.donsBudgtaire) + Number(props.donsProjet)
         const recette_non_fiscale = Number(petrolMine) + Number(recetteAdministrative)
         const impot_indirect = Number(props.impotBienService) + Number(props.autreImpotIndirect) + Number(tvaBrut)
@@ -114,46 +120,46 @@ function MethodeCalibrageInfo(props)
       <tbody>
          <tr style={{border:"2px solid white"}}>
              <td><i ><b>Dons</b></i></td>
-             <td><i><b>{dons}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(dons).toFixed())}</b></i></td>
         </tr>   
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>Recettes non-fiscales</b></i></td>
-             <td><i><b>{recette_non_fiscale}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(recette_non_fiscale).toFixed())}</b></i></td>
         </tr>   
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>   Impôts indirects </b></i></td>
-             <td><i><b>{impot_indirect}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(impot_indirect).toFixed())}</b></i></td>
         </tr>  
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>   Impôts directs </b></i></td>
-             <td><i><b>{impot_direct}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed())}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>   Impôts directs et indirects (DGI) </b></i></td>
-             <td><i><b>{impotDirect_et_impotIndirect}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed(impotDirect_et_impotIndirect))}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>      Recettes douanières </b></i></td>
-             <td><i><b>{resource_douaniere}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed(resource_douaniere))}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>      Douanes et accises (DGDA) </b></i></td>
-             <td><i><b>{douaneEtAccise}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed(douaneEtAccise))}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>      Recettes fiscales </b></i></td>
-             <td><i><b>{recetteFiscale}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed(recetteFiscale))}</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
              <td><i ><b>      Recettes internes : fiscales et non-fiscales </b></i></td>
-             <td><i><b>{recetteInterne}</b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(recetteInterne).toFixed(recetteFiscale))}</b></i></td>
         </tr> 
 
 

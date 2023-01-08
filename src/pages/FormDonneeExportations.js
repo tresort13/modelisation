@@ -65,6 +65,7 @@ const resetFileInput = () => {
               {
                  setModalShow2(false)
                 setModalShow(true)
+                console.log(error)
               } )
   
               

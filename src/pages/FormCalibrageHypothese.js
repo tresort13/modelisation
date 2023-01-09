@@ -101,8 +101,8 @@ return (
     
 <Form>
     <Row>
-      <hr variant='text-warning'></hr>
-      <p variant='warning'><b><u> Droit et taxe à l'importation </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Droit et taxe à l'importation </u></b> </p>
     </Row>
     <Row className='justify-content-center'>
         <Col xs = {6}>
@@ -119,8 +119,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Droit et taxe à l'exportation </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Droit et taxe à l'exportation </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -137,8 +137,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Accises </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Accises </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -155,8 +155,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Impôts sur le revenu personnes physiques </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Impôts sur le revenu personnes physiques </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -173,8 +173,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Impôts sur le revenu des sociétés et des entreprises non pétrolières </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Impôts sur le revenu des sociétés et des entreprises non pétrolières </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -191,8 +191,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Impôts sur le revenu des sociétés pétrolières </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Impôts sur le revenu des sociétés pétrolières </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -215,8 +215,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Autres impôts directs </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Autres impôts directs </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -233,8 +233,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> TVA Brute </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> TVA Brute </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -251,8 +251,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Impôts sur les biens et services </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Impôts sur les biens et services </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -269,8 +269,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Autres impôts indirects </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Autres impôts indirects </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -287,8 +287,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Recettes administratives (DGRAD) </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Recettes administratives (DGRAD) </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -323,8 +323,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Dons budgétaires </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Dons budgétaires </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -341,8 +341,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Dons projets </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Dons projets </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>

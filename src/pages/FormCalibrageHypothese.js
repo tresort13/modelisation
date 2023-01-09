@@ -30,11 +30,22 @@ function FormCalibrageHypothese(props)
 const inputRef = useRef(null);
 const [fichier,setFichier] = useState();
 const[CalibrageInputFields,setCalibrageInputFields] = useState({infoCalibrage :{
-    impot_bien_service :"",
-    autre_impot_indirect :"",
-    dons_budgetaire:"",
-    dons_projet:"",
-    coefficient_approche_production:""
+    
+  droit_taxe_importation:"",
+  droit_taxe_exportation:"",
+  accises:"",
+  impot_revenu_personne_physique:"",
+  impot_revenu_societe_non_petroliere:"",
+  impot_revenu_societe_petroliere:"",
+  autre_impot_direct:"",
+  tva_brut:"",
+  impot_bien_service :"",
+  autre_impot_indirect :"",
+  recette_administrative:"",
+  petrol_mine:"",
+  dons_budgetaire:"",
+  dons_projet:"",
+  impot_revenu_societe_petroliere_coefficient:""
 }});
 //const pib_annee_fiscale_2022= Number(Number((props.impotDGIInfo[2].annee_fiscale_2021) * (1 + Number(props.impotTauxCroissance)))).toFixed()
 const [message,setMessage] = useState("Methode Calibrage des Hypotheses");
@@ -51,11 +62,21 @@ const submitManifest = (e)=>
     e.preventDefault()
     setModalShow2(true)
              props.dataDonneeMethodeCalibrage()
+             props.dataDonneeDroitTaxeImportation( 3500800 * (Number(CalibrageInputFields.infoCalibrage.droit_taxe_importation) / 100))
+             props.dataDonneeDroitTaxeExportation( 2581344 * (Number(CalibrageInputFields.infoCalibrage.droit_taxe_exportation) / 100))
+             props.dataDonneeAccise(4250000 * (Number(CalibrageInputFields.infoCalibrage.accises) / 100))
+             props.dataDonneeImpotRevenuPersonnePhysique(3450000 * (Number(CalibrageInputFields.infoCalibrage.impot_revenu_personne_physique) / 100))
+             props.dataDonneeRevenuSocieteNonPetroliere(Number(CalibrageInputFields.infoCalibrage.impot_revenu_societe_non_petroliere))
+             props.dataDonneeRevenuSocietePetroliere( 3500800 * (Number(CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere) / 100))
+             props.dataDonneeAutreImpotDirect( 3500800 * (Number(CalibrageInputFields.infoCalibrage.autre_impot_direct) / 100))
+              props.dataDonneeTvaBrut( 2581344 * (Number(CalibrageInputFields.infoCalibrage.tva_brut) / 100))
               props.dataDonneeImpotsBienService( 3500800 * (Number(CalibrageInputFields.infoCalibrage.impot_bien_service) / 100))
               props.dataDonneeAutreImpotIndirect( 2581344 * (Number(CalibrageInputFields.infoCalibrage.autre_impot_indirect) / 100))
+              props.dataDonneeRecetteAdministrative( 2581344 * (Number(CalibrageInputFields.infoCalibrage.recette_administrative) / 100))
+              props.dataDonneePetrolMine( 2581344 * (Number(CalibrageInputFields.infoCalibrage.petrol_mine) / 100))
               props.dataDonneeDonsBudgetaire(4250000 * (Number(CalibrageInputFields.infoCalibrage.dons_budgetaire) / 100))
               props.dataDonneeDonsProjets(3450000 * (Number(CalibrageInputFields.infoCalibrage.dons_projet) / 100))
-              props.dataDonneeCoefficientApprocheProduction(Number(CalibrageInputFields.infoCalibrage.coefficient_approche_production))
+              props.dataDonneedataDonneeRevenuSocietePetroliereCoefficient(Number(CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere_coefficient))
                 
                navigate('/methode_calibrage_info')
             
@@ -81,44 +102,195 @@ return (
 <Form>
 
     <Row className='justify-content-center'>
-        <Col xs = {8}>
+        <Col xs = {5}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_bien_service} name="impot_bien_service"  onChange={e=>inputChanged(e)} type="text" placeholder='Impôts sur les biens et services (%)' autoFocus   required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.droit_taxe_importation} name="droit_taxe_importation"  onChange={e=>inputChanged(e)} type="text" placeholder="Droit et taxe à l'importation (%)" autoFocus   required/>
+         </Form.Group>
+        </Col>
+
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="droit_taxe_importation_base_calcul"   type="text"   required/>
          </Form.Group>
         </Col>
     </Row>
 
     <Row className='justify-content-center'>
-        <Col xs = {8}>
+        <Col xs = {5}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect} name="autre_impot_indirect"  onChange={e=>inputChanged(e)} type="text" placeholder='Autres impôts indirects (%)'   required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.droit_taxe_exportation} name="droit_taxe_exportation"   type="text" placeholder="Droit et taxe à l'exportation" required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="droit_taxe_exportation_base_calcul"   type="text"   required/>
          </Form.Group>
         </Col>
     </Row>
 
     <Row className='justify-content-center'>
-        <Col xs = {8}>
+    <Col xs = {5}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire} name="dons_budgetaire"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons budgétaires (%)'  required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.accises} name="droit_taxe_exportation" placeholder='Accises'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="droit_taxe_exportation_base_calcul"   type="text"   required/>
          </Form.Group>
         </Col>
     </Row>
 
     <Row className='justify-content-center'>
-        <Col xs = {8}>
+    <Col xs = {5}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet} name="dons_projet"  onChange={e=>inputChanged(e)} type="text" placeholder='Dons projets (%)'  required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_personne_physique} name="impot_revenu_personne_physique" placeholder='Impôts sur le revenu personnes physiques'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="impot_revenu_personne_physique_base_calcul" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
     <Row className='justify-content-center'>
-        <Col xs = {8}>
+    <Col xs = {5}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.coefficient_approche_production} name="coefficient_approche_production"  onChange={e=>inputChanged(e)} type="text" placeholder='coefficient Approche production (Decimal)'  required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_non_petroliere} name="impot_revenu_societe_non_petroliere" placeholder='Impôts sur le revenu des sociétés et des entreprises non pétrolières'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="impot_revenu_societe_non_petroliere_base_calcul" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {4}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere} name="impot_revenu_societe_petroliere" placeholder='Impôts sur le revenu des sociétés pétrolières'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {4}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="impot_revenu_societe_petroliere_base_calcul" type="text" required/>
+         </Form.Group>
+        </Col>
+
+        <Col xs = {2}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere_coefficient} name="impot_revenu_societe_petroliere_coefficient" placeholder='Coefficient'  type="text"  required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_direct} name="autre_impot_direct" placeholder='Autres impôts directs'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="autre_impot_direct_base_calcul" type="text" required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.tva_brut} name="tva_brut" placeholder='TVA Brute'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="tva_brut_base_calcule" type="text" required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_bien_service} name="tva_brut" placeholder='Impôts sur les biens et services'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="impot_bien_service_base_calcule" type="text" required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect} name="autre_impot_indirect" placeholder='Autres impôts indirects'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="autre_impot_indirect_base_calcule" type="text" required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.recette_administrative} name="recette_administrative" placeholder='Recettes administratives (DGRAD)'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="recette_administrative_base_calcule" type="text" required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.petrol_mine} name="petrol_mine" placeholder='Pétrole et mines (royalties et taxes)'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="petrol_mine_base_calcule" type="text" required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire} name="dons_budgetaire" placeholder='Dons budgétaires'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="dons_budgetaire_base_calcule" type="text" required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+    <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet} name="dons_projet" placeholder='Dons projets'  type="text"  required/>
+         </Form.Group>
+        </Col>
+        <Col xs = {5}>
+        <Form.Group className="mb-3" controlId="formBasicFile" >
+        <Form.Control  name="dons_projet_base_calcule" type="text" required/>
+         </Form.Group>
+        </Col>
+    </Row>
+
+
 
   
   

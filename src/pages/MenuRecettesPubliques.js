@@ -24,20 +24,21 @@ function MenuRecettesPubliques(props)
      <Header username={props.username}/>
        {isDesktop && <Container className=" mb-5" style={{marginTop:100}}>
        <Row className="text-center justify-content-center">
-            <Col md={6} className="my-auto text-center">
-            <Link to="/form_recettes_calibrage_hypothese" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Methode Calibrage des Hypotheses </b></i>
-            </Button>
-            </Link>    
-            </Col>
-
+            
             <Col mdmd={6} className="my-auto text-center">
             <Link to="/menu_recettes" style={{color:'white',textDecorationLine:'none'}}>
             <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>Methode Régulière</b></i>
            </Button>
             </Link>            
+            </Col>
+
+            <Col md={6} className="my-auto text-center">
+            <Link to="/form_recettes_calibrage_hypothese" style={{color:'white',textDecorationLine:'none'}}>
+            <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
+            <i className="text-secondary"><b>Methode Calibrage des Hypotheses </b></i>
+            </Button>
+            </Link>    
             </Col>
 
            

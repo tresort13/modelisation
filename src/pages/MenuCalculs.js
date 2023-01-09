@@ -24,13 +24,6 @@ function MenuCalculs(props)
      <Header username={props.username}/>
        {isDesktop && <Container className=" mb-5" style={{marginTop:100}}>
        <Row className="text-center justify-content-center">
-            <Col md={6} className="my-auto text-center">
-            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>Calculs des indicateurs économiques</b></i>
-            </Button>
-            </Link>    
-            </Col>
 
             <Col mdmd={6} className="my-auto text-center">
             <Link to="/menu_recettes_publiques" style={{color:'white',textDecorationLine:'none'}}>
@@ -38,6 +31,14 @@ function MenuCalculs(props)
             <i className="text-secondary"><b>Calcul des recettes publiques</b></i>
            </Button>
             </Link>            
+            </Col>
+
+            <Col md={6} className="my-auto text-center">
+            <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+            <Button variant="warning" style={{width:300,height:300}} className='btn-lg rounded-pill zoom'>
+            <i className="text-secondary"><b>Calculs des indicateurs économiques</b></i>
+            </Button>
+            </Link>    
             </Col>
 
            

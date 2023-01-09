@@ -103,7 +103,7 @@ function DonneeExportationsInfo(props)
   
         const total_secteur = Number(total_secteur_agriculture) + Number(total_secteur_mines) + Number(total_secteur_industrie) + Number(total_secteur_service)
 
-        props.setDroitTaxeExportation([{nom : "droitTaxeExportation",montant: Number(total_secteur) * 0.01}])
+        props.setDonneeTotalExportationApprocheDepense(total_secteur)
   
 
   

@@ -568,6 +568,86 @@ useEffect(() => {
   window.localStorage.setItem("donneeTotalRevenuApproche", JSON.stringify(donneeTotalRevenuApproche))
 }, [donneeTotalRevenuApproche])
 
+const [donneeTotalRevenuSalaire ,setDonneeTotalRevenuSalaire] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeTotalRevenuSalaire');
+  return localData ? JSON.parse(localData) :"";
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeTotalRevenuSalaire", JSON.stringify(donneeTotalRevenuSalaire))
+}, [donneeTotalRevenuSalaire])
+
+const [donneeTotalProductionApproche ,setDonneeTotalProductionApproche] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeTotalProductionApproche');
+  return localData ? JSON.parse(localData) :"";
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeTotalProductionApproche", JSON.stringify(donneeTotalProductionApproche))
+}, [donneeTotalProductionApproche])
+
+const [donneeTotalImportationApprocheDepense ,setDonneeTotalImportationApprocheDepense] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeTotalImportationApprocheDepense');
+  return localData ? JSON.parse(localData) :"";
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeTotalImportationApprocheDepense", JSON.stringify(donneeTotalImportationApprocheDepense))
+}, [donneeTotalImportationApprocheDepense])
+
+const [donneeTotalExportationApprocheDepense ,setDonneeTotalExportationApprocheDepense] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeTotalExportationApprocheDepense');
+  return localData ? JSON.parse(localData) :"";
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeTotalExportationApprocheDepense", JSON.stringify(donneeTotalExportationApprocheDepense))
+}, [donneeTotalExportationApprocheDepense])
+
+const [donneeTotalApprocheProductionNonPetrolier ,setDonneeTotalApprocheProductionNonPetrolier] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeTotalApprocheProductionNonPetrolier');
+  return localData ? JSON.parse(localData) :"";
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeTotalApprocheProductionNonPetrolier", JSON.stringify(donneeTotalApprocheProductionNonPetrolier))
+}, [donneeTotalApprocheProductionNonPetrolier])
+
+const [donneeTotalApprocheProductionPetrolier ,setDonneeTotalApprocheProductionPetrolier] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeTotalApprocheProductionPetrolier');
+  return localData ? JSON.parse(localData) :"";
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeTotalApprocheProductionPetrolier", JSON.stringify(donneeTotalApprocheProductionPetrolier))
+}, [donneeTotalApprocheProductionPetrolier])
+
+const [donneeTotalApprocheProductionAutreImpotDirect ,setDonneeTotalApprocheProductionAutreImpotDirect] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeTotalApprocheProductionAutreImpotDirect');
+  return localData ? JSON.parse(localData) :"";
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeTotalApprocheProductionAutreImpotDirect", JSON.stringify(donneeTotalApprocheProductionAutreImpotDirect))
+}, [donneeTotalApprocheProductionAutreImpotDirect])
+
+const [donneeTotalApprocheProductionPetrolMine ,setDonneeTotalApprocheProductionPetrolMine] = useState(()=>
+{
+  const localData = localStorage.getItem('donneeTotalApprocheProductionPetrolMine');
+  return localData ? JSON.parse(localData) :"";
+});
+
+useEffect(() => {
+  window.localStorage.setItem("donneeTotalApprocheProductionPetrolMine", JSON.stringify(donneeTotalApprocheProductionPetrolMine))
+}, [donneeTotalApprocheProductionPetrolMine])
+
 const dataPopulation = (data)=>
 {
   setPopulationInfo(data)
@@ -924,10 +1004,10 @@ return (
     <Route path="/donnees_depense_publique" element={<DonneesDepensePubliqueInfo username = {username} donneeDepenseCouranteInfo={donneeDepenseCouranteInfo} donneeDepenseCapitalInfo={donneeDepenseCapitalInfo}/>} >
     </Route>
 
-    <Route path="/donnees_exportations_info" element={<DonneeExportationsInfo username = {username} donneeExportationsInfo={donneeExportationsInfo} setDroitTaxeExportation={setDroitTaxeExportation}/>} >
+    <Route path="/donnees_exportations_info" element={<DonneeExportationsInfo username = {username} donneeExportationsInfo={donneeExportationsInfo} setDonneeTotalExportationApprocheDepense={setDonneeTotalExportationApprocheDepense}/>} >
     </Route>
 
-    <Route path="/donnees_importations_info" element={<DonneeImportationsInfo username = {username} donneeImportationsInfo={donneeImportationsInfo} setDroitTaxeImportation={setDroitTaxeImportation}/>} >
+    <Route path="/donnees_importations_info" element={<DonneeImportationsInfo username = {username} donneeImportationsInfo={donneeImportationsInfo} setDonneeTotalImportationApprocheDepense={setDonneeTotalImportationApprocheDepense}/>} >
     </Route>
 
     <Route path="/donnees_exportations_nettes_info" element={<DonneeExportationsNettesInfo username = {username} donneeExportationsInfo={donneeExportationsInfo} donneeImportationsInfo={donneeImportationsInfo} />} >
@@ -946,7 +1026,7 @@ return (
     <Route path="/demande_interieure_urbaine" element={<DemandeInterieureUrbaineInfo username = {username} />} >
     </Route>
 
-    <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo} setPetrolMine={setPetrolMine} setTvaBrut={setTvaBrut} setAutreImpotDirect={setAutreImpotDirect} setImpotRevenuPetrolier={setImpotRevenuPetrolier} setImpotRevenuNonPetrolier={setImpotRevenuNonPetrolier} />} >
+    <Route path="/donnee_production_info" element={<ProductionInfo username = {username} productionInfo={productionInfo} setDonneeTotalProductionApproche={setDonneeTotalProductionApproche} setDonneeTotalApprocheProductionNonPetrolier={setDonneeTotalApprocheProductionNonPetrolier} setDonneeTotalApprocheProductionPetrolier={setDonneeTotalApprocheProductionPetrolier} setDonneeTotalApprocheProductionAutreImpotDirect={setDonneeTotalApprocheProductionAutreImpotDirect} setDonneeTotalApprocheProductionPetrolMine={setDonneeTotalApprocheProductionPetrolMine}/>} >
     </Route>
 
     <Route path="/impot_dgi_info" element={<ImpotDGIInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} setRecettesPubliquesDGI={setRecettesPubliquesDGI}/>} >
@@ -964,7 +1044,7 @@ return (
     <Route path="/recettes_publiques_info" element={<RecettesPubliquesInfo username = {username} impotDgiInfo={impotDgiInfo} impotPourcentageCroissance={impotPourcentageCroissance} recettesPubliques={recettesPubliques}/>} >
     </Route>
 
-    <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} revenusSalaires={revenusSalaires} setImpotRevenuPersonnePhysique={setImpotRevenuPersonnePhysique}/>} >
+    <Route path="/revenu_salaire_info" element={<RevenuSalaireInfo username = {username} revenusSalaires={revenusSalaires} setDonneeTotalRevenuSalaire={setDonneeTotalRevenuSalaire}/>} >
     </Route>
 
     <Route path="/exedant_brut_info" element={<ExedantBrutInfo username = {username} exedantBrut={exedantBrut}/>} >
@@ -988,7 +1068,7 @@ return (
     <Route path="/impot_salaire_info" element={<ImpotSalaireInfo username={username} setDonneeTotalRevenuApproche={setDonneeTotalRevenuApproche} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots} />} >
     </Route>
 
-    <Route path="/methode_calibrage_info" element={<MethodeCalibrageInfo username = {username} donneeMethodeCalibrage={donneeMethodeCalibrage} petrolMine={petrolMine} droitTaxeImportation={droitTaxeImportation} droitTaxeExportation={droitTaxeExportation} accises={accises} impotRevenuPersonnePhysique={impotRevenuPersonnePhysique} impotRevenuNonPetrolier={impotRevenuNonPetrolier} impotRevenuPetrolier={impotRevenuPetrolier} autreImpotDirect={autreImpotDirect} tvaBrut={tvaBrut} recetteAdministrative={recetteAdministrative} coefficientProduction={coefficientProduction} impotBienService={impotBienService} autreImpotIndirect={autreImpotIndirect} donsBudgtaire={donsBudgtaire} donsProjet={donsProjet}  productionInfo={productionInfo} donneeImportationsInfo={donneeImportationsInfo} donneeExportationsInfo={donneeExportationsInfo} revenusSalaires={revenusSalaires}/>} >
+    <Route path="/methode_calibrage_info" element={<MethodeCalibrageInfo username = {username}  petrolMine={petrolMine} droitTaxeImportation={droitTaxeImportation} droitTaxeExportation={droitTaxeExportation} accises={accises} impotRevenuPersonnePhysique={impotRevenuPersonnePhysique} impotRevenuNonPetrolier={impotRevenuNonPetrolier} impotRevenuPetrolier={impotRevenuPetrolier} autreImpotDirect={autreImpotDirect} tvaBrut={tvaBrut} recetteAdministrative={recetteAdministrative} coefficientProduction={coefficientProduction} impotBienService={impotBienService} autreImpotIndirect={autreImpotIndirect} donsBudgtaire={donsBudgtaire} donsProjet={donsProjet}  productionInfo={productionInfo} donneeImportationsInfo={donneeImportationsInfo} donneeExportationsInfo={donneeExportationsInfo} revenusSalaires={revenusSalaires} donneeTotalRevenuApproche={donneeTotalRevenuApproche} donneeTotalRevenuSalaire={donneeTotalRevenuSalaire} donneeTotalProductionApproche={donneeTotalProductionApproche} donneeTotalImportationApprocheDepense={donneeTotalImportationApprocheDepense} donneeTotalExportationApprocheDepense={donneeTotalExportationApprocheDepense} donneeTotalApprocheProductionNonPetrolier={donneeTotalApprocheProductionNonPetrolier} donneeTotalApprocheProductionPetrolier={donneeTotalApprocheProductionPetrolier} donneeTotalApprocheProductionAutreImpotDirect={donneeTotalApprocheProductionAutreImpotDirect} donneeTotalApprocheProductionPetrolMine={donneeTotalApprocheProductionPetrolMine}/>} >
     </Route>
     
 

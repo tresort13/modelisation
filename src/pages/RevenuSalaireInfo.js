@@ -98,7 +98,7 @@ const total_salaires_urbain_agricultures = props.revenusSalaires.reduce((total,v
   
         const total_impot_salaire = Number(total_secteur_primaire) + Number(total_secteur_secondaire) + Number(total_secteur_tertiaire) 
 
-        props.setImpotRevenuPersonnePhysique([{nom : "impotRevenuPersonnePhysique",montant:Number(total_impot_salaire) * 0.015}])
+        props.setDonneeTotalRevenuSalaire(total_impot_salaire)
     return (
         <>
             <Header username={props.username}/>

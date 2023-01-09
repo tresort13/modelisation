@@ -105,11 +105,10 @@ function ProductionInfo(props)
         
         //donnee calibarage
         
-        props.setPetrolMine([{nom : "petrolMine",montant : Number(total_secteur_industrie) * 0.002}])
-        props.setTvaBrut([{nom : "tvaBrut",montant: Number(total_secteur) * 0.024}])
-        props.setAutreImpotDirect([{nom :"autreImpotDirect",montant: Number(Number(total_secteur_agriculture) + Number(total_secteur_industrie)+ Number(total_secteur_service)) * 0.024}])
-        props.setImpotRevenuPetrolier([{nom :"impotRevenuPetrolier",montant: Number(total_secteur_industrie) * 0.002}])
-        props.setImpotRevenuNonPetrolier([{nom :"impotRevenuNonPetrolier",momtant:Number(Number(total_secteur_agriculture) + Number(total_secteur_industrie)+ Number(total_secteur_service)) * 0.03}])
+        props.setDonneeTotalProductionApproche(total_secteur)
+        props.setDonneeTotalApprocheProductionNonPetrolier(Number(total_secteur_agriculture) + Number(total_secteur_industrie) + Number(total_secteur_service))
+        props.setDonneeTotalApprocheProductionPetrolier(total_secteur_mines)
+        props.setDonneeTotalApprocheProductionAutreImpotDirect(Number(total_secteur_agriculture) + Number(total_secteur_industrie) + Number(total_secteur_service))
   
     return (
         <>

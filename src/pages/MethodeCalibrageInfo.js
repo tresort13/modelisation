@@ -31,48 +31,36 @@ function MethodeCalibrageInfo(props)
         {
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
-        console.log(props.donneeMethodeCalibrage)
+       
 
         
-        const petrolMine = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "petrolMine"
-        })
+        const petrolMine = Number(props.petrolMine)
 
-        const recetteAdministrative = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "recetteAdministrative"
-        })
+        const recetteAdministrative = Number(props.recetteAdministrative)
 
-        const tvaBrut = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "tvaBrut"
-        })
+        const tvaBrut = Number(props.tvaBrut)
 
-        const autreImpotDirect = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "autreImpotDirect"
-        })
+        const autreImpotDirect = Number(props.autreImpotDirect)
 
-        const impotRevenuPetrolier = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "impotRevenuPetrolier"
-        })
+        const impotRevenuPetrolier = Number(props.impotRevenuPetrolier)
 
-        const impotRevenuNonPetrolier = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "impotRevenuNonPetrolier"
-        })
+        const impotRevenuNonPetrolier = Number(props.impotRevenuNonPetrolier)
 
-        const impotRevenuPersonnePhysique = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "impotRevenuPersonnePhysique"
-        })
+        const impotRevenuPersonnePhysique = Number(props.impotRevenuPersonnePhysique)
 
-        const accises = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "accises"
-        })
+        const accises = Number(props.accises)
 
-        const droitTaxeImportation = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "droitTaxeImportation"
-        })
+        const droitTaxeImportation = Number(props.droitTaxeImportation)
 
-        const droitTaxeExportation = props.donneeMethodeCalibrage.find((value)=>{
-            return value.nom == "droitTaxeExportation"
-        })
+        const droitTaxeExportation = Number(props.droitTaxeExportation)
+
+        const impot_bien_service = Number(props.impotBienService)
+
+        const autre_impot_indirect = Number(props.autreImpotIndirect)
+
+        const dons_budgetaire = Number(props.donsBudgtaire)
+
+        const dons_projet = Number(props.donsProjet)
 
         console.log(petrolMine)
         console.log(recetteAdministrative)
@@ -84,18 +72,22 @@ function MethodeCalibrageInfo(props)
         console.log(accises)
         console.log(droitTaxeImportation)
         console.log(droitTaxeExportation)
+        console.log(impot_bien_service)
+        console.log(autre_impot_indirect)
+        console.log(dons_budgetaire)
+        console.log(dons_projet)
 
-        const dons = Number(props.donsBudgtaire) + Number(props.donsProjet)
-        const recette_non_fiscale = Number(petrolMine.montant) + Number(recetteAdministrative.montant)
-        const impot_indirect = Number(props.impotBienService) + Number(props.autreImpotIndirect) + Number(tvaBrut.montant)
-        const impot_direct = Number(impotRevenuPersonnePhysique.montant) + Number(autreImpotDirect.montant)
+        const dons = Number(dons_budgetaire) + Number(dons_projet)
+        const recette_non_fiscale = Number(petrolMine) + Number(recetteAdministrative)
+        const impot_indirect = Number(impot_bien_service) + Number(autre_impot_indirect) + Number(tvaBrut)
+        const impot_direct = Number(impotRevenuPersonnePhysique) + Number(autreImpotDirect)
         const impotDirect_et_impotIndirect = Number(impot_direct) + Number(impot_indirect)
-        const resource_douaniere = Number(droitTaxeImportation.montant) + Number(droitTaxeExportation.montant)
-        const douaneEtAccise = Number(resource_douaniere) + Number(accises.montant)
+        const resource_douaniere = Number(droitTaxeImportation) + Number(droitTaxeExportation)
+        const douaneEtAccise = Number(resource_douaniere) + Number(accises)
         const recetteFiscale = Number(douaneEtAccise) + Number(impotDirect_et_impotIndirect)
         const recetteInterne = Number(recetteFiscale) + Number(recette_non_fiscale)
 
-        console.log(impot_direct)
+        
         
     return (
         <>

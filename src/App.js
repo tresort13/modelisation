@@ -548,12 +548,6 @@ useEffect(() => {
 
 
 
-const [donneeMethodeCalibrage ,setDonneeMethodeCalibrage] = useState(()=>
-{
-  const localData = localStorage.getItem('donneeMethodeCalibrage');
-  return localData ? JSON.parse(localData) :[];
-});
-
 useEffect(() => {
   window.localStorage.setItem("donneeMethodeCalibrage", JSON.stringify(donneeMethodeCalibrage))
 }, [donneeMethodeCalibrage])
@@ -818,13 +812,8 @@ const dataDonneeDonsBudgetaire  = (data)=>{
 const dataDonneeDonsProjets  = (data)=>{
    setDonsProjet(data)
 }
-const dataDonneedataDonneeRevenuSocietePetroliereCoefficient  = (data)=>{
-   setCoefficientProduction(data)
-}
-const dataDonneeMethodeCalibrage = ()=>
-{
-  setDonneeMethodeCalibrage([...petrolMine,...recetteAdministrative,...tvaBrut,...autreImpotDirect,...impotRevenuPetrolier,...impotRevenuNonPetrolier,...impotRevenuPersonnePhysique,...accises,...droitTaxeImportation,...droitTaxeExportation])
-}
+
+
 
 
 
@@ -951,7 +940,7 @@ return (
     <Route path="/form_subvention_consommation" element={<FormSubventionConsommation username = {username} dataDonneeSubventionConsommation={dataDonneeSubventionConsommation}/>} >
     </Route>
 
-    <Route path="/form_recettes_calibrage_hypothese" element={<FormCalibrageHypothese username = {username} dataDonneeImpotsBienService={dataDonneeImpotsBienService} dataDonneeAutreImpotIndirect={dataDonneeAutreImpotIndirect} dataDonneeDonsBudgetaire={dataDonneeDonsBudgetaire} dataDonneeDonsProjets={dataDonneeDonsProjets}  dataDonneeDroitTaxeImportation={dataDonneeDroitTaxeImportation} dataDonneeDroitTaxeExportation={dataDonneeDroitTaxeExportation} dataDonneeAccise={dataDonneeAccise} dataDonneeAutreImpotDirect={dataDonneeAutreImpotDirect} dataDonneeAutresImpots={dataDonneeAutresImpots} dataDonneePetrolMine={dataDonneePetrolMine} dataDonneeRecetteAdministrative={dataDonneeRecetteAdministrative} dataDonneeRevenuSocieteNonPetroliere={dataDonneeRevenuSocieteNonPetroliere} dataDonneeImpotRevenuPersonnePhysique={dataDonneeImpotRevenuPersonnePhysique} dataDonneeRevenuSocietePetroliere={dataDonneeRevenuSocietePetroliere} dataDonneeTvaBrut={dataDonneeTvaBrut} dataDonneedataDonneeRevenuSocietePetroliereCoefficient={dataDonneedataDonneeRevenuSocietePetroliereCoefficient} dataDonneeMethodeCalibrage={dataDonneeMethodeCalibrage}/>} >
+    <Route path="/form_recettes_calibrage_hypothese" element={<FormCalibrageHypothese username = {username} dataDonneeImpotsBienService={dataDonneeImpotsBienService} dataDonneeAutreImpotIndirect={dataDonneeAutreImpotIndirect} dataDonneeDonsBudgetaire={dataDonneeDonsBudgetaire} dataDonneeDonsProjets={dataDonneeDonsProjets}  dataDonneeDroitTaxeImportation={dataDonneeDroitTaxeImportation} dataDonneeDroitTaxeExportation={dataDonneeDroitTaxeExportation} dataDonneeAccise={dataDonneeAccise} dataDonneeAutreImpotDirect={dataDonneeAutreImpotDirect} dataDonneeAutresImpots={dataDonneeAutresImpots} dataDonneePetrolMine={dataDonneePetrolMine} dataDonneeRecetteAdministrative={dataDonneeRecetteAdministrative} dataDonneeRevenuSocieteNonPetroliere={dataDonneeRevenuSocieteNonPetroliere} dataDonneeImpotRevenuPersonnePhysique={dataDonneeImpotRevenuPersonnePhysique} dataDonneeRevenuSocietePetroliere={dataDonneeRevenuSocietePetroliere} dataDonneeTvaBrut={dataDonneeTvaBrut}  donneeTotalRevenuApproche={donneeTotalRevenuApproche} donneeTotalRevenuSalaire={donneeTotalRevenuSalaire} donneeTotalProductionApproche={donneeTotalProductionApproche} donneeTotalImportationApprocheDepense={donneeTotalImportationApprocheDepense} donneeTotalExportationApprocheDepense={donneeTotalExportationApprocheDepense} donneeTotalApprocheProductionNonPetrolier={donneeTotalApprocheProductionNonPetrolier} donneeTotalApprocheProductionPetrolier={donneeTotalApprocheProductionPetrolier} donneeTotalApprocheProductionAutreImpotDirect={donneeTotalApprocheProductionAutreImpotDirect} donneeTotalApprocheProductionPetrolMine={donneeTotalApprocheProductionPetrolMine}/>} >
     </Route>
 
     
@@ -1068,7 +1057,7 @@ return (
     <Route path="/impot_salaire_info" element={<ImpotSalaireInfo username={username} setDonneeTotalRevenuApproche={setDonneeTotalRevenuApproche} subventionProduction={subventionProduction} subventionConsommation={subventionConsommation} revenusSalaires={revenusSalaires} exedantBrut={exedantBrut} autresImpots={autresImpots} />} >
     </Route>
 
-    <Route path="/methode_calibrage_info" element={<MethodeCalibrageInfo username = {username}  petrolMine={petrolMine} droitTaxeImportation={droitTaxeImportation} droitTaxeExportation={droitTaxeExportation} accises={accises} impotRevenuPersonnePhysique={impotRevenuPersonnePhysique} impotRevenuNonPetrolier={impotRevenuNonPetrolier} impotRevenuPetrolier={impotRevenuPetrolier} autreImpotDirect={autreImpotDirect} tvaBrut={tvaBrut} recetteAdministrative={recetteAdministrative} coefficientProduction={coefficientProduction} impotBienService={impotBienService} autreImpotIndirect={autreImpotIndirect} donsBudgtaire={donsBudgtaire} donsProjet={donsProjet}  productionInfo={productionInfo} donneeImportationsInfo={donneeImportationsInfo} donneeExportationsInfo={donneeExportationsInfo} revenusSalaires={revenusSalaires} donneeTotalRevenuApproche={donneeTotalRevenuApproche} donneeTotalRevenuSalaire={donneeTotalRevenuSalaire} donneeTotalProductionApproche={donneeTotalProductionApproche} donneeTotalImportationApprocheDepense={donneeTotalImportationApprocheDepense} donneeTotalExportationApprocheDepense={donneeTotalExportationApprocheDepense} donneeTotalApprocheProductionNonPetrolier={donneeTotalApprocheProductionNonPetrolier} donneeTotalApprocheProductionPetrolier={donneeTotalApprocheProductionPetrolier} donneeTotalApprocheProductionAutreImpotDirect={donneeTotalApprocheProductionAutreImpotDirect} donneeTotalApprocheProductionPetrolMine={donneeTotalApprocheProductionPetrolMine}/>} >
+    <Route path="/methode_calibrage_info" element={<MethodeCalibrageInfo username = {username}  petrolMine={petrolMine} droitTaxeImportation={droitTaxeImportation} droitTaxeExportation={droitTaxeExportation} accises={accises} impotRevenuPersonnePhysique={impotRevenuPersonnePhysique} impotRevenuNonPetrolier={impotRevenuNonPetrolier} impotRevenuPetrolier={impotRevenuPetrolier} autreImpotDirect={autreImpotDirect} tvaBrut={tvaBrut} recetteAdministrative={recetteAdministrative}  impotBienService={impotBienService} autreImpotIndirect={autreImpotIndirect} donsBudgtaire={donsBudgtaire} donsProjet={donsProjet}   />} >
     </Route>
     
 

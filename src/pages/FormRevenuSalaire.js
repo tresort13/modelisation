@@ -31,7 +31,7 @@ const [fichier,setFichier] = useState()
 const navigate = useNavigate()
 const [modalShow, setModalShow] = React.useState(false);
 const [modalShow2, setModalShow2] = React.useState(false);
-const [message,setMessage] = useState("Révenu Salaire");
+const [message,setMessage] = useState("Impôts sur Salaires");
 const [couleur,setCouleur] = useState("text-warning");
 
 

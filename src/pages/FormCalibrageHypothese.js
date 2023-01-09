@@ -92,7 +92,7 @@ const inputChanged = (event)=>
 return (
 <>
 <Header username={props.username}/>
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:50,width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:50}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
         <p className={couleur}><i><b>{message}</b></i></p>
@@ -100,71 +100,99 @@ return (
     </Row>
     
 <Form>
-
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Droit et taxe à l'importation </u></b> </p>
+    </Row>
     <Row className='justify-content-center'>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.droit_taxe_importation} name="droit_taxe_importation"  onChange={e=>inputChanged(e)} type="text" placeholder="Droit et taxe à l'importation (%)" autoFocus   required/>
          </Form.Group>
         </Col>
 
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="droit_taxe_importation_base_calcul"   type="text"   required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Droit et taxe à l'exportation </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.droit_taxe_exportation} name="droit_taxe_exportation"   type="text" placeholder="Droit et taxe à l'exportation" required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="droit_taxe_exportation_base_calcul"   type="text"   required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Accises </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.accises} name="droit_taxe_exportation" placeholder='Accises'  type="text"  required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.accises} name="accises" placeholder='Accises'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="droit_taxe_exportation_base_calcul"   type="text"   required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Impôts sur le revenu personnes physiques </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_personne_physique} name="impot_revenu_personne_physique" placeholder='Impôts sur le revenu personnes physiques'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="impot_revenu_personne_physique_base_calcul" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Impôts sur le revenu des sociétés et des entreprises non pétrolières </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_non_petroliere} name="impot_revenu_societe_non_petroliere" placeholder='Impôts sur le revenu des sociétés et des entreprises non pétrolières'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="impot_revenu_societe_non_petroliere_base_calcul" type="text" required/>
          </Form.Group>
         </Col>
+    </Row>
+
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Impôts sur le revenu des sociétés pétrolières </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -179,111 +207,151 @@ return (
          </Form.Group>
         </Col>
 
-        <Col xs = {2}>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere_coefficient} name="impot_revenu_societe_petroliere_coefficient" placeholder='Coefficient'  type="text"  required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Autres impôts directs </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_direct} name="autre_impot_direct" placeholder='Autres impôts directs'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="autre_impot_direct_base_calcul" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> TVA Brute </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.tva_brut} name="tva_brut" placeholder='TVA Brute'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="tva_brut_base_calcule" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Impôts sur les biens et services </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.impot_bien_service} name="tva_brut" placeholder='Impôts sur les biens et services'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="impot_bien_service_base_calcule" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Autres impôts indirects </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect} name="autre_impot_indirect" placeholder='Autres impôts indirects'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="autre_impot_indirect_base_calcule" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Recettes administratives (DGRAD) </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.recette_administrative} name="recette_administrative" placeholder='Recettes administratives (DGRAD)'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="recette_administrative_base_calcule" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Pétrole et mines (royalties et taxes) </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.petrol_mine} name="petrol_mine" placeholder='Pétrole et mines (royalties et taxes)'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="petrol_mine_base_calcule" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Dons budgétaires </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire} name="dons_budgetaire" placeholder='Dons budgétaires'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="dons_budgetaire_base_calcule" type="text" required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row>
+      <hr className='warning'></hr>
+      <p className='warning'><b><u> Dons projets </u></b> </p>
+    </Row>
+
     <Row className='justify-content-center'>
-    <Col xs = {5}>
+    <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet} name="dons_projet" placeholder='Dons projets'  type="text"  required/>
          </Form.Group>
         </Col>
-        <Col xs = {5}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
         <Form.Control  name="dons_projet_base_calcule" type="text" required/>
          </Form.Group>

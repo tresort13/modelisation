@@ -305,8 +305,8 @@ return (
     </Row>
 
     <Row>
-      <hr variant='warning'></hr>
-      <p variant='warning'><b><u> Pétrole et mines (royalties et taxes) </u></b> </p>
+      <hr className='text-warning'></hr>
+      <p className='text-warning'><b><u> Pétrole et mines (royalties et taxes) </u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>

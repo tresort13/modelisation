@@ -548,9 +548,7 @@ useEffect(() => {
 
 
 
-useEffect(() => {
-  window.localStorage.setItem("donneeMethodeCalibrage", JSON.stringify(donneeMethodeCalibrage))
-}, [donneeMethodeCalibrage])
+
 
 const [donneeTotalRevenuApproche ,setDonneeTotalRevenuApproche] = useState(()=>
 {

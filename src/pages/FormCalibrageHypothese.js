@@ -148,7 +148,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.accises_base_calcul}   name="accises_base_calcul"  placeholder='Veuillez entrer la base de calcul' onChange={e=>inputChanged(e)}  type="text" required/>
+        <Form.Control value={new Intl.NumberFormat().format(CalibrageInputFields.infoCalibrage.accises_base_calcul)}   name="accises_base_calcul"  placeholder='Veuillez entrer la base de calcul' onChange={e=>inputChanged(e)}  type="text" required/>
          </Form.Group>
         </Col>
     </Row>
@@ -262,7 +262,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control  value={CalibrageInputFields.infoCalibrage.impot_bien_service_base_calcul} name="impot_bien_service_base_calcul" type="text"  onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul' required/>
+        <Form.Control  value={new Intl.NumberFormat().format(CalibrageInputFields.infoCalibrage.impot_bien_service_base_calcul)} name="impot_bien_service_base_calcul" type="text"  onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul' required/>
          </Form.Group>
         </Col>
     </Row>
@@ -280,7 +280,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect_base_calcul}  name="autre_impot_indirect_base_calcul"  onChange={e=>inputChanged(e)} type="text" placeholder='Veuillez entrer la base de calcul' required/>
+        <Form.Control value={new Intl.NumberFormat().format(CalibrageInputFields.infoCalibrage.autre_impot_indirect_base_calcul)}  name="autre_impot_indirect_base_calcul"  onChange={e=>inputChanged(e)} type="text" placeholder='Veuillez entrer la base de calcul' required/>
          </Form.Group>
         </Col>
     </Row>
@@ -334,7 +334,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire_base_calcul}  name="dons_budgetaire_base_calcul" onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul' type="text" required/>
+        <Form.Control value={new Intl.NumberFormat().format(CalibrageInputFields.infoCalibrage.dons_budgetaire_base_calcul)}  name="dons_budgetaire_base_calcul" onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul' type="text" required/>
          </Form.Group>
         </Col>
     </Row>
@@ -352,7 +352,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet_base_calcul}  name="dons_projet_base_calcul" onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul'  type="text" required/>
+        <Form.Control value={new Intl.NumberFormat().format(CalibrageInputFields.infoCalibrage.dons_projet_base_calcul)}  name="dons_projet_base_calcul" onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul'  type="text" required/>
          </Form.Group>
         </Col>
     </Row>

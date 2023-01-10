@@ -352,7 +352,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet_base_calcul}  name="dons_projet_base_calcule" onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul'  type="text" required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet_base_calcul}  name="dons_projet_base_calcul" onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul'  type="text" required/>
          </Form.Group>
         </Col>
     </Row>

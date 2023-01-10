@@ -58,10 +58,7 @@ const [couleur,setCouleur] = useState("text-warning");
 const navigate = useNavigate();
 const [modalShow, setModalShow] = React.useState(false);
 const [modalShow2, setModalShow2] = React.useState(false);
-const resetFileInput = () => {
-    // 👇️ reset input value
-    inputRef.current.value = null;
-  };
+
 const submitManifest = (e)=>
 {
     e.preventDefault()
@@ -84,7 +81,7 @@ const submitManifest = (e)=>
                 
                navigate('/methode_calibrage_info')
             
-    resetFileInput()
+   
 }
 
 const inputChanged = (event)=>

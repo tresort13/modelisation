@@ -64,9 +64,9 @@ const resetFileInput = () => {
   };
 const submitManifest = (e)=>
 {
-    
+    e.preventDefault()
     setModalShow2(true)
-             props.dataDonneeMethodeCalibrage()
+             
              props.dataDonneeDroitTaxeImportation( Number(props.donneeTotalImportationApprocheDepense) * (Number(CalibrageInputFields.infoCalibrage.droit_taxe_importation) / 100))
              props.dataDonneeDroitTaxeExportation( Number(props.donneeTotalExportationApprocheDepense) * (Number(CalibrageInputFields.infoCalibrage.droit_taxe_exportation) / 100))
              props.dataDonneeAccise(Number(CalibrageInputFields.infoCalibrage.accises_base_calcul) * (Number(CalibrageInputFields.infoCalibrage.accises) / 100))

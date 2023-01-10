@@ -59,9 +59,9 @@ const navigate = useNavigate();
 const [modalShow, setModalShow] = React.useState(false);
 const [modalShow2, setModalShow2] = React.useState(false);
 
-const submitManifest = (e)=>
+const submitManifest = ()=>
 {
-    e.preventDefault()
+    //e.preventDefault()
     setModalShow2(true)
              
              props.dataDonneeDroitTaxeImportation( Number(props.donneeTotalImportationApprocheDepense) * (Number(CalibrageInputFields.infoCalibrage.droit_taxe_importation) / 100))
@@ -108,7 +108,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.droit_taxe_importation} name="droit_taxe_importation"  onChange={e=>inputChanged(e)} type="text" placeholder="Droit et taxe à l'importation (%)" autoFocus   />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.droit_taxe_importation} name="droit_taxe_importation"  onChange={e=>inputChanged(e)} type="text" placeholder="Droit et taxe à l'importation (%)" autoFocus   required/>
          </Form.Group>
         </Col>
 
@@ -127,7 +127,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.droit_taxe_exportation} name="droit_taxe_exportation"   type="text" placeholder="Droit et taxe à l'exportation (%)" required/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.droit_taxe_exportation} name="droit_taxe_exportation"   type="text"  onChange={e=>inputChanged(e)} placeholder="Droit et taxe à l'exportation (%)" required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -145,7 +145,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.accises} name="accises" placeholder='Accises (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.accises} name="accises" placeholder='Accises (%)'  type="text"  onChange={e=>inputChanged(e)}  required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -163,7 +163,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_personne_physique} name="impot_revenu_personne_physique" placeholder='Impôts sur le revenu personnes physiques (%)'  type="text" />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_personne_physique} name="impot_revenu_personne_physique" placeholder='Impôts sur le revenu personnes physiques (%)'  onChange={e=>inputChanged(e)}  type="text" required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -181,7 +181,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_non_petroliere} name="impot_revenu_societe_non_petroliere" placeholder='Impôts sur le revenu des sociétés et des entreprises non pétrolières (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_non_petroliere} name="impot_revenu_societe_non_petroliere" placeholder='Impôts sur le revenu des sociétés et des entreprises non pétrolières (%)'  onChange={e=>inputChanged(e)}  type="text"  required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -199,7 +199,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere} name="impot_revenu_societe_petroliere" placeholder='Impôts sur le revenu des sociétés pétrolières (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere} name="impot_revenu_societe_petroliere" placeholder='Impôts sur le revenu des sociétés pétrolières (%)'  onChange={e=>inputChanged(e)} type="text"  required/>
          </Form.Group>
         </Col>
         <Col xs = {4}>
@@ -210,7 +210,7 @@ return (
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere_coefficient} name="impot_revenu_societe_petroliere_coefficient" placeholder='Coefficient (Decimal)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere_coefficient} name="impot_revenu_societe_petroliere_coefficient" placeholder='Coefficient (Decimal)'  onChange={e=>inputChanged(e)}  type="text"  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -223,7 +223,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_direct} name="autre_impot_direct" placeholder='Autres impôts directs (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_direct} name="autre_impot_direct" placeholder='Autres impôts directs (%)'  onChange={e=>inputChanged(e)}  type="text"  required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -241,7 +241,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.tva_brut} name="tva_brut" placeholder='TVA Brute (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.tva_brut} name="tva_brut" placeholder='TVA Brute (%)'  onChange={e=>inputChanged(e)}  type="text"  required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -259,12 +259,12 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_bien_service} name="tva_brut" placeholder='Impôts sur les biens et services (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.impot_bien_service} name="tva_brut" placeholder='Impôts sur les biens et services (%)'  onChange={e=>inputChanged(e)} type="text"  required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control  value={CalibrageInputFields.infoCalibrage.impot_bien_service_base_calcul} name="impot_bien_service_base_calcule" type="text" />
+        <Form.Control  value={CalibrageInputFields.infoCalibrage.impot_bien_service_base_calcul} name="impot_bien_service_base_calcule" type="text"  onChange={e=>inputChanged(e)} required/>
          </Form.Group>
         </Col>
     </Row>
@@ -277,12 +277,12 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect} name="autre_impot_indirect" placeholder='Autres impôts indirects (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect} name="autre_impot_indirect" placeholder='Autres impôts indirects (%)'  onChange={e=>inputChanged(e)}  type="text"  required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect_base_calcul}  name="autre_impot_indirect_base_calcule" type="text" />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.autre_impot_indirect_base_calcul}  name="autre_impot_indirect_base_calcule"  onChange={e=>inputChanged(e)} type="text" required/>
          </Form.Group>
         </Col>
     </Row>
@@ -295,7 +295,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.recette_administrative} name="recette_administrative" placeholder='Recettes administratives (%)'  type="text" />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.recette_administrative} name="recette_administrative" placeholder='Recettes administratives (%)'  onChange={e=>inputChanged(e)}  type="text" required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -313,7 +313,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.petrol_mine} name="petrol_mine" placeholder='Pétrole et mines (royalties et taxes) - (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.petrol_mine} name="petrol_mine" placeholder='Pétrole et mines (royalties et taxes) - (%)'  onChange={e=>inputChanged(e)}  type="text" required />
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -331,7 +331,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire} name="dons_budgetaire" placeholder='Dons budgétaires (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire} name="dons_budgetaire" placeholder='Dons budgétaires (%)'  onChange={e=>inputChanged(e)}  type="text"  required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -349,7 +349,7 @@ return (
     <Row className='justify-content-center'>
     <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet} name="dons_projet" placeholder='Dons projets (%)'  type="text"  />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet} name="dons_projet" placeholder='Dons projets (%)'  onChange={e=>inputChanged(e)}  type="text"  required/>
          </Form.Group>
         </Col>
         <Col xs = {6}>
@@ -367,7 +367,7 @@ return (
         <Col xs ={4}>
         
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitManifest(e)}>
+        <Button variant="warning" type="submit" onClick={()=>submitManifest()}>
         Executer
         </Button>
         </Link>

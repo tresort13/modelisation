@@ -109,6 +109,8 @@ function ProductionInfo(props)
         props.setDonneeTotalApprocheProductionNonPetrolier(Number(total_secteur_agriculture) + Number(total_secteur_industrie) + Number(total_secteur_service))
         props.setDonneeTotalApprocheProductionPetrolier(total_secteur_mines)
         props.setDonneeTotalApprocheProductionAutreImpotDirect(Number(total_secteur_agriculture) + Number(total_secteur_industrie) + Number(total_secteur_service))
+        props.setDonneeTotalApprocheProductionPetrolMine(total_secteur_mines)
+
   
     return (
         <>

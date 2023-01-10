@@ -64,7 +64,7 @@ const resetFileInput = () => {
   };
 const submitManifest = (e)=>
 {
-    e.preventDefault()
+    
     setModalShow2(true)
              props.dataDonneeMethodeCalibrage()
              props.dataDonneeDroitTaxeImportation( Number(props.donneeTotalImportationApprocheDepense) * (Number(CalibrageInputFields.infoCalibrage.droit_taxe_importation) / 100))

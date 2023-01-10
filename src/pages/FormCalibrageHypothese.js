@@ -27,8 +27,6 @@ function FormCalibrageHypothese(props)
         query: "(max-width: 1224px)"
       });   
       
-const inputRef = useRef(null);
-const [fichier,setFichier] = useState();
 const[CalibrageInputFields,setCalibrageInputFields] = useState({infoCalibrage :{
     
   droit_taxe_importation:"",
@@ -59,9 +57,9 @@ const navigate = useNavigate();
 const [modalShow, setModalShow] = React.useState(false);
 const [modalShow2, setModalShow2] = React.useState(false);
 
-const submitManifest = ()=>
+const submitManifest = (e)=>
 {
-    //e.preventDefault()
+    e.preventDefault()
     setModalShow2(true)
              
              props.dataDonneeDroitTaxeImportation( Number(props.donneeTotalImportationApprocheDepense) * (Number(CalibrageInputFields.infoCalibrage.droit_taxe_importation) / 100))
@@ -150,7 +148,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.accises_base_calcul}   name="accises_base_calcul"   type="text" />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.accises_base_calcul}   name="accises_base_calcul"  placeholder='Veuillez la base de calcul' onChange={e=>inputChanged(e)}  type="text" required/>
          </Form.Group>
         </Col>
     </Row>
@@ -228,7 +226,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={new Intl.NumberFormat().format(props.donneeTotalApprocheProductionAutreImpotDirect) + " (Base de calcul)"}  name="autre_impot_direct_base_calcul" type="text" />
+        <Form.Control value={new Intl.NumberFormat().format(props.donneeTotalApprocheProductionAutreImpotDirect) + " (Base de calcul)"}  name="autre_impot_direct_base_calcul" type="text" disabled/>
          </Form.Group>
         </Col>
     </Row>
@@ -336,7 +334,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire_base_calcul}  name="dons_budgetaire_base_calcule" type="text" disabled/>
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_budgetaire_base_calcul}  name="dons_budgetaire_base_calcule" placeholder='Accises (%)' type="text" disabled/>
          </Form.Group>
         </Col>
     </Row>
@@ -354,7 +352,7 @@ return (
         </Col>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicFile" >
-        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet_base_calcul}  name="dons_projet_base_calcule" type="text" />
+        <Form.Control value={CalibrageInputFields.infoCalibrage.dons_projet_base_calcul}  name="dons_projet_base_calcule" onChange={e=>inputChanged(e)} placeholder='Veuillez entrer la base de calcul'  type="text" required/>
          </Form.Group>
         </Col>
     </Row>
@@ -367,7 +365,7 @@ return (
         <Col xs ={4}>
         
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={()=>submitManifest()}>
+        <Button variant="warning" type="submit" onClick={(e)=>submitManifest(e)}>
         Executer
         </Button>
         </Link>

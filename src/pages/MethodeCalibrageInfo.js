@@ -140,25 +140,25 @@ function MethodeCalibrageInfo(props)
         </tr>
        
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-3'>      Recettes douanières </b></i></td>
+             <td><i ><b style={{paddingLeft:10}}>      Recettes douanières </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(resource_douaniere).toFixed())}</b></i></td>
              <td><i ><b> Total Droit et taxe à l'importation &amp; Droit et taxe à l'exportation </b></i></td>
         </tr>
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-5'> Droit et taxe à l'importation </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}> Droit et taxe à l'importation </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(resource_douaniere).toFixed())}</b></i></td>
              <td><i ><b> Droit et taxe à l'importation : hypothèse de prélèvement sur les importations de biens et services (PIB optique emplois nominal) </b></i></td>
         </tr>
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-5'>    Droit et taxe à l'exportation </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>    Droit et taxe à l'exportation </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(resource_douaniere).toFixed())}</b></i></td>
              <td><i ><b> Droit et taxe à l'exportation : hypothèse de 0,12 % appliquée aux droits et taxes sur les exportations de biens et services. </b></i></td>
         </tr>
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-3'>    Accises </b></i></td>
+             <td><i ><b style={{paddingLeft:10}}>    Accises </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(resource_douaniere).toFixed())}</b></i></td>
              <td><i ><b>  hypothèse de 1,2 % d’accroissement du PIB nominal</b></i></td>
         </tr>
@@ -173,49 +173,55 @@ function MethodeCalibrageInfo(props)
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-3'>   Impôts directs </b></i></td>
+             <td><i ><b style={{paddingLeft:10}}>   Impôts directs </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed())}</b></i></td>
              <td><i ><b> Total de la ligne    Impôts sur le revenu personnes physiques  &amp;  Impôts sur le revenu des sociétés et des entreprises non pétrolières  &amp;  Impôts sur le revenu des sociétés pétrolières  &amp;  Autres impôts directs</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-5'> Impôts sur le revenu personnes physiques </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}> Impôts sur le revenu personnes physiques </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed())}</b></i></td>
              <td><i ><b> hypothèse de 1,5 % du PIB</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-5'>    Impôts sur le revenu des sociétés et des entreprises non pétrolières </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>    Impôts sur le revenu des sociétés et des entreprises non pétrolières </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed())}</b></i></td>
              <td><i ><b> Hypothèse de 3 % sur le PIB non extractif</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-5'>       Impôts sur le revenu des sociétés pétrolières </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>       Impôts sur le revenu des sociétés pétrolières </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed())}</b></i></td>
              <td><i ><b> hypothèse de 0,2 % sur le PIB ind. Extract. (0,2 % du PIB sur les hydrocarbures) </b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-3'>   Impôts indirects </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>  Autres impôts directs </b></i></td>
+             <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed())}</b></i></td>
+             <td><i ><b> 0,2 % sur le PIB non minier </b></i></td>
+        </tr> 
+
+        <tr style={{border:"2px solid white"}}>
+             <td><i ><b style={{paddingLeft:10}}>   Impôts indirects </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_indirect).toFixed())}</b></i></td>
              <td><i ><b>   Total TVA Brute  &amp;   Impôts sur les biens et services   &amp;  Autres impôts indirects</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-5'>    TVA Brute </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>    TVA Brute </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_indirect).toFixed())}</b></i></td>
              <td><i ><b>propension du prélèvent de2,4% sur le revenu nominal du côté PIB emplois</b></i></td>
         </tr>  
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-5'>    Impôts sur les biens et services </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>    Impôts sur les biens et services </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_indirect).toFixed())}</b></i></td>
              <td><i ><b>???? Input field</b></i></td>
         </tr>  
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-5'>    Autres impôts indirects </b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>    Autres impôts indirects </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_indirect).toFixed())}</b></i></td>
              <td><i ><b>???? Input field</b></i></td>
         </tr>  
@@ -231,13 +237,13 @@ function MethodeCalibrageInfo(props)
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-3'>Recettes administratives (DGRAD)</b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>Recettes administratives (DGRAD)</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(recette_non_fiscale).toFixed())}</b></i></td>
              <td><i ><b>propension du prélèvent de2,4 % sur le revenu</b></i></td>
         </tr>   
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-3'>  Pétrole et mines (royalties et taxes)</b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>  Pétrole et mines (royalties et taxes)</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(recette_non_fiscale).toFixed())}</b></i></td>
              <td><i ><b>PIB ind. extractives*0,2 %</b></i></td>
         </tr>   
@@ -251,13 +257,13 @@ function MethodeCalibrageInfo(props)
         </tr>   
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-3'>Dons budgétaires</b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>Dons budgétaires</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(dons).toFixed())}</b></i></td>
              <td><i ><b>  ???? Input field </b></i></td>
         </tr>   
 
         <tr style={{border:"2px solid white"}}>
-             <td><i ><b className='pl-3'>Dons projets</b></i></td>
+             <td><i ><b style={{paddingLeft:20}}>Dons projets</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(dons).toFixed())}</b></i></td>
              <td><i ><b>  ???? Input field </b></i></td>
         </tr>   

@@ -98,10 +98,10 @@ function MethodeCalibrageInfo(props)
 
     
 <div>
-<Row className='justify-content-center '>
-        <Col xs = {"auto"} className='text-center borders pt-2'>
+<Row className='justify-content-start '>
+        <Col xs = {"auto"} className='text-start borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Projection des Recettes par la méthode de calibrage des hypothèses</i></b></u></h6>
+        <h6 className='text-center'><u><b><i className='text-primary'>Projection des Recettes par la méthode de calibrage des hypothèses</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">

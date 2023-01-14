@@ -241,7 +241,7 @@ function MethodeCalibrageInfo(props)
         <tr style={{border:"2px solid white"}}>
              <td><b style={{paddingLeft:30}}>5.2.3</b></td>
              <td><i ><b  style={{paddingLeft:30}}>    Autres impôts indirects </b></i></td>
-             <td><i><b >{new Intl.NumberFormat().format(Number(autre_impot_indirect).toFixed(2))}</b></i></td>
+             <td><i><b >{new Intl.NumberFormat().format(Number(autre_impot_indirect).toFixed())}</b></i></td>
              <td><i ><b >???? Input field</b></i></td>
         </tr>  
 
@@ -287,7 +287,7 @@ function MethodeCalibrageInfo(props)
         </tr>   
 
         <tr style={{border:"2px solid white"}}>
-             <td><b style={{paddingLeft:20}}>7.2</b></td>
+             <td><b style={{paddingLeft:30}}>7.2</b></td>
              <td><i ><b  style={{paddingLeft:20}}>Dons projets</b></i></td>
              <td><i><b >{new Intl.NumberFormat().format(Number(dons_projet).toFixed())}</b></i></td>
              <td><i ><b >  ???? Input field </b></i></td>

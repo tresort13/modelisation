@@ -71,7 +71,7 @@ const submitManifest = (e)=>
              props.dataDonneeAutreImpotDirect( Number(props.donneeTotalApprocheProductionAutreImpotDirect) * (Number(CalibrageInputFields.infoCalibrage.autre_impot_direct) / 100))
               props.dataDonneeTvaBrut( Number(props.donneeTotalProductionApproche) * (Number(CalibrageInputFields.infoCalibrage.tva_brut) / 100))
               props.dataDonneeImpotsBienService( Number(CalibrageInputFields.infoCalibrage.impot_bien_service_base_calcul) * (Number(CalibrageInputFields.infoCalibrage.impot_bien_service) / 100))
-              props.dataDonneeAutreImpotIndirect( Number(CalibrageInputFields.infoCalibrage.autre_impot_indirect) * (Number(CalibrageInputFields.infoCalibrage.autre_impot_indirect) / 100))
+              props.dataDonneeAutreImpotIndirect( Number(CalibrageInputFields.infoCalibrage.autre_impot_indirect_base_calcul) * (Number(CalibrageInputFields.infoCalibrage.autre_impot_indirect) / 100))
               props.dataDonneeRecetteAdministrative( Number(props.donneeTotalRevenuApproche) * (Number(CalibrageInputFields.infoCalibrage.recette_administrative) / 100))
               props.dataDonneePetrolMine( Number(props.donneeTotalApprocheProductionPetrolMine) * (Number(CalibrageInputFields.infoCalibrage.petrol_mine) / 100))
               props.dataDonneeDonsBudgetaire(Number(CalibrageInputFields.infoCalibrage.dons_budgetaire_base_calcul) * (Number(CalibrageInputFields.infoCalibrage.dons_budgetaire) / 100))

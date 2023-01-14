@@ -186,7 +186,7 @@ function MethodeCalibrageInfo(props)
              <td><b style={{paddingLeft:20}}>5.1</b></td>
              <td><i ><b  style={{paddingLeft:20}}>   Impôts directs </b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(impot_direct).toFixed())}</b></i></td>
-             <td><i ><b > Total de la ligne    Impôts sur le revenu personnes physiques  &amp;  Impôts sur le revenu des sociétés et des entreprises non pétrolières  &amp;  Impôts sur le revenu des sociétés pétrolières  &amp;  Autres impôts directs</b></i></td>
+             <td><i ><b > Total Impôts sur le revenu personnes physiques  &amp;  Impôts sur le revenu des sociétés et des entreprises non pétrolières  &amp;  Impôts sur le revenu des sociétés pétrolières  &amp;  Autres impôts directs</b></i></td>
         </tr> 
 
         <tr style={{border:"2px solid white"}}>
@@ -228,7 +228,7 @@ function MethodeCalibrageInfo(props)
              <td><b style={{paddingLeft:30}}>5.2.1</b></td>
              <td><i ><b  style={{paddingLeft:30}}>    TVA Brute </b></i></td>
              <td><i><b >{new Intl.NumberFormat().format(Number(tvaBrut).toFixed())}</b></i></td>
-             <td><i ><b >propension du prélèvent de2,4% sur le revenu nominal du côté PIB emplois</b></i></td>
+             <td><i ><b >propension du prélèvent de 2,4% sur le revenu nominal du côté PIB emplois</b></i></td>
         </tr>  
 
         <tr style={{border:"2px solid white"}}>
@@ -241,7 +241,7 @@ function MethodeCalibrageInfo(props)
         <tr style={{border:"2px solid white"}}>
              <td><b style={{paddingLeft:30}}>5.2.3</b></td>
              <td><i ><b  style={{paddingLeft:30}}>    Autres impôts indirects </b></i></td>
-             <td><i><b >{new Intl.NumberFormat().format(Number(autre_impot_indirect).toFixed())}</b></i></td>
+             <td><i><b >{new Intl.NumberFormat().format(Number(autre_impot_indirect).toFixed(2))}</b></i></td>
              <td><i ><b >???? Input field</b></i></td>
         </tr>  
 

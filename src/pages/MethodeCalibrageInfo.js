@@ -234,7 +234,7 @@ function MethodeCalibrageInfo(props)
         <tr style={{border:"2px solid white"}}>
              <td><b style={{paddingLeft:30}}>5.2.2</b></td>
              <td><i ><b  style={{paddingLeft:30}}>    Impôts sur les biens et services </b></i></td>
-             <td><i><b >{new Intl.NumberFormat().format(Number(impot_bien_service).toFixed(2))}</b></i></td>
+             <td class='text-end'><i><b >{new Intl.NumberFormat().format(Number(impot_bien_service).toFixed(2))}</b></i></td>
              <td><i ><b >???? Input field</b></i></td>
         </tr>  
 

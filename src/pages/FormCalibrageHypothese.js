@@ -66,7 +66,7 @@ const submitManifest = (e)=>
              props.dataDonneeDroitTaxeExportation( Number(props.donneeTotalExportationApprocheDepense) * (Number(CalibrageInputFields.infoCalibrage.droit_taxe_exportation) / 100))
              props.dataDonneeAccise(Number(CalibrageInputFields.infoCalibrage.accises_base_calcul) * (Number(CalibrageInputFields.infoCalibrage.accises) / 100))
              props.dataDonneeImpotRevenuPersonnePhysique(Number(props.donneeTotalRevenuSalaire) * (Number(CalibrageInputFields.infoCalibrage.impot_revenu_personne_physique) / 100))
-             props.dataDonneeRevenuSocieteNonPetroliere(Number(props.donneeTotalApprocheProductionNonPetrolier) * (Number(CalibrageInputFields.infoCalibrage.impot_revenu_societe_non_petroliere) * 100))
+             props.dataDonneeRevenuSocieteNonPetroliere(Number(props.donneeTotalApprocheProductionNonPetrolier) * (Number(CalibrageInputFields.infoCalibrage.impot_revenu_societe_non_petroliere) / 100))
              props.dataDonneeRevenuSocietePetroliere( Number(props.donneeTotalApprocheProductionPetrolier) * Number(CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere_coefficient) * (Number(CalibrageInputFields.infoCalibrage.impot_revenu_societe_petroliere) / 100))
              props.dataDonneeAutreImpotDirect( Number(props.donneeTotalApprocheProductionAutreImpotDirect) * (Number(CalibrageInputFields.infoCalibrage.autre_impot_direct) / 100))
               props.dataDonneeTvaBrut( Number(props.donneeTotalProductionApproche) * (Number(CalibrageInputFields.infoCalibrage.tva_brut) / 100))

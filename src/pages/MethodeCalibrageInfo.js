@@ -169,7 +169,7 @@ function MethodeCalibrageInfo(props)
         <tr style={{border:"2px solid white"}}>
              <td><b style={{paddingLeft:20}}>4.2</b></td>
              <td><i ><b  style={{paddingLeft:20}}>    Accises </b></i></td>
-             <td class='text-end'><i><b  >{new Intl.NumberFormat.format(parseFloat(accises).toFixed(2))}</b></i></td>
+             <td class='text-end'><i><b  >{new Intl.NumberFormat().format(parseFloat(accises).toFixed(2))}</b></i></td>
              <td><i ><b  >  hypothèse de 1,2 % d’accroissement du PIB nominal</b></i></td>
         </tr>
 

@@ -86,6 +86,7 @@ function MethodeCalibrageInfo(props)
         const douaneEtAccise = Number(resource_douaniere) + Number(accises)
         const recetteFiscale = Number(douaneEtAccise) + Number(impotDirect_et_impotIndirect)
         const recetteInterne = Number(recetteFiscale) + Number(recette_non_fiscale)
+        const recetteTotale = Number(recetteInterne) + Number(dons)
 
         
         
@@ -119,7 +120,7 @@ function MethodeCalibrageInfo(props)
       <tr style={{border:"2px solid white"}}>
              <td><b>1</b></td>
              <td><i ><b>Recettes totales : recettes internes et dons</b></i></td>
-             <td class='text-end'><i><b>{new Intl.NumberFormat().format(Number(recetteInterne).toFixed(2))}</b></i></td>
+             <td class='text-end'><i><b>{new Intl.NumberFormat().format(Number(recetteTotale).toFixed(2))}</b></i></td>
              <td><i ><b> Total Recettes internes : fiscales et non-fiscales &amp; Dons </b></i></td>
         </tr> 
 
@@ -168,7 +169,7 @@ function MethodeCalibrageInfo(props)
         <tr style={{border:"2px solid white"}}>
              <td><b style={{paddingLeft:20}}>4.2</b></td>
              <td><i ><b  style={{paddingLeft:20}}>    Accises </b></i></td>
-             <td class='text-end'><i><b  >{new Intl.NumberFormat().format(Number(accises).toFixed(2))}</b></i></td>
+             <td class='text-end'><i><b  >{new Intl.NumberFormat().format(Number(accises).toPrecision(2))}</b></i></td>
              <td><i ><b  >  hypothèse de 1,2 % d’accroissement du PIB nominal</b></i></td>
         </tr>
 
